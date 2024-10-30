@@ -1,0 +1,36 @@
+.clubForm {
+  width: 100%;
+  max-width: 1224px;
+  margin-top: 38px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 4px;
+  font: var(--sds-typography-subheading-font-weight) var(--sds-typography-subheading-size-medium) / 1.2 var(--sds-typography-subheading-font-family);
+  color: var(--sds-color-text-default-default);
+}
+
+.formInput,
+.formTextarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(102, 102, 102, 0.35);
+  padding: 10px;
+  font: inherit;
+}
+
+.formTextarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+@media (max-width: 991px) {
+  .clubForm {
+    max-width: 100%;
+  }
+}

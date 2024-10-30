@@ -1,0 +1,58 @@
+.sportSelection {
+  width: 100%;
+  max-width: 1102px;
+  margin-top: 41px;
+}
+
+.sectionTitle {
+  font: var(--sds-typography-subheading-font-weight) var(--sds-typography-subheading-size-medium) / 1.2 var(--sds-typography-subheading-font-family);
+  color: var(--sds-color-text-default-default);
+  margin-bottom: 11px;
+}
+
+.sportGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.sportButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 2px solid rgba(0, 0, 0, 0.32);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sportButton:hover {
+  transform: scale(1.05);
+}
+
+.sportEmoji {
+  font-size: 40px;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.sportName {
+  font: 600 18px/1.2 Roboto, -apple-system, Helvetica, sans-serif;
+  color: #000;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .sportSelection {
+    max-width: 100%;
+  }
+
+  .sportGrid {
+    justify-content: center;
+  }
+}

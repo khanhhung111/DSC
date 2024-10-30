@@ -1,0 +1,57 @@
+.accountDetails {
+    background-color: #fff;
+    flex-grow: 1;
+    padding: 64px;
+  }
+  
+  .sectionTitle {
+    color: #000;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 48px;
+  }
+  
+  .fieldsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 44px;
+  }
+  
+  .accountField {
+    flex: 1 1 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .fieldLabel {
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .fieldValue {
+    color: #666;
+    font-size: 16px;
+    margin-top: 8px;
+  }
+  
+  .editButton {
+    color: #007aff;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  @media (max-width: 991px) {
+    .accountDetails {
+      padding: 40px 20px;
+    }
+    
+    .fieldsContainer {
+      gap: 20px;
+    }
+  }

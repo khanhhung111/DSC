@@ -1,0 +1,387 @@
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\appsettings.Development.json
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\appsettings.json
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\dsc-backend.exe
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\dsc-backend.deps.json
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\dsc-backend.runtimeconfig.json
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\dsc-backend.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\dsc-backend.pdb
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Azure.Core.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Azure.Identity.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Humanizer.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.Google.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.Identity.Client.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.OpenApi.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Mono.TextTemplating.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\System.CodeDom.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\System.Drawing.Common.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\System.Memory.Data.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\System.Runtime.Caching.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\System.Security.Permissions.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\System.Windows.Extensions.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+E:\dsc-backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\dsc-backend.csproj.AssemblyReference.cache
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\dsc-backend.GeneratedMSBuildEditorConfig.editorconfig
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\dsc-backend.AssemblyInfoInputs.cache
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\dsc-backend.AssemblyInfo.cs
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\dsc-backend.csproj.CoreCompileInputs.cache
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\dsc-backend.MvcApplicationPartsAssemblyInfo.cs
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\dsc-backend.MvcApplicationPartsAssemblyInfo.cache
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\staticwebassets\msbuild.dsc-backend.Microsoft.AspNetCore.StaticWebAssets.props
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\staticwebassets\msbuild.build.dsc-backend.props
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.dsc-backend.props
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.dsc-backend.props
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\staticwebassets.pack.json
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\staticwebassets.build.json
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\staticwebassets.development.json
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\scopedcss\bundle\dsc-backend.styles.css
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\dsc-backend.csproj.CopyComplete
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\dsc-backend.dll
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\refint\dsc-backend.dll
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\dsc-backend.pdb
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\dsc-backend.genruntimeconfig.cache
+E:\dsc-backend\dsc-backend\obj\Debug\net7.0\ref\dsc-backend.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\appsettings.Development.json
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\appsettings.json
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\dsc-backend.exe
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\dsc-backend.deps.json
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\dsc-backend.runtimeconfig.json
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\dsc-backend.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\dsc-backend.pdb
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Azure.Core.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Azure.Identity.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Humanizer.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.Google.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Identity.Client.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.OpenApi.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Mono.TextTemplating.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\System.CodeDom.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Drawing.Common.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Memory.Data.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Runtime.Caching.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Security.Permissions.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Windows.Extensions.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.csproj.AssemblyReference.cache
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.GeneratedMSBuildEditorConfig.editorconfig
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.AssemblyInfoInputs.cache
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.AssemblyInfo.cs
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.csproj.CoreCompileInputs.cache
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.MvcApplicationPartsAssemblyInfo.cs
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.MvcApplicationPartsAssemblyInfo.cache
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets\msbuild.dsc-backend.Microsoft.AspNetCore.StaticWebAssets.props
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets\msbuild.build.dsc-backend.props
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.dsc-backend.props
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.dsc-backend.props
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets.pack.json
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets.build.json
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets.development.json
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\scopedcss\bundle\dsc-backend.styles.css
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.csproj.CopyComplete
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.dll
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\refint\dsc-backend.dll
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.pdb
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.genruntimeconfig.cache
+D:\dsc_backend\dsc-backend\obj\Debug\net7.0\ref\dsc-backend.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\appsettings.Development.json
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\appsettings.json
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\dsc-backend.exe
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\dsc-backend.deps.json
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\dsc-backend.runtimeconfig.json
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\dsc-backend.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\dsc-backend.pdb
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Azure.Core.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Azure.Identity.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Humanizer.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.Google.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Identity.Client.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.OpenApi.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Mono.TextTemplating.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.CodeDom.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Drawing.Common.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Memory.Data.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Runtime.Caching.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Security.Permissions.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Windows.Extensions.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.csproj.AssemblyReference.cache
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.AssemblyInfoInputs.cache
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.AssemblyInfo.cs
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.csproj.CoreCompileInputs.cache
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.MvcApplicationPartsAssemblyInfo.cs
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.MvcApplicationPartsAssemblyInfo.cache
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.sourcelink.json
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets.build.json
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets.development.json
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets\msbuild.dsc-backend.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets\msbuild.build.dsc-backend.props
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.dsc-backend.props
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.dsc-backend.props
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets.pack.json
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\scopedcss\bundle\dsc-backend.styles.css
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-back.C21B38D7.Up2Date
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\refint\dsc-backend.dll
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.pdb
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.genruntimeconfig.cache
+D:\Documents\Đồ án\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\ref\dsc-backend.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\appsettings.Development.json
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\appsettings.json
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\dsc-backend.exe
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\dsc-backend.deps.json
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\dsc-backend.runtimeconfig.json
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\dsc-backend.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\dsc-backend.pdb
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Azure.Core.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Azure.Identity.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Humanizer.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.Google.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Identity.Client.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.OpenApi.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Mono.TextTemplating.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.CodeDom.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Drawing.Common.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Memory.Data.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Runtime.Caching.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Security.Permissions.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Windows.Extensions.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.csproj.AssemblyReference.cache
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.AssemblyInfoInputs.cache
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.AssemblyInfo.cs
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.csproj.CoreCompileInputs.cache
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.MvcApplicationPartsAssemblyInfo.cs
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.MvcApplicationPartsAssemblyInfo.cache
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets.build.json
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets.development.json
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets\msbuild.dsc-backend.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets\msbuild.build.dsc-backend.props
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.dsc-backend.props
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.dsc-backend.props
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets.pack.json
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\scopedcss\bundle\dsc-backend.styles.css
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-back.C21B38D7.Up2Date
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\refint\dsc-backend.dll
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.pdb
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.genruntimeconfig.cache
+D:\Documents\Đồ án\SE17\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\ref\dsc-backend.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\appsettings.Development.json
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\appsettings.json
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\dsc-backend.exe
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\dsc-backend.deps.json
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\dsc-backend.runtimeconfig.json
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\dsc-backend.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\dsc-backend.pdb
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Azure.Core.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Azure.Identity.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Humanizer.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.Google.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Identity.Client.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.OpenApi.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Mono.TextTemplating.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.CodeDom.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Drawing.Common.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Memory.Data.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Runtime.Caching.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Security.Permissions.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\System.Windows.Extensions.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.csproj.AssemblyReference.cache
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.AssemblyInfoInputs.cache
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.AssemblyInfo.cs
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.csproj.CoreCompileInputs.cache
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.MvcApplicationPartsAssemblyInfo.cs
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.MvcApplicationPartsAssemblyInfo.cache
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.sourcelink.json
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets.build.json
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets.development.json
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets\msbuild.dsc-backend.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets\msbuild.build.dsc-backend.props
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.dsc-backend.props
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.dsc-backend.props
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\staticwebassets.pack.json
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\scopedcss\bundle\dsc-backend.styles.css
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-back.C21B38D7.Up2Date
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\refint\dsc-backend.dll
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.pdb
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\dsc-backend.genruntimeconfig.cache
+D:\Documents\Đồ án\SE17\DSC\Backend\dsc_backend\dsc-backend\obj\Debug\net7.0\ref\dsc-backend.dll

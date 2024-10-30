@@ -1,0 +1,64 @@
+.sportGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+  
+  .sportButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 2px solid rgba(0, 0, 0, 0.32);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .sportButton:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sportEmoji {
+    font-size: 40px;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  
+  .sportName {
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .sportIcon {
+    width: 71px;
+    height: 71px;
+    margin-bottom: 10px;
+  }
+  
+  @media (max-width: 991px) {
+    .sportButton {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .sportEmoji {
+      font-size: 32px;
+    }
+  
+    .sportName {
+      font-size: 16px;
+    }
+  
+    .sportIcon {
+      width: 60px;
+      height: 60px;
+    }
+  }
