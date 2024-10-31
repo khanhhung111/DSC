@@ -1,22 +1,34 @@
-import axios from 'axios';
+import axios from "axios";
+import configuration from "./config";
 
-const getInfo = ({ userId }) =>
-  axios({
-    method: 'get',
-    url: `http://guardsystem.site:3000/customer/myinfor/${userId}`,
-  });
-const getInfoGua = ({ userId }) =>
-  axios({
-    method: 'get',
-    url: `http://guardsystem.site:3000/guard/myinfor/${userId}`,
-  });
-
-const updateInfo = ({ userId, data }) =>
-  axios({
-    method: 'post',
-    url: `http://guardsystem.site:3000/customer/changeinfor/${userId}`,
-    data,
-  });
+const getInfo = ({
+  email
+}) => {
+  return axios(
+    configuration({
+      method: "POST",
+      path: "/User/getinfor",
+      data: {
+        email
+      },
+    })
+  )
+    .then((result) => result)
+    .catch((error) => error);
+  };
+const updateInfo = ({
+    email, updatedInfo
+  }) => {
+    return axios(
+      configuration({
+        method: "POST",
+        path: "/User/updateinfor",
+        data: { email, ...updatedInfo },
+      })
+    )
+      .then((result) => result)
+      .catch((error) => error);
+    };
 const updateInfoGua = ({ userId, data }) =>
   axios({
     method: 'post',
@@ -36,4 +48,4 @@ const updateImgGua = ({ userId, data }) =>
     data,
   });
 
-export { getInfo, updateInfo, updateImgCus, updateImgGua, getInfoGua, updateInfoGua };
+export { getInfo, updateInfo, updateImgCus, updateImgGua, updateInfoGua };

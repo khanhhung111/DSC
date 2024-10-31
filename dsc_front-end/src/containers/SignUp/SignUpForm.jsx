@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 function SignUpForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [fullname, setFullname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -50,6 +51,7 @@ function SignUpForm() {
     setIsLoading(true);
     try {
       const response = await signUp({
+        fullname,
         email,
         password
       });
@@ -81,6 +83,21 @@ function SignUpForm() {
         Đăng ký tài khoản để truy cập vào các tính năng của chúng tôi
       </p>
       <form className={styles.form} onSubmit={handleSubmit}>
+      <div className={styles.formGroup}>
+          <label htmlFor="fullname" className={styles.label}>
+            Họ và tên
+          </label>
+          <input
+            type="text"
+            id="fullname"
+            className={styles.input}
+            value={fullname}
+            onChange={(e) => setFullname(e.target.value)}
+            required
+            aria-required="true"
+            placeholder="Nhập họ và tên của bạn"
+          />
+        </div>
         <div className={styles.formGroup}>
           <label htmlFor="email" className={styles.label}>
             Địa chỉ Email

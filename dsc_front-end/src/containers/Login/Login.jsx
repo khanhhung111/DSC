@@ -2,6 +2,8 @@ import React from "react";
 import LoginForm from "./LoginForm";
 import styles from "./Login.module.css";
 import Header from "../../components/Header/Hearder";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
   const socialButtons = [
@@ -17,7 +19,7 @@ function Login() {
     },
   ];
   return (
-    
+    <>
     <main className={styles.LoginPage}>
       <Header />
       <section className={styles.content}>
@@ -41,6 +43,18 @@ function Login() {
         </div>
       </section>
     </main>
+          <ToastContainer 
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+      </>
   );
 }
 

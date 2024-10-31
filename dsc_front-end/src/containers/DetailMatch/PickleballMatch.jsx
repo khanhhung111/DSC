@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderLogin from "../../components/Header/HearderLogin"
+import HeaderLogin from "../../components/Header/Hearder"
 import MatchDetails from "./MatchDetails";
 import ActionButtons  from "./ActionButtons";
 import MatchDescription from "./MatchDescription";

@@ -2,6 +2,7 @@ import axios from "axios";
 import configuration from "./config";
 
 const signUp = ({
+  fullname,
   email,
   password
 }) => {
@@ -10,6 +11,7 @@ const signUp = ({
       method: "POST",
       path: "/Authen/Register",
       data: {
+        fullname,
         email,
         password
       },
@@ -19,12 +21,12 @@ const signUp = ({
     .catch((error) => error);
 };
 
-const login = (username, passwd) => {
+const login = (email, password) => {
   return axios(
     configuration({
       method: "post",
-      path: "/auth/login",
-      data: { username, passwd },
+      path: "/Authen/Login",
+      data: { email, password },
     })
   )
     .then((result) => result.data)

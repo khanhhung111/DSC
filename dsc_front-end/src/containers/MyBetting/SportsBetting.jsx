@@ -1,5 +1,5 @@
 import React from 'react';
-import HeaderLogin from '../../components/Header/HearderLogin';
+import HeaderLogin from '../../components/Header/Hearder';
 import SegmentedButton from './SegmentedButton';
 import EventList from './EventList';
 import Footer from '../../components/Footer/Footer';

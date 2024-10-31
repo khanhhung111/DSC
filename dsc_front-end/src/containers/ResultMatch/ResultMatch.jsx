@@ -4,7 +4,7 @@ import EventCard from './EventCard';
 import MatchDetails from './MatchDetails';
 import DetailsResult from './DetailsResult';
 import Footer from "../../components/Footer/Footer"
-import HeaderLogin from "../../components/Header/HearderLogin"
+import HeaderLogin from "../../components/Header/Hearder"
 
 function ResultMatch() {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderLogin from "../../components/Header/HearderLogin"
+import HeaderLogin from "../../components/Header/Hearder"
 import Footer from "../../components/Footer/Footer"
 import ParticipantList from "./ParticipantList";
 import MatchDetails from "./MatchDetails";

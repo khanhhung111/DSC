@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './AccountPage.module.css';
 import ProfileCard from './ProfileCard';
-import HeaderLogin from "../../components/Header/HearderLogin";
+import Header from "../../components/Header/Hearder";
 import Footer from "../../components/Footer/Footer";
 import { useNavigate } from 'react-router-dom';
 function AccountPage() {
@@ -9,7 +9,7 @@ function AccountPage() {
     return (
         
         <div>
-            <HeaderLogin />
+            <Header />
             <main className={styles.accountPage}>
                 <div className={styles.contentWrapper}>
 

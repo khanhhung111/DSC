@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './AccountSports.module.css';
 import ProfileCard from './ProfileCard';
-import HeaderLogin from "../../components/Header/HearderLogin";
+import Hearder from "../../components/Header/Hearder";
 import Footer from "../../components/Footer/Footer";
 import { useNavigate } from 'react-router-dom';
 function AccountSport() {
@@ -9,7 +9,7 @@ function AccountSport() {
     return (
         
         <div>
-            <HeaderLogin />
+            <Hearder />
             <main className={styles.accountPage}>
                 <div className={styles.contentWrapper}>
 

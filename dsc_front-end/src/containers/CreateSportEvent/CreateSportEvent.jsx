@@ -1,5 +1,5 @@
 import React from 'react';
-import HeaderLogin from '../../components/Header/HearderLogin'
+import Hearder from '../../components/Header/Hearder'
 import SportSelection from './SportSelection';
 import EventTypeSelection from './EventTypeSelection';
 import KeoForm from './KeoForm';
@@ -12,7 +12,7 @@ function CreateSportEvent() {
   const navigate = useNavigate();
   return (
     <div className={styles.createSportEvent}>
-      <HeaderLogin />
+      <Hearder />
       <div className={styles.bannerContainer}>
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/73697ede93124dea36ec63cd0d105c568819e769f86fa52d92e3a5690a5d212c?placeholderIfAbsent=true&apiKey=64a11f7ccf9c4f09a01cd9aadc1c5dac"

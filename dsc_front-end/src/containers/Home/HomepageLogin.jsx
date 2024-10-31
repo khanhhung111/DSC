@@ -2,7 +2,7 @@ import React from 'react';
 import Testimonials from '../../components/Testimonials/Testimonials';
 import styles from './Homepage.module.css'
 import Footer from '../../components/Footer/Footer'
-import HeaderLogin from '../../components/Header/HearderLogin'
+import HeaderLogin from '../../components/Header/Hearder'
 import Hero from '../../components/Hero/Hero';
 
 function HomePageLogin() {

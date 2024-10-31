@@ -55,3 +55,67 @@
       gap: 20px;
     }
   }
+  /* Style cho ô input */
+.editInput {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 15px;
+  border: 2px solid #3498db;
+  border-radius: 6px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.editInput:focus {
+  outline: none;
+  border-color: #2980b9;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Style cho nút lưu */
+.saveButton {
+  padding: 8px 20px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.saveButton:hover {
+  background-color: #27ae60;
+  transform: translateY(-1px);
+}
+
+.saveButton:active {
+  transform: translateY(0);
+}
+
+/* Thêm icon cho nút lưu (tùy chọn) */
+.saveButton::before {
+  content: "✓";
+  font-size: 16px;
+}
+
+/* Style cho nút chỉnh sửa */
+/* .editButton {
+  padding: 8px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+} */
+
+/* .editButton:hover {
+  background-color: #2980b9;
+} */
