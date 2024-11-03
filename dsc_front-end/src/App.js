@@ -26,7 +26,7 @@ import Match from "./containers/Match/Match";
 import PickleballMatch from "./containers/DetailMatch/PickleballMatch";
 import CreateSportEvent from "./containers/CreateSportEvent/CreateSportEvent";
 import ResultMatch from "./containers/ResultMatch/ResultMatch";
-
+import Security from "./containers/Security/Security";
 function App() {
   return (
     <BrowserRouter>
@@ -50,6 +50,7 @@ function App() {
           <Route path="/detailmatch" element={<PickleballMatch />} />
           <Route path="/createsportevent" element={<CreateSportEvent />} />
           <Route path="/resultmatch" element={<ResultMatch />} />
+          <Route path="/security" element={<Security />} />
           <Route element={<ProtectRoutes />}>
             <Route path="user-about" element={<UserAbout />} />
             

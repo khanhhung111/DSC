@@ -29,6 +29,21 @@ const updateInfo = ({
       .then((result) => result)
       .catch((error) => error);
     };
+
+
+const changePassword = ({
+  Email, Password, NewPassword
+}) => {
+  return axios(
+    configuration({
+      method: "POST",
+      path: "/User/changepassword",
+      data: { Email, Password, NewPassword },
+    })
+  )
+    .then((result) => result)
+    .catch((error) => error);
+  };
 const updateInfoGua = ({ userId, data }) =>
   axios({
     method: 'post',
@@ -48,4 +63,4 @@ const updateImgGua = ({ userId, data }) =>
     data,
   });
 
-export { getInfo, updateInfo, updateImgCus, updateImgGua, updateInfoGua };
+export { getInfo, updateInfo,changePassword, updateImgCus, updateImgGua, updateInfoGua };

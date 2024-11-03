@@ -31,7 +31,7 @@ function AccountPage() {
                                     <h2 className={styles.cardTitle}>Thể thao</h2>
                                     <p className={styles.cardDescription}>Quản lý thể thao của bạn</p>
                                 </article>
-                                <article className={styles.card} style={{paddingTop:'30px'}}>
+                                <article className={styles.card} onClick={() => navigate('/security')} style={{paddingTop:'30px'}}>
                                     <h2 className={styles.cardTitle}>Đăng nhập và bảo mật</h2>
                                     <p className={styles.cardDescription}>Cập nhật mật khẩu và bảo mật tài khoản của bạn</p>
                                 </article>

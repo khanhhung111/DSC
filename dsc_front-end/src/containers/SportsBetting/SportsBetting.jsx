@@ -28,9 +28,6 @@ const SportsBetting = () => {
         </div>
       <main className={styles.mainContent}>
         <SegmentedButton />
-        <h2 className={styles.sectionTitle}>HÔM NAY</h2>
-        <EventList />
-        <h2 className={styles.sectionTitle}>NGÀY MAI, 25 tháng 9</h2>
         <EventList />
       </main>
       <Footer />

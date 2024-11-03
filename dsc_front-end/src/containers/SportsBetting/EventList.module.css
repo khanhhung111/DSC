@@ -1,5 +1,4 @@
 .eventList {
-  display: flex;
   margin-top: 10px;
   width: 100%;
 }
@@ -38,4 +37,34 @@
   .timeSlot {
     padding: 10px 0;
   }
+}
+.dayGroup {
+  margin-bottom: 30px;
+}
+
+.dateHeader {
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.dayContent {
+  display: flex;
+}
+
+.timeColumn {
+  width: 100px;
+  margin-right: 20px;
+}
+
+.timeSlot {
+  padding: 10px;
+  text-align: center;
+}
+
+.eventColumn {
+  flex: 1;
 }
