@@ -22,8 +22,8 @@ import SportClubCreation from "./containers/Createclub/SportClubCreation"
 import AccountPage from "./containers/AccountPage/AccountPage";
 import AccountSport from "./containers/AccountPage/AccountSport";
 import AddSportAcc from "./containers/AccountPage/AddSportAcc";
-import Match from "./containers/Match/Match";
-import PickleballMatch from "./containers/DetailMatch/PickleballMatch";
+import MemberMatch from "./containers/MemberMatch/MemberMatch";
+import Match from "./containers/DetailMatch/Match";
 import CreateSportEvent from "./containers/CreateSportEvent/CreateSportEvent";
 import ResultMatch from "./containers/ResultMatch/ResultMatch";
 import Security from "./containers/Security/Security";
@@ -46,8 +46,8 @@ function App() {
           <Route path="/account" element={<AccountPage />} />
           <Route path="/accountsports" element={<AccountSport />} />
           <Route path="/addsportsacc" element={<AddSportAcc />} />
-          <Route path="/match" element={<Match />} />
-          <Route path="/detailmatch" element={<PickleballMatch />} />
+          <Route path="/membermatch/:activityId" element={<MemberMatch />} />
+          <Route path="/detailmatch/:activityId" element={<Match />} />
           <Route path="/createsportevent" element={<CreateSportEvent />} />
           <Route path="/resultmatch" element={<ResultMatch />} />
           <Route path="/security" element={<Security />} />

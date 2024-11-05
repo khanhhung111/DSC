@@ -2,12 +2,12 @@ import React from 'react';
 import styles from './EventItem.module.css';
 import { useNavigate } from 'react-router-dom';
 
-const EventItem = ({ activityName, levelname, location, numberOfTeams, image, startDate }) => {
+const EventItem = ({ activityId,activityName, levelname, location, numberOfTeams, image, startDate }) => {
   const navigate = useNavigate();
   
   const handleButtonClick = (href) => {
     if (href !== '#') {
-      navigate(href);
+      navigate(`/detailmatch/${activityId}`); // Truyền activityId qua đường dẫn
     }
   };
 
@@ -48,9 +48,7 @@ const EventItem = ({ activityName, levelname, location, numberOfTeams, image, st
           Ngày bắt đầu: {new Date(startDate).toLocaleDateString()}
         </p>
       </div>
-
-      {/* "More" Button */}
-      <button className={styles.moreButton} onClick={() => handleButtonClick('/detailmatch')}>More</button>
+      <button className={styles.moreButton} onClick={() => handleButtonClick()}>More</button>
     </article>
   );
 };

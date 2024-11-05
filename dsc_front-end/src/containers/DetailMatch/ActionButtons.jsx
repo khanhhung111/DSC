@@ -1,33 +1,36 @@
-import React from "react";
 import styles from './ActionButtons.module.css';
 import { useNavigate } from 'react-router-dom';
 
-function ActionButtons() {
+function ActionButtons({ matchData }) {
   const navigate = useNavigate();
-
-  const buttons = [
-    { text: 'Tham gia', href: '#' },
-    { text: 'Người tham gia', href: '/match' },
-    { text: 'Kết quả', href: '/resultmatch' },
-  ];
+  const data = matchData[0];
 
   const handleButtonClick = (href) => {
-    if (href !== '#') {
+    if (href) {
       navigate(href);
     }
   };
 
   return (
     <div className={styles.actionButtons}>
-      {buttons.map((item, index) => (
-        <button
-          key={index}
-          className={styles.button}
-          onClick={() => handleButtonClick(item.href)}
-        >
-          {item.text}
-        </button>
-      ))}
+      <button
+        className={styles.button}
+        onClick={() => handleButtonClick('#')}
+      >
+        Tham gia
+      </button>
+      <button
+        className={styles.button}
+        onClick={() => handleButtonClick(`/membermatch/${data?.activityId}`)} // Gửi activityId
+      >
+        Người tham gia
+      </button>
+      <button
+        className={styles.button}
+        onClick={() => handleButtonClick('/resultmatch')}
+      >
+        Kết quả
+      </button>
     </div>
   );
 }

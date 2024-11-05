@@ -7,16 +7,16 @@ import { getAllActivity } from "../../utils/activity"; // Giả sử đây là A
 const EventList = () => {
   const [events, setEvents] = useState([]);  // Khởi tạo events là một mảng rỗng
   const [loading, setLoading] = useState(true); // State để quản lý trạng thái loading
-
+  const userId = localStorage.getItem('userId');
   useEffect(() => {
     const fetchActivity = async () => {
       try {
         setLoading(true); // Bắt đầu loading
-        const response = await getAllActivity(); // Gửi request để lấy dữ liệu
+        const response = await getAllActivity( userId ); // Gửi request để lấy dữ liệu
         if (response.data) {
-          // Kiểm tra xem response.data.$values có phải là mảng không
           if (response.data.$values && Array.isArray(response.data.$values)) {
-            setEvents(response.data.$values); // Nếu là mảng, gán vào state events
+            setEvents(response.data.$values); 
+            console.log("datane",response.data.$values);
           } else {
             console.error('Dữ liệu không phải là một mảng:', response.data);
             toast.error('Dữ liệu sự kiện không đúng định dạng');
@@ -89,6 +89,7 @@ const EventList = () => {
               {dailyEvents.map((event, index) => (
                 <EventItem
                   key={index}
+                  activityId= {event.activityId}
                   activityName={event.activityName}
                   startDate={event.startDate}
                   location={event.location}
