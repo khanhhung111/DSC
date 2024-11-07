@@ -7,7 +7,7 @@ const EventItem = ({ activityId,activityName, levelname, location, numberOfTeams
   
   const handleButtonClick = (href) => {
     if (href !== '#') {
-      navigate(`/detailmatch/${activityId}`); // Truyền activityId qua đường dẫn
+      navigate(`/detailmatchjoined/${activityId}`); // Truyền activityId qua đường dẫn
     }
   };
 

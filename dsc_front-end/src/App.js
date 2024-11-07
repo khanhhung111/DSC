@@ -24,6 +24,10 @@ import AccountSport from "./containers/AccountPage/AccountSport";
 import AddSportAcc from "./containers/AccountPage/AddSportAcc";
 import MemberMatch from "./containers/MemberMatch/MemberMatch";
 import Match from "./containers/DetailMatch/Match";
+import DetailMyBetting from "./containers/DetailMyBetting/Match";
+import DetailJoined from "./containers/DetailJoined/Match"
+import MemberMyMatch from "./containers/MemberMyMatch/MemberMatch";
+import JoinActivity from "./containers/JoinActivity/MemberMatch";
 import CreateSportEvent from "./containers/CreateSportEvent/CreateSportEvent";
 import ResultMatch from "./containers/ResultMatch/ResultMatch";
 import Security from "./containers/Security/Security";
@@ -33,13 +37,13 @@ function App() {
       <AppProvider>
         <Routes>
           <Route index element={<Home />} />
-          <Route path="login" element={<Login />} />
-          <Route path="signup" element={<SignUp />} />
-          <Route path="reset-password" element={<ResetPassword />} />
-          <Route path="my-profile" element={<MyProfile />} />
-          <Route path="sportbetting" element={<SportsBetting />} />
-          <Route path="management-betting" element={<ManagementSportsBetting />} />
-          <Route path="mybetting" element={<MyBetting />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/my-profile" element={<MyProfile />} />
+          <Route path="/sportbetting" element={<SportsBetting />} />
+          <Route path="/management-betting" element={<ManagementSportsBetting />} />
+          <Route path="/mybetting" element={<MyBetting />} />
           <Route path="club" element={<Club />} />
           <Route path="/home" element={<HomePageLogin />} />
           <Route path="/createclub" element={<SportClubCreation />} />
@@ -47,7 +51,11 @@ function App() {
           <Route path="/accountsports" element={<AccountSport />} />
           <Route path="/addsportsacc" element={<AddSportAcc />} />
           <Route path="/membermatch/:activityId" element={<MemberMatch />} />
+          <Route path="/membermymatch/:activityId" element={<MemberMyMatch />} />
+          <Route path="/approvemember/:activityId" element={<JoinActivity />} />
           <Route path="/detailmatch/:activityId" element={<Match />} />
+          <Route path="/detailmymatch/:activityId" element={<DetailMyBetting />} />
+          <Route path="/detailmatchjoined/:activityId" element={<DetailJoined />} />
           <Route path="/createsportevent" element={<CreateSportEvent />} />
           <Route path="/resultmatch" element={<ResultMatch />} />
           <Route path="/security" element={<Security />} />

@@ -1,114 +1,148 @@
-import React from 'react';
+import { useState } from 'react';
 import styles from './KeoForm.module.css';
 
-const FormField = ({ icon, label, children }) => (
-  <div className={styles.formField}>
-    <label>
-      {icon} {label}
-    </label>
-    {children}
-  </div>
-);
+const KeoForm = ({ formData, setFormData }) => {
+  const toggleCostType = () => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      isFree: !prevFormData.isFree, // Chỉ thay đổi giá trị isFree
+      amount: prevFormData.isFree ? 0 : prevFormData.amount, // Nếu isFree = true, set amount = 0, nếu là false thì giữ lại amount đã nhập
+    }));
+  };
 
-const RadioButton = ({ id, name, value, label, checked, onChange }) => (
-  <div className={styles.radioGroup}>
-<input
-  type="radio"
-  id={id}
-  name={name}
-  value={value}
-  checked={checked}
-  onChange={onChange}
-  className={styles['visually-hidden']}
-/>
-    <label htmlFor={id} className={styles.radioLabel}>
-      {label}
-    </label>
-    <span className={styles.radioButton}>{checked ? '🔘' : '⚪'}</span>
-  </div>
-);
-
-function KeoForm() {
   return (
-    <form className={styles.container}>
-      <section className={styles.leftSection}>
-        <h2 className={styles.formTitle}>KÈO</h2>
-        <FormField icon="📅" label="Chọn ngày và giờ">
-          <input type="datetime-local" aria-label="Chọn ngày và giờ" />
-        </FormField>
-        <FormField icon="⏱️" label="1 tiếng">
-          <input type="text" value="1 tiếng" readOnly aria-label="Thời gian" />
-        </FormField>
-        <FormField icon="⛳️" label="Chọn địa điểm">
-          <select aria-label="Chọn địa điểm">
-            <option>Chọn địa điểm</option>
-          </select>
-        </FormField>
-        <div className={styles.playerCount}>
-          <label className={styles.playerCountLabel}>👤 Số người chơi</label>
-          <input type="number" className={styles.playerCountInput} aria-label="Số người chơi" />
-        </div>
-        <div className={styles.costSection}>
-          <label className={styles.costLabel}>💲 Chi phí</label>
-          <span className={styles.freeTag}>🆓</span>
-          <div className={styles.costInputGroup}>
-            <input type="number" className={styles.costInput} aria-label="Chi phí mỗi người" />
-            <span className={styles.costUnit}>/Người</span>
+    <form className={styles.eventForm} style={{ paddingTop: '50px' }}>
+      <div className={styles.formColumns}>
+        <div className={styles.leftColumn}>
+          <div className={styles.formGroup}>
+            <label htmlFor="eventDate" className={styles.label}>📅 Chọn ngày và giờ</label>
+            <input
+              type="datetime-local"
+              id="eventDate"
+              className={styles.input}
+              value={formData.datetime}
+              onChange={(e) => setFormData({ ...formData, datetime: e.target.value })}
+              required
+            />
           </div>
-          <div className={styles.costInputGroup}>
-            <input type="number" className={styles.costInput} aria-label="Chi phí mỗi đội" />
-            <span className={styles.costUnit}>/Đội</span>
+
+          <div className={styles.formGroup}>
+            <label htmlFor="eventLocation" className={styles.label}>⛳️ Chọn địa điểm</label>
+            <input
+              type="text"
+              id="eventLocation"
+              className={styles.input}
+              value={formData.location}
+              onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+              required
+            />
+          </div>
+
+          <div className={styles.formGroup}>
+            <label htmlFor="playerCount" className={styles.label}>👤 Số người chơi</label>
+            <input
+              type="number"
+              id="playerCount"
+              className={styles.input}
+              min="1"
+              value={formData.playerCount}
+              onChange={(e) => setFormData({ ...formData, playerCount: parseInt(e.target.value) })}
+              required
+            />
+          </div>
+
+          <div className={styles.formGroup}>
+            <label className={styles.label}>💲 Chi phí</label>
+            <div className={styles.costOptions}>
+              <button
+                type="button"
+                className={`${styles.costButton} ${formData.isFree ? styles.active : ''}`}
+                onClick={toggleCostType}
+              >
+                {formData.isFree ? '🆓 Miễn phí' : '💰 Có phí'}
+              </button>
+              {!formData.isFree && (
+                <div className={styles.costInputGroup}>
+                  <input
+                    type="number"
+                    className={styles.costInput}
+                    min="0"
+                    value={formData.amount}
+                    onChange={(e) => setFormData({
+                      ...formData,
+                      amount: parseInt(e.target.value) || 0  // Nếu nhập không phải số, gán giá trị là 0
+                    })}
+                  />
+                  <span className={styles.costUnit}>VNĐ</span>
+                </div>
+              )}
+            </div>
           </div>
         </div>
-        <div className={styles.skillLevelSection}>
-          <label className={styles.skillLevelLabel}>Tối thiểu</label>
-          <select className={styles.skillLevelSelect} aria-label="Trình đội tối thiểu">
-            <option>Chọn trình độ</option>
-          </select>
+
+        <div className={styles.ruler}></div>
+
+        <div className={styles.rightColumn}>
+          <div className={styles.formGroup}>
+            <label htmlFor="eventName" className={styles.label}>Tên kèo</label>
+            <input
+              type="text"
+              id="eventName"
+              className={styles.input}
+              placeholder="Vd: Giao hữu với tôi"
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              required
+            />
+          </div>
+
+          <div className={styles.formGroup}>
+            <label htmlFor="eventDescription" className={styles.label}>Mô tả</label>
+            <textarea
+              id="eventDescription"
+              className={styles.textarea}
+              rows="6"
+              value={formData.description}
+              onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+              required
+            ></textarea>
+          </div>
+
+          <div className={styles.formGroup}>
+            <label htmlFor="minSkillLevel" className={styles.label}>Trình độ tối thiểu</label>
+            <select
+              id="minSkillLevel"
+              className={styles.select}
+              value={formData.minSkill}
+              onChange={(e) => setFormData({ ...formData, minSkill: e.target.value })}
+              required
+            >
+              <option value="">Chọn trình độ</option>
+              <option value="Mới biết chơi">Mới biết chơi</option>
+              <option value="Trung bình - Khá">Trung bình - Khá</option>
+              <option value="Chuyên nghiệp">Chuyên nghiệp</option>
+            </select>
+          </div>
+
+          <div className={styles.formGroup}>
+            <label htmlFor="maxSkillLevel" className={styles.label}>Trình độ tối đa</label>
+            <select
+              id="maxSkillLevel"
+              className={styles.select}
+              value={formData.maxSkill}
+              onChange={(e) => setFormData({ ...formData, maxSkill: e.target.value })}
+              required
+            >
+              <option value="">Chọn trình độ</option>
+              <option value="Mới biết chơi">Mới biết chơi</option>
+              <option value="Trung bình - Khá">Trung bình - Khá</option>
+              <option value="Chuyên nghiệp">Chuyên nghiệp</option>
+            </select>
+          </div>
         </div>
-        <div className={styles.skillLevelSection}>
-          <label className={styles.skillLevelLabel}>Tối đa</label>
-          <select className={styles.skillLevelSelect} aria-label="Trình đội tối thiểu">
-            <option>Chọn trình độ</option>
-          </select>
-        </div>
-      </section>
-      <div className={styles.divider} role="separator"></div>
-      <section className={styles.rightSection}>
-        <label className={styles.keoNameLabel}>Tên kèo</label>
-        <input
-          type="text"
-          className={styles.keoNameInput}
-          placeholder="Vd: Giao hữu với tôi"
-          aria-label="Tên kèo"
-        />
-        <textarea
-          className={styles.descriptionInput}
-          placeholder="Mô tả"
-          aria-label="Mô tả"
-        ></textarea>
-        <div className={styles.autoApproveSection}>
-          <label className={styles.autoApproveLabel}>Duyệt tự động</label>
-          <RadioButton
-            id="auto-approve-yes"
-            name="auto-approve"
-            value="yes"
-            label="Có"
-            checked={true}
-            onChange={() => {}}
-          />
-          <RadioButton
-            id="auto-approve-no"
-            name="auto-approve"
-            value="no"
-            label="Không"
-            checked={false}
-            onChange={() => {}}
-          />
-        </div>
-      </section>
+      </div>
     </form>
   );
-}
+};
 
 export default KeoForm;

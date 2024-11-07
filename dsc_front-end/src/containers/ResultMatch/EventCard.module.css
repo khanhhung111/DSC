@@ -1,9 +1,10 @@
 .actionButtons {
   display: flex;
-  gap: 150px;
-  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 40px;
   align-content: stretch;
-  justify-content: center;
+  gap: 100px;
+  padding-left: 150px;
 }
 
 .button {

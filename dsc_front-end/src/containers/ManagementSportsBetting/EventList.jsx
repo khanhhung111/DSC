@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import EventItem from './EventItem';
 import styles from './EventList.module.css';
 import { toast } from 'react-toastify';
-import { getMyActivity } from "../../utils/activity"; // Giả sử đây là API call
+import { getActivityJoined } from "../../utils/activity"; // Giả sử đây là API call
 
 const EventList = () => {
   const [events, setEvents] = useState([]);  // Khởi tạo events là một mảng rỗng
@@ -12,7 +12,7 @@ const EventList = () => {
     const fetchActivity = async () => {
       try {
         setLoading(true); // Bắt đầu loading
-        const response = await getMyActivity( userId ); // Gửi request để lấy dữ liệu
+        const response = await getActivityJoined( userId ); // Gửi request để lấy dữ liệu
         if (response.data) {
           if (response.data.$values && Array.isArray(response.data.$values)) {
             setEvents(response.data.$values); 
@@ -64,45 +64,61 @@ const EventList = () => {
   
   return (
     <section className={styles.eventList}>
-      {groupEventsByDate(events).map(([date, dailyEvents]) => (
-        <div key={date} className={styles.dayGroup}>
-          <h2 className={styles.dateHeader}>
-            {new Date(date).toLocaleDateString('vi-VN', {
-              weekday: 'long',
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
-            })}
-          </h2>
-          <div className={styles.dayContent}>
-            <div className={styles.timeColumn}>
-              {dailyEvents.map((event, index) => (
-                <div key={index} className={styles.timeSlot}>
-                  {new Date(event.startDate).toLocaleTimeString([], {
+      {groupEventsByDate(events).map(([date, dailyEvents]) => {
+        // Tạo đối tượng Date cho dayHeader
+        const headerDate = new Date(date.split('/').reverse().join('-')); // Chuyển từ dd/mm/yyyy sang yyyy-mm-dd
+
+        return (
+          <div key={date} className={styles.dayGroup}>
+            <h2 className={styles.dateHeader}>
+              {headerDate.toLocaleDateString('vi-VN', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </h2>
+            <div className={styles.dayContent}>
+              <div className={styles.timeColumn}>
+                {dailyEvents.map((event, index) => {
+                  const eventDate = new Date(event.startDate);
+                  const formattedEventDate = eventDate.toLocaleDateString('vi-VN', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric'
+                  });
+                  const formattedEventTime = eventDate.toLocaleTimeString([], {
                     hour: '2-digit',
                     minute: '2-digit'
-                  })}
-                </div>
-              ))}
-            </div>
-            <div className={styles.eventColumn}>
-              {dailyEvents.map((event, index) => (
-                <EventItem
-                  key={index}
-                  activityId= {event.activityId}
-                  activityName={event.activityName}
-                  startDate={event.startDate}
-                  location={event.location}
-                  numberOfTeams={event.numberOfTeams}
-                  expense={event.expense}
-                  description={event.description}
-                  levelname={event.levelName}
-                />
-              ))}
+                  });
+
+                  return (
+                    <div key={index} className={styles.timeSlot}>
+                      {formattedEventDate} - {formattedEventTime}
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className={styles.eventColumn}>
+                {dailyEvents.map((event, index) => (
+                  <EventItem
+                    key={index}
+                    activityId={event.activityId}
+                    activityName={event.activityName}
+                    startDate={event.startDate}
+                    location={event.location}
+                    numberOfTeams={event.numberOfTeams}
+                    expense={event.expense}
+                    description={event.description}
+                    levelname={event.levelName}
+                  />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </section>
   );
 };

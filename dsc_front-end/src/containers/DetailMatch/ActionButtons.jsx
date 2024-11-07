@@ -17,11 +17,11 @@ function ActionButtons({ matchData }) {
         className={styles.button}
         onClick={() => handleButtonClick('#')}
       >
-        Tham gia
+        Tham Gia
       </button>
       <button
         className={styles.button}
-        onClick={() => handleButtonClick(`/membermatch/${data?.activityId}`)} // Gửi activityId
+        onClick={() => handleButtonClick(`/membermatch/${data?.activityId}`)}
       >
         Người tham gia
       </button>

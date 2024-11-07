@@ -26,3 +26,33 @@
     font-size: 16px;
   }
 }
+.eventTypeButton.selected {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.2);
+}
+
+/* Hover effect */
+.eventTypeButton:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-2px);
+}
+
+.eventTypeButton.selected:hover {
+  background-color: #45a049;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .eventTypeGrid {
+    gap: 0.5rem;
+  }
+  
+  .eventTypeButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
