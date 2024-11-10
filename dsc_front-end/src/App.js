@@ -31,6 +31,7 @@ import JoinActivity from "./containers/JoinActivity/MemberMatch";
 import CreateSportEvent from "./containers/CreateSportEvent/CreateSportEvent";
 import ResultMatch from "./containers/ResultMatch/ResultMatch";
 import Security from "./containers/Security/Security";
+import UpdateSportEvent from "./containers/UpdateSportEvent/UpdateSportEvent";
 function App() {
   return (
     <BrowserRouter>
@@ -57,6 +58,7 @@ function App() {
           <Route path="/detailmymatch/:activityId" element={<DetailMyBetting />} />
           <Route path="/detailmatchjoined/:activityId" element={<DetailJoined />} />
           <Route path="/createsportevent" element={<CreateSportEvent />} />
+          <Route path="/updatesportevent/:activityId" element={<UpdateSportEvent />} />
           <Route path="/resultmatch" element={<ResultMatch />} />
           <Route path="/security" element={<Security />} />
           <Route element={<ProtectRoutes />}>

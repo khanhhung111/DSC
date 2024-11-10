@@ -83,6 +83,31 @@ const getrequestJoinActivity = (activityId) =>
       .then((result) => result)
       .catch((error) => error);
   };
+  const uppdateActivity = (eventData) => {
+    return axios(
+      configuration({
+        method: "POST",
+        path: "/Activity/uppdateActivity",
+        data:
+          eventData,
+      })
+    )
+      .then((result) => result)
+      .catch((error) => error);
+  };
+  const requestJoinActivity = (userId, activityId) => {
+    return axios(
+      configuration({
+        method: "POST",
+        path: "/Activity/requestJoinActivity",
+        data: {
+          userId, activityId
+        },
+      })
+    )
+      .then((result) => result)
+      .catch((error) => error);
+  };
   
 export {
     getAllActivity,
@@ -93,5 +118,7 @@ export {
     getrequestJoinActivity,
     acceptrequestJoinActivity,
     cancelrequestJoinActivity,
-    createActivity
+    createActivity,
+    uppdateActivity,
+    requestJoinActivity
   };

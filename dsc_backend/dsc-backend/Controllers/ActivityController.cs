@@ -161,23 +161,24 @@ namespace dsc_backend.Controllers
 
         }
         [HttpPost("uppdateActivity")]
-        public async Task<IActionResult> uppdateActivity([FromBody] Activity activitys)
+        public async Task<IActionResult> uppdateActivity([FromBody] CreateActivityDAO activitys)
         {
             if (activitys != null)
             {
-                var ActivityExist = await _db.Activities.FirstOrDefaultAsync(x => x.ActivityId == activitys.ActivityId);
-
+                var ActivityExist = await _db.Activities.FirstOrDefaultAsync(x => x.ActivityId == activitys.activityId && x.UserId == activitys.userId);
+                var level = await _db.Levels.Where(x => x.LevelName == activitys.minSkill).FirstOrDefaultAsync();
                 if (ActivityExist == null)
                 {
                     return NotFound("kèo đấu không tồn tại.");
                 }
-                ActivityExist.ActivityName = activitys.ActivityName ?? ActivityExist.ActivityName;
-                ActivityExist.LevelId = activitys.LevelId ?? ActivityExist.LevelId;
-                ActivityExist.StartDate = activitys.StartDate ?? ActivityExist.StartDate;
-                ActivityExist.Location = activitys.Location ?? ActivityExist.Location;
-                ActivityExist.NumberOfTeams = activitys.NumberOfTeams ?? ActivityExist.NumberOfTeams;
-                ActivityExist.Expense = activitys.Expense ?? ActivityExist.Expense;
-                ActivityExist.Description = activitys.Description ?? ActivityExist.Description;
+                var StartDate = DateTime.Parse(activitys?.datetime);
+                ActivityExist.ActivityName = activitys.name ?? ActivityExist.ActivityName;
+                ActivityExist.LevelId = level?.LevelId ?? ActivityExist.LevelId;
+                ActivityExist.StartDate = (DateTime?)StartDate ?? ActivityExist.StartDate;
+                ActivityExist.Location = activitys.location ?? ActivityExist.Location;
+                ActivityExist.NumberOfTeams = (int?)activitys.playerCount ?? ActivityExist.NumberOfTeams;
+                ActivityExist.Expense = activitys.amount ?? ActivityExist.Expense;
+                ActivityExist.Description = activitys.description ?? ActivityExist.Description;
                 _db.Activities.Update(ActivityExist);
                 await _db.SaveChangesAsync();
                 var updatedactivity = new
@@ -208,40 +209,50 @@ namespace dsc_backend.Controllers
 
         }
         [HttpPost("requestJoinActivity")]
-        public async Task<IActionResult> requestJoinActivity([FromBody] RequestJoinActivity requestJoinActivity)
+        public async Task<IActionResult> requestJoinActivity([FromBody] CreateActivityDAO requestJoinActivity)
         {
-            if (requestJoinActivity != null)
+            var requestExist = await _db.RequestJoinActivities.Where(x => x.ActivitiesId == requestJoinActivity.activityId && x.UserId == requestJoinActivity.userId).FirstOrDefaultAsync();
+            if(requestExist != null)
             {
-                var joinActivitynew = new RequestJoinActivity
-                {
-
-                    UserId = requestJoinActivity.UserId,
-                    ActivitiesId = requestJoinActivity.ActivitiesId,
-                    Status = "1",
-                    CreateDate = DateTime.Now,
-                };
-                _db.RequestJoinActivities.Add(joinActivitynew);
-                _db.SaveChanges();
                 var ListViewRequest = new
                 {
                     Success = true,
-                    UserId = requestJoinActivity.UserId,
-                    ActivitiesId = requestJoinActivity.ActivitiesId,
-                    Status = "1",
-                    Createdate = DateTime.Now,
-                    Message = "Đã gởi đơn xin tham gia kèo đấu thành công"
+                    Message = "Đã gởi đơn xin tham gia trước đó rồi. Vui lòng chờ duyệt !"
 
                 };
                 return Ok(ListViewRequest);
             }
             else
             {
-                var ListViewRequest = new
+                if (requestJoinActivity != null)
                 {
-                    Success = false,
-                    Message = "Có lỗi trong việc gởi đơn tham gia kèo đấu"
-                };
-                return BadRequest(ListViewRequest);
+                    var joinActivitynew = new RequestJoinActivity
+                    {
+
+                        UserId = requestJoinActivity.userId,
+                        ActivitiesId = requestJoinActivity.activityId,
+                        Status = "1",
+                        CreateDate = DateTime.Now,
+                    };
+                    _db.RequestJoinActivities.Add(joinActivitynew);
+                    _db.SaveChanges();
+                    var ListViewRequest = new
+                    {
+                        Success = true,
+                        Message = "Đã gởi đơn xin tham gia kèo đấu thành công"
+
+                    };
+                    return Ok(ListViewRequest);
+                }
+                else
+                {
+                    var ListViewRequest = new
+                    {
+                        Success = false,
+                        Message = "Có lỗi trong việc gởi đơn tham gia kèo đấu"
+                    };
+                    return BadRequest(ListViewRequest);
+                }
             }
         }
         [HttpGet("getrequestJoinActivity/{activityId}")]

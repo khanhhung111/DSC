@@ -15,7 +15,7 @@ function ActionButtons({ matchData }) {
     <div className={styles.actionButtons}>
       <button
         className={styles.button}
-        onClick={() => handleButtonClick('#')}
+        onClick={() => handleButtonClick(`/updatesportevent/${data?.activityId}`)}
       >
         Chỉnh Sửa
       </button>
