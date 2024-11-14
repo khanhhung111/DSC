@@ -1,50 +1,58 @@
-.profileCard {
-    background-color: rgba(76, 175, 79, 0.69);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 708px;
-    padding: 82px 24px 278px;
-    text-align: center;
-  }
-  
-  .profileImage {
-    aspect-ratio: 1.05;
-    object-fit: contain;
-    width: 160px;
-  }
-  
-  .profileInfo {
-    margin-top: 32px;
-    width: 100%;
-  }
-  
-  .divider {
-    border: 1px solid rgba(202, 196, 208, 1);
-    margin-bottom: 4px;
-    width: 100%;
-  }
-  
-  .userName {
-    color: var(--Schemes-On-Surface-Variant, #49454f);
-    font: 400 22px/28px Roboto, sans-serif;
-    letter-spacing: 0;
-  }
-  
-  .logoutButton {
-    background: none;
-    border: 1px solid rgba(121, 116, 126, 1);
-    border-radius: 8px;
-    color: var(--Schemes-On-Surface, #1d1b20);
-    font: 500 14px/20px Roboto, sans-serif;
-    letter-spacing: 0.1px;
-    margin-top: 32px;
-    padding: 6px 16px;
-  }
-  
-  @media (max-width: 991px) {
-    .profileCard {
-      padding: 0 20px 100px;
-    }
-  }
+.profileCard { /* Kích thước card */
+  padding: 70px;
+  background: #d4edda; /* Màu nền xanh lá cây nhạt */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Phân bố không gian giữa các phần tử */
+  align-items: center; /* Căn giữa các phần tử */
+  height: 100%; /* Đảm bảo card chiếm hết chiều cao */
+}
+
+.profileImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #a9dfbf;
+  transition: transform 0.2s;
+}
+
+.profileImage:hover {
+  transform: scale(1.05); /* Tăng kích thước ảnh khi hover */
+}
+
+.profileInfo {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #a9dfbf;
+  margin: 10px 0;
+}
+
+.userName {
+  font-size: 1.5rem; /* Tăng kích thước chữ */
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.logoutButton {
+  padding: 8px 12px;
+  font-size: 14px; /* Giảm kích thước chữ */
+  background-color: #ff4d4f; /* Màu nền nút */
+  color: white; /* Màu chữ */
+  border: none;
+  border-radius: 4px; /* Bo tròn các góc */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: auto; /* Đảm bảo nút có kích thước vừa phải */
+  margin-top: 20px; /* Khoảng cách với các phần tử trên */
+}
+
+.logoutButton:hover {
+  background-color: #ff7875; /* Màu nền khi hover */
+}

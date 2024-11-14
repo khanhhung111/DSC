@@ -42,7 +42,6 @@ const EventList = () => {
   }
 
   const groupEventsByDate = (events) => {
-    // Đảm bảo events là mảng và không rỗng
     if (!Array.isArray(events) || events.length === 0) return [];
   
     const grouped = events.reduce((groups, event) => {

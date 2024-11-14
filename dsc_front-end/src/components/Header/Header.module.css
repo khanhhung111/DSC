@@ -79,8 +79,8 @@
   }
   
   .logoIcon {
-    width: 40px; /* Kích thước avatar, bạn có thể điều chỉnh */
-    height: 40px;
+    width: 50px; /* Kích thước avatar, bạn có thể điều chỉnh */
+    height: 50px;
     border-radius: 50%; /* Tạo avatar dạng tròn */
     margin-right: 10px; /* Khoảng cách giữa avatar và tên */
   }

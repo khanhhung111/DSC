@@ -1,0 +1,36 @@
+.actionButtons {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  align-content: stretch;
+  gap: 50px;
+  padding-left: 150px;
+}
+
+.button {
+  border-radius: 100px;
+  background-color: #fff;
+  color: #4caf4f;
+  border: 1px solid #4caf4f;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+  background-color: #4caf4f;
+  color: #fff;
+}
+
+/* Thêm cho nút Dừng Hoạt Động */
+.button:last-child {
+  color: red; /* Màu chữ đỏ */
+  border-color: red; /* Viền đỏ */
+}
+
+.button:last-child:hover {
+  background-color: rgba(255, 0, 0, 0.1); /* Nền khi hover cho nút Dừng Hoạt Động */
+  color: red; /* Giữ màu chữ đỏ khi hover */
+}

@@ -18,15 +18,19 @@ import SportsBetting from "./containers/SportsBetting/SportsBetting";
 import ManagementSportsBetting from "./containers/ManagementSportsBetting/SportsBetting";
 import MyBetting from "./containers/MyBetting/SportsBetting"
 import Club from "./containers/Club/ClubPage"
+import DetailClub from "./containers/DetailClub/Match";
 import SportClubCreation from "./containers/Createclub/SportClubCreation"
 import AccountPage from "./containers/AccountPage/AccountPage";
 import AccountSport from "./containers/AccountPage/AccountSport";
 import AddSportAcc from "./containers/AccountPage/AddSportAcc";
 import MemberMatch from "./containers/MemberMatch/MemberMatch";
 import Match from "./containers/DetailMatch/Match";
+import MyClub from "./containers/MyClub/ClubPage";
+import DetailMyClub from "./containers/DetailMyClub/Match";
 import DetailMyBetting from "./containers/DetailMyBetting/Match";
 import DetailJoined from "./containers/DetailJoined/Match"
 import MemberMyMatch from "./containers/MemberMyMatch/MemberMatch";
+import MemberMyClub from "./containers/MemberMyClub/MemberClub";
 import JoinActivity from "./containers/JoinActivity/MemberMatch";
 import CreateSportEvent from "./containers/CreateSportEvent/CreateSportEvent";
 import ResultMatch from "./containers/ResultMatch/ResultMatch";
@@ -46,6 +50,10 @@ function App() {
           <Route path="/management-betting" element={<ManagementSportsBetting />} />
           <Route path="/mybetting" element={<MyBetting />} />
           <Route path="club" element={<Club />} />
+          <Route path="detailclub/:clubId" element={<DetailClub />} />
+          <Route path="myclub" element={<MyClub />} />
+          <Route path="myclubdetail/:clubId" element={<DetailMyClub />} />
+          <Route path="/membermyclub/:clubId" element={<MemberMyClub />} />
           <Route path="/home" element={<HomePageLogin />} />
           <Route path="/createclub" element={<SportClubCreation />} />
           <Route path="/account" element={<AccountPage />} />

@@ -8,6 +8,8 @@ function HeroSection() {
   const getInitialActiveButton = () => {
     if (location.pathname === '/createclub') return 'create';
     if (location.pathname === '/club') return 'my';
+    if (location.pathname === '/myclub') return 'myclub';
+    
     return 'all';
   };
   const [activeButton, setActiveButton] = useState(getInitialActiveButton());
@@ -26,16 +28,20 @@ function HeroSection() {
         <h1 className={styles.heroTitle}>Câu lạc bộ</h1>
         <nav className={styles.heroNav}>
           <button 
-            className={`${styles.navButton} ${activeButton === 'all' ? styles.active : ''}`} 
-            onClick={() => handleButtonClick('all')}
+            className={`${styles.navButton} ${activeButton === 'my' ? styles.active : ''}`} 
+            onClick={() => {
+              handleButtonClick('my');
+              navigate('/club');
+            }}
+            
           >
             Tất cả câu lạc bộ
           </button>
           <button 
-            className={`${styles.navButton} ${activeButton === 'my' ? styles.active : ''}`} 
+            className={`${styles.navButton} ${activeButton === '' ? styles.active : ''}`} 
             onClick={() => {
-              handleButtonClick('my');
-              navigate('/club'); 
+              handleButtonClick('myclub');
+              navigate('/myclub'); 
             }}
           >
             Câu lạc bộ của tôi
