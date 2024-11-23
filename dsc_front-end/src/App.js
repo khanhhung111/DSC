@@ -16,8 +16,11 @@ import MyProfile from "./containers/MyProfile/Profile";
 import Header from "./components/Header/Hearder";
 import SportsBetting from "./containers/SportsBetting/SportsBetting";
 import ManagementSportsBetting from "./containers/ManagementSportsBetting/SportsBetting";
-import MyBetting from "./containers/MyBetting/SportsBetting"
-import Club from "./containers/Club/ClubPage"
+import ManagementTournament from "./containers/ManagementTournament/SportsBetting";
+import MyBetting from "./containers/MyBetting/SportsBetting";
+import Club from "./containers/Club/ClubPage";
+import SportProfile from "./containers/SportProfile/SportProfile";
+import AddSportProfile from "./containers/AddSportProfle/SportProfile";
 import DetailClub from "./containers/DetailClub/Match";
 import SportClubCreation from "./containers/Createclub/SportClubCreation"
 import AccountPage from "./containers/AccountPage/AccountPage";
@@ -31,11 +34,16 @@ import DetailMyBetting from "./containers/DetailMyBetting/Match";
 import DetailJoined from "./containers/DetailJoined/Match"
 import MemberMyMatch from "./containers/MemberMyMatch/MemberMatch";
 import MemberMyClub from "./containers/MemberMyClub/MemberClub";
+import RequestJoinClub from "./containers/RequestJoinClub/MemberClub";
 import JoinActivity from "./containers/JoinActivity/MemberMatch";
 import CreateSportEvent from "./containers/CreateSportEvent/CreateSportEvent";
 import ResultMatch from "./containers/ResultMatch/ResultMatch";
 import Security from "./containers/Security/Security";
 import UpdateSportEvent from "./containers/UpdateSportEvent/UpdateSportEvent";
+import TournamentForm from "./containers/CreateTournament/TournamentForm";
+import MyTournament from "./containers/MyTournament/ClubPage";
+import UpdateTournament from "./containers/UpdateTournament/TournamentForm";
+import DetailTournament from "./containers/DetailTournament/Match"
 function App() {
   return (
     <BrowserRouter>
@@ -47,13 +55,18 @@ function App() {
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/my-profile" element={<MyProfile />} />
           <Route path="/sportbetting" element={<SportsBetting />} />
+          <Route path="/sportprofile" element={<SportProfile />} />
+          <Route path="/add-sport" element={<AddSportProfile />} />
           <Route path="/management-betting" element={<ManagementSportsBetting />} />
           <Route path="/mybetting" element={<MyBetting />} />
           <Route path="club" element={<Club />} />
+          
           <Route path="detailclub/:clubId" element={<DetailClub />} />
           <Route path="myclub" element={<MyClub />} />
           <Route path="myclubdetail/:clubId" element={<DetailMyClub />} />
           <Route path="/membermyclub/:clubId" element={<MemberMyClub />} />
+          <Route path="/approveclub/:clubId" element={<RequestJoinClub />} />
+          
           <Route path="/home" element={<HomePageLogin />} />
           <Route path="/createclub" element={<SportClubCreation />} />
           <Route path="/account" element={<AccountPage />} />
@@ -64,11 +77,18 @@ function App() {
           <Route path="/approvemember/:activityId" element={<JoinActivity />} />
           <Route path="/detailmatch/:activityId" element={<Match />} />
           <Route path="/detailmymatch/:activityId" element={<DetailMyBetting />} />
+
           <Route path="/detailmatchjoined/:activityId" element={<DetailJoined />} />
           <Route path="/createsportevent" element={<CreateSportEvent />} />
           <Route path="/updatesportevent/:activityId" element={<UpdateSportEvent />} />
           <Route path="/resultmatch" element={<ResultMatch />} />
           <Route path="/security" element={<Security />} />
+          <Route path="/createTournament" element={<TournamentForm />} />
+          <Route path="/mytournament" element={<MyTournament />} />
+          <Route path="/detailtournament/:tournamentId" element={<DetailTournament />} />
+          <Route path="/managementtournament" element={<ManagementTournament />} />
+          <Route path="/updateTournament/:tournamentId" element={<UpdateTournament />} />
+          
           <Route element={<ProtectRoutes />}>
             <Route path="user-about" element={<UserAbout />} />
             

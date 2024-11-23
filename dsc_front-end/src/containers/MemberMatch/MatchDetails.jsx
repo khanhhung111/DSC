@@ -14,6 +14,9 @@ function MatchDetails({ memberdata }) {
       </section>
     );
   }
+  const uniqueMembers = [
+    ...new Map(data.memberInfo.$values.map((participant) => [participant.userId, participant])).values(),
+  ];
 
   return (
     <section className={styles.matchDetails}>
@@ -36,7 +39,7 @@ function MatchDetails({ memberdata }) {
           </p>
         </div>
         <p className={styles.participantCount}>
-          Số người tham gia: {data.memberInfo.$values.length} / {data.activity.numberOfTeams}
+        Số người tham gia: {uniqueMembers.length} / {data.activity.numberOfTeams}
         </p>
         <p className={styles.matchPrice}>$ {data.activity.expense.toLocaleString()}đ</p>
         <div className={styles.matchActions}>

@@ -73,23 +73,49 @@ const changePassword = ({
     .then((result) => result)
     .catch((error) => error);
   };
-const updateInfoGua = ({ userId, data }) =>
-  axios({
-    method: 'post',
-    url: `http://guardsystem.site:3000/guard/changeinfor/${userId}`,
-    data,
-  });
-const updateImgCus = ({ userId, data }) =>
-  axios({
-    method: 'post',
-    url: `http://guardsystem.site:3000/customer/changeimg/${userId}`,
-    data,
-  });
-const updateImgGua = ({ userId, data }) =>
-  axios({
-    method: 'post',
-    url: `http://guardsystem.site:3000/guard/changeimg/${userId}`,
-    data,
-  });
-
-export { getInfo, updateInfo,changePassword, updateImgCus, updateImgGua, updateInfoGua,updateInfoImg };
+  
+  const getMySport = ({
+    userId
+  }) => {
+    return axios(
+      configuration({
+        method: "POST",
+        path: "/User/getMySport",
+        data: {
+          userId
+        },
+      })
+    )
+      .then((result) => result)
+      .catch((error) => error);
+    };
+    const getSportName = () =>
+      axios(
+        configuration({
+          method: "get",
+          path: "/User/getSportName",
+        })
+      );
+      const getLevel = () =>
+        axios(
+          configuration({
+            method: "get",
+            path: "/User/getLevel",
+          })
+        );
+        const AddSportName = ({userId,SportId, LevelId
+        }) => {
+          return axios(
+            configuration({
+              method: "POST",
+              path: "/User/AddSportName",
+              data: {
+                userId,SportId, LevelId
+              },
+            })
+          )
+            .then((result) => result)
+            .catch((error) => error);
+          };
+        
+export { getInfo, updateInfo,changePassword,updateInfoImg,getMySport,getSportName,getLevel,AddSportName };

@@ -15,6 +15,11 @@ function MatchDetails({ memberdata }) {
     );
   }
 
+  // Lọc ra các thành viên có UserID duy nhất
+  const uniqueMembers = [
+    ...new Map(data.memberInfo.$values.map((participant) => [participant.userId, participant])).values(),
+  ];
+
   return (
     <section className={styles.matchDetails}>
       <img
@@ -36,11 +41,11 @@ function MatchDetails({ memberdata }) {
           </p>
         </div>
         <p className={styles.participantCount}>
-          Số người tham gia: {data.memberInfo.$values.length} / {data.activity.numberOfTeams}
+          Số người tham gia: {uniqueMembers.length} / {data.activity.numberOfTeams}
         </p>
         <p className={styles.matchPrice}>$ {data.activity.expense.toLocaleString()}đ</p>
         <div className={styles.matchActions}>
-          <button className={styles.participantsButton} onClick={() => navigate('#')}>Chỉnh Sửa</button>
+          <button className={styles.participantsButton} onClick={() => navigate(`/updatesportevent/${data.activity.activityId}`)}>Chỉnh Sửa</button>
           <button className={styles.joinButton} onClick={() => navigate(`/membermymatch/${data.activity.activityId}`)}>Người tham gia</button>
           <button className={styles.participantsButton} onClick={() => navigate(`/approvemember/${data.activity.activityId}`)}>Phê Duyệt</button>
           <button className={styles.resultsButton} onClick={() => navigate('/resultmatch')}>Kết quả</button>

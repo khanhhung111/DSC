@@ -38,33 +38,33 @@ const getMemberClub = (ClubId) =>
             path: `/Club/getMemberClub/${ClubId}`,
           })
         );
-const getrequestJoinActivity = (activityId) =>
+const getrequestJoinClub = (clubId) =>
   axios(
     configuration({
       method: "get",
-      path: `/Activity/getrequestJoinActivity/${activityId}`,
+      path: `/Club/getrequestJoinClub/${clubId}`,
     })
   );
-  const acceptrequestJoinActivity = (RequestJoinActivityId, UserId) => {
+  const acceptrequestJoinClub = (requestClubId, UserId) => {
     return axios(
       configuration({
         method: "POST",
-        path: "/Activity/acceptrequestJoinActivity",
+        path: "/Club/acceptrequestJoinClub",
         data: {
-          RequestJoinActivityId, UserId
+          requestClubId, UserId
         },
       })
     )
       .then((result) => result)
       .catch((error) => error);
   };
-  const cancelrequestJoinActivity = (RequestJoinActivityId, UserId) => {
+  const cancelrequestJoinClub = (requestClubId, UserId) => {
     return axios(
       configuration({
         method: "POST",
-        path: "/Activity/cancelrequestJoinActivity",
+        path: "/Club/cancelrequestJoinClub",
         data: {
-          RequestJoinActivityId, UserId
+          requestClubId, UserId
         },
       })
     )
@@ -115,9 +115,9 @@ export {
     getMemberClub,
     getActivityJoined,
     getMyClub,
-    getrequestJoinActivity,
-    acceptrequestJoinActivity,
-    cancelrequestJoinActivity,
+    getrequestJoinClub,
+    acceptrequestJoinClub,
+    cancelrequestJoinClub,
     createActivity,
     uppdateActivity,
     requestJoinClub

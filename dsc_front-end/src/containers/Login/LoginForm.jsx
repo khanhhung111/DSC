@@ -47,9 +47,10 @@ function LoginForm() {
       if (response && response.success) {
         // Lưu thông tin vào localStorage
         localStorage.setItem('userEmail', email);
-        localStorage.setItem('userId', response.$id);
+        localStorage.setItem('userId', response.userId);
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('fullName', response.fullName);
+        localStorage.setItem('avatar', response.avatar);
         toast.success("Đăng nhập thành công!", {
           autoClose: 1000
         });

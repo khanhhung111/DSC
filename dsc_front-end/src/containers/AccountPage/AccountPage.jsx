@@ -27,7 +27,7 @@ function AccountPage() {
                                     <h2 className={styles.cardTitle}>Hồ sơ</h2>
                                     <p className={styles.cardDescription}>Cập nhật thông tin cá nhân</p>
                                 </article>
-                                <article className={styles.card}>
+                                <article className={styles.card} onClick={() => navigate('/sportprofile')}>
                                     <h2 className={styles.cardTitle}>Thể thao</h2>
                                     <p className={styles.cardDescription}>Quản lý thể thao của bạn</p>
                                 </article>

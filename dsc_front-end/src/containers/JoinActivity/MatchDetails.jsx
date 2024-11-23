@@ -40,7 +40,7 @@ function MatchDetails({ matchData }) {
         </p>
         <p className={styles.matchPrice}>$ {data.activity.expense.toLocaleString()}đ</p>
         <div className={styles.matchActions}>
-          <button className={styles.participantsButton} onClick={() => navigate('#')}>Chỉnh Sửa</button>
+          <button className={styles.participantsButton} onClick={() => navigate(`/updatesportevent/${data.activity.activityId}`)}>Chỉnh Sửa</button>
           <button className={styles.participantsButton} onClick={() => navigate(`/membermymatch/${data.activity.activityId}`)}>Người tham gia</button>
           <button className={styles.joinButton} onClick={() => navigate(`/approvemember/${data.activity.activityId}`)}>Phê Duyệt</button>
           <button className={styles.resultsButton} onClick={() => navigate('/resultmatch')}>Kết quả</button>

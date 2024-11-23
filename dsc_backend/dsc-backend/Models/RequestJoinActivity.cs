@@ -15,7 +15,7 @@ public partial class RequestJoinActivity
 
     public DateTime? CreateDate { get; set; }
 
-    public virtual Activity? Activities { get; set; }
+    public virtual Activity Activities { get; set; } = null!;
 
-    public virtual User? User { get; set; }
+    public virtual User User { get; set; } = null!;
 }
