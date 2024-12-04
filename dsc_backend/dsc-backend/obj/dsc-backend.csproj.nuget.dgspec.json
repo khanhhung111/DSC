@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents\\Đồ án\\SE17test\\DSC\\dsc_backend\\dsc-backend\\dsc-backend.csproj": {}
+    "D:\\dsc_backend\\dsc-backend\\dsc-backend.csproj": {}
   },
   "projects": {
-    "D:\\Documents\\Đồ án\\SE17test\\DSC\\dsc_backend\\dsc-backend\\dsc-backend.csproj": {
+    "D:\\dsc_backend\\dsc-backend\\dsc-backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\Đồ án\\SE17test\\DSC\\dsc_backend\\dsc-backend\\dsc-backend.csproj",
+        "projectUniqueName": "D:\\dsc_backend\\dsc-backend\\dsc-backend.csproj",
         "projectName": "dsc-backend",
-        "projectPath": "D:\\Documents\\Đồ án\\SE17test\\DSC\\dsc_backend\\dsc-backend\\dsc-backend.csproj",
-        "packagesPath": "C:\\Users\\tvkhu\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\Đồ án\\SE17test\\DSC\\dsc_backend\\dsc-backend\\obj\\",
+        "projectPath": "D:\\dsc_backend\\dsc-backend\\dsc-backend.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\dsc_backend\\dsc-backend\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\tvkhu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -38,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -71,12 +62,6 @@
               "target": "Package",
               "version": "[7.0.20, )"
             },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
@@ -101,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -4,6 +4,7 @@
   margin: 0 auto;
   padding: 20px;
 }
+
 .bannerImage {
   width: 100%;
   height: auto;
@@ -212,7 +213,7 @@
 }
 
 .feeText {
-  color: #666;
+  color: red;
   margin-top: 10px;
 }
 
@@ -262,4 +263,84 @@
   outline: none;
   border-color: #40a9ff;
   box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+.selectInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  appearance: none; /* Loại bỏ style mặc định của trình duyệt */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.selectInput:focus {
+  outline: none;
+  border-color: #4A90E2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+.selectInput option {
+  padding: 10px;
+}
+.openModalButton {
+  margin-top: 10px;
+  padding: 13px 25px; /* Điều chỉnh kích thước nút nhỏ hơn */
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px; /* Giảm kích thước chữ */
+  display: block; /* Đảm bảo nút là block để căn giữa */
+  margin-left: auto; /* Căn giữa */
+  margin-right: auto; /* Căn giữa */
+}
+
+.openModalButton:hover {
+  opacity: 0.8;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+}
+
+.modalImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.closeModalButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.closeModalButton:hover {
+  opacity: 0.8;
 }

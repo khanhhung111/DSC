@@ -68,14 +68,13 @@ public partial class DscContext : DbContext
     public virtual DbSet<UserTeam> UserTeams { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-3VMQCNG\\HUNGSERVER;Initial Catalog=DSC;Integrated Security=True;Persist Security Info=False;Pooling=False;Multiple Active Result Sets=False;Encrypt=True;Trust Server Certificate=True;Command Timeout=0");
+        => optionsBuilder.UseSqlServer("Name=ConnectionStrings:Database");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Activity>(entity =>
         {
-            entity.HasKey(e => e.ActivityId).HasName("PK__Activiti__45F4A7F1405A3038");
+            entity.HasKey(e => e.ActivityId).HasName("PK__Activiti__45F4A7F1567643F0");
 
             entity.Property(e => e.ActivityId).HasColumnName("ActivityID");
             entity.Property(e => e.ActivityName).HasMaxLength(255);
@@ -97,7 +96,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<Admin>(entity =>
         {
-            entity.HasKey(e => e.AdminId).HasName("PK__Admin__719FE4E8B0DBC4E0");
+            entity.HasKey(e => e.AdminId).HasName("PK__Admin__719FE4E8463647CA");
 
             entity.ToTable("Admin");
 
@@ -114,7 +113,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<Club>(entity =>
         {
-            entity.HasKey(e => e.ClubId).HasName("PK__Club__D35058C73B2F5DF5");
+            entity.HasKey(e => e.ClubId).HasName("PK__Club__D35058C7AD2C14E6");
 
             entity.ToTable("Club");
 
@@ -138,7 +137,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<Comment>(entity =>
         {
-            entity.HasKey(e => e.CommentId).HasName("PK__Comment__C3B4DFAA82C198E6");
+            entity.HasKey(e => e.CommentId).HasName("PK__Comment__C3B4DFAAFC8A5A21");
 
             entity.ToTable("Comment");
 
@@ -164,7 +163,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<Fee>(entity =>
         {
-            entity.HasKey(e => e.FeeId).HasName("PK__Fee__B387B20990745AD4");
+            entity.HasKey(e => e.FeeId).HasName("PK__Fee__B387B20926392934");
 
             entity.ToTable("Fee");
 
@@ -179,7 +178,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<Level>(entity =>
         {
-            entity.HasKey(e => e.LevelId).HasName("PK__Level__09F03C06B34B1729");
+            entity.HasKey(e => e.LevelId).HasName("PK__Level__09F03C067F407273");
 
             entity.ToTable("Level");
 
@@ -189,7 +188,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<Match>(entity =>
         {
-            entity.HasKey(e => e.MatchId).HasName("PK__Match__4218C837B0DBC869");
+            entity.HasKey(e => e.MatchId).HasName("PK__Match__4218C837D84A9B1C");
 
             entity.ToTable("Match");
 
@@ -213,7 +212,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<Notification>(entity =>
         {
-            entity.HasKey(e => e.NotificationId).HasName("PK__Notifica__20CF2E3255A5B393");
+            entity.HasKey(e => e.NotificationId).HasName("PK__Notifica__20CF2E327E71AAF7");
 
             entity.ToTable("Notification");
 
@@ -237,7 +236,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<Payment>(entity =>
         {
-            entity.HasKey(e => e.PaymentId).HasName("PK__Payment__9B556A58912645B8");
+            entity.HasKey(e => e.PaymentId).HasName("PK__Payment__9B556A58546E577A");
 
             entity.ToTable("Payment");
 
@@ -263,7 +262,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<RequestJoinActivity>(entity =>
         {
-            entity.HasKey(e => e.RequestJoinActivityId).HasName("PK__requestJ__7ABA80745857D517");
+            entity.HasKey(e => e.RequestJoinActivityId).HasName("PK__requestJ__7ABA807479079D92");
 
             entity.ToTable("requestJoinActivity");
 
@@ -288,7 +287,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<RequestJoinClub>(entity =>
         {
-            entity.HasKey(e => e.RequestClubId).HasName("PK__RequestJ__7E4BEF010C9FD0DE");
+            entity.HasKey(e => e.RequestClubId).HasName("PK__RequestJ__7E4BEF017FFF8271");
 
             entity.ToTable("RequestJoinClub");
 
@@ -314,7 +313,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<Result>(entity =>
         {
-            entity.HasKey(e => e.ResultId).HasName("PK__Result__97690228A6C0CA44");
+            entity.HasKey(e => e.ResultId).HasName("PK__Result__976902281C48B89C");
 
             entity.ToTable("Result");
 
@@ -328,7 +327,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<ResultOfActivity>(entity =>
         {
-            entity.HasKey(e => e.ResultId).HasName("PK__ResultOf__976902287D8BB430");
+            entity.HasKey(e => e.ResultId).HasName("PK__ResultOf__976902283E28A99F");
 
             entity.Property(e => e.ResultId).HasColumnName("ResultID");
             entity.Property(e => e.ActivityId).HasColumnName("ActivityID");
@@ -340,7 +339,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.RoleId).HasName("PK__Role__8AFACE3A811E08D7");
+            entity.HasKey(e => e.RoleId).HasName("PK__Role__8AFACE3A21B2AFE2");
 
             entity.ToTable("Role");
 
@@ -350,7 +349,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<Round>(entity =>
         {
-            entity.HasKey(e => e.RoundId).HasName("PK__Round__94D84E1AB3A9FCD2");
+            entity.HasKey(e => e.RoundId).HasName("PK__Round__94D84E1A461BAB67");
 
             entity.ToTable("Round");
 
@@ -364,7 +363,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<Sport>(entity =>
         {
-            entity.HasKey(e => e.SportId).HasName("PK__Sport__7A41AF1C160568C4");
+            entity.HasKey(e => e.SportId).HasName("PK__Sport__7A41AF1C0869BD7D");
 
             entity.ToTable("Sport");
 
@@ -375,42 +374,40 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<Team>(entity =>
         {
-            entity.HasKey(e => e.TeamId).HasName("PK__Team__123AE7B998DC6772");
+            entity.HasKey(e => e.TeamId).HasName("PK__Team__123AE7B901BD106A");
 
             entity.ToTable("Team");
 
             entity.Property(e => e.TeamId).HasColumnName("TeamID");
+            entity.Property(e => e.Avatar).HasMaxLength(255);
             entity.Property(e => e.TeamName).HasMaxLength(255);
             entity.Property(e => e.TournamentId).HasColumnName("TournamentID");
-            entity.Property(e => e.UserTeamId).HasColumnName("UserTeamID");
 
             entity.HasOne(d => d.Tournament).WithMany(p => p.Teams)
                 .HasForeignKey(d => d.TournamentId)
                 .HasConstraintName("FK_Team_Tournament");
+
+            entity.HasOne(d => d.User).WithMany(p => p.Teams)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK_Team_User");
         });
 
         modelBuilder.Entity<TeamTournament>(entity =>
         {
-            entity.HasKey(e => e.TeamTournamentId).HasName("PK__TeamTour__7B13E860EA5CA67C");
-
             entity.ToTable("TeamTournament");
 
             entity.Property(e => e.TeamTournamentId).HasColumnName("TeamTournamentID");
+            entity.Property(e => e.NamePlayer).HasMaxLength(100);
             entity.Property(e => e.TeamId).HasColumnName("TeamID");
-            entity.Property(e => e.TournamentId).HasColumnName("TournamentID");
 
             entity.HasOne(d => d.Team).WithMany(p => p.TeamTournaments)
                 .HasForeignKey(d => d.TeamId)
                 .HasConstraintName("FK_TeamTournament_Team");
-
-            entity.HasOne(d => d.Tournament).WithMany(p => p.TeamTournaments)
-                .HasForeignKey(d => d.TournamentId)
-                .HasConstraintName("FK_TeamTournament_Tournament");
         });
 
         modelBuilder.Entity<Tournament>(entity =>
         {
-            entity.HasKey(e => e.TournamentId).HasName("PK__Tourname__AC631333B1778154");
+            entity.HasKey(e => e.TournamentId).HasName("PK__Tourname__AC6313330042E623");
 
             entity.Property(e => e.TournamentId).HasColumnName("TournamentID");
             entity.Property(e => e.Avatar).HasMaxLength(255);
@@ -435,7 +432,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<TransferHistory>(entity =>
         {
-            entity.HasKey(e => e.TransferId).HasName("PK__Transfer__954901718014B80A");
+            entity.HasKey(e => e.TransferId).HasName("PK__Transfer__95490171E7C89053");
 
             entity.ToTable("TransferHistory");
 
@@ -466,7 +463,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__User__1788CCACA7D36286");
+            entity.HasKey(e => e.UserId).HasName("PK__User__1788CCAC6B2E6FD9");
 
             entity.ToTable("User");
 
@@ -491,7 +488,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<UserActivity>(entity =>
         {
-            entity.HasKey(e => e.UserActivityId).HasName("PK__UserActi__8256046381C30B6F");
+            entity.HasKey(e => e.UserActivityId).HasName("PK__UserActi__82560463C03507F9");
 
             entity.Property(e => e.UserActivityId).HasColumnName("UserActivityID");
             entity.Property(e => e.ActivityId).HasColumnName("ActivityID");
@@ -510,7 +507,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<UserActivityClub>(entity =>
         {
-            entity.HasKey(e => e.UserActivityClubId).HasName("PK__UserActi__6CAE09FCD599DF6C");
+            entity.HasKey(e => e.UserActivityClubId).HasName("PK__UserActi__6CAE09FCBC802542");
 
             entity.ToTable("UserActivityClub");
 
@@ -540,7 +537,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<UserClub>(entity =>
         {
-            entity.HasKey(e => e.UserClubId).HasName("PK__UserClub__9BFD3C25F2604921");
+            entity.HasKey(e => e.UserClubId).HasName("PK__UserClub__9BFD3C25DE386A9E");
 
             entity.ToTable("UserClub");
 
@@ -562,7 +559,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<UserSport>(entity =>
         {
-            entity.HasKey(e => e.UserSportId).HasName("PK__UserSpor__A6A5EE9BB9B47731");
+            entity.HasKey(e => e.UserSportId).HasName("PK__UserSpor__A6A5EE9BC6162BE6");
 
             entity.ToTable("UserSport");
 
@@ -587,7 +584,7 @@ public partial class DscContext : DbContext
 
         modelBuilder.Entity<UserTeam>(entity =>
         {
-            entity.HasKey(e => e.UserTeamId).HasName("PK__UserTeam__9ADF80928BFC27FD");
+            entity.HasKey(e => e.UserTeamId).HasName("PK__UserTeam__9ADF80922DB78C71");
 
             entity.ToTable("UserTeam");
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ClubItem from "./ClubItem";
 import styles from "./ClubList.module.css";
-import { getAllTournament } from "../../utils/tournament";
+import { GetMyTournament } from "../../utils/tournament";
 import { toast } from 'react-toastify';
 
 function ClubList() {
@@ -13,7 +13,7 @@ function ClubList() {
     const fetchClub = async () => {
       try {
         setLoading(true); // Bắt đầu loading
-        const response = await getAllTournament(userId); // Gửi request để lấy dữ liệu
+        const response = await GetMyTournament(userId); // Gửi request để lấy dữ liệu
         console.log('Response:', response);
         if (response.data && Array.isArray(response.data.$values)) {
           setEvents(response.data.$values); // Gán dữ liệu vào state

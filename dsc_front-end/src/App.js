@@ -16,7 +16,7 @@ import MyProfile from "./containers/MyProfile/Profile";
 import Header from "./components/Header/Hearder";
 import SportsBetting from "./containers/SportsBetting/SportsBetting";
 import ManagementSportsBetting from "./containers/ManagementSportsBetting/SportsBetting";
-import ManagementTournament from "./containers/ManagementTournament/SportsBetting";
+import ManagementTournament from "./containers/ManagementTournament/ClubPage";
 import MyBetting from "./containers/MyBetting/SportsBetting";
 import Club from "./containers/Club/ClubPage";
 import SportProfile from "./containers/SportProfile/SportProfile";
@@ -44,6 +44,12 @@ import TournamentForm from "./containers/CreateTournament/TournamentForm";
 import MyTournament from "./containers/MyTournament/ClubPage";
 import UpdateTournament from "./containers/UpdateTournament/TournamentForm";
 import DetailTournament from "./containers/DetailTournament/Match"
+import TournamentOut from "./containers/TournamentOut/ClubPage";
+import DetailTournamentJoin from "./containers/DetailTournamentJoin/Match";
+import TournamentBracket from "./containers/TournamentBracket/TournamentBracket";
+import ViewTournamentBracket from "./containers/ViewTournamentBracket/TournamentBracket"
+import ViewListTeam from "./containers/ViewListTeam/Match";
+// import ViewListMember from "./containers/ViewListMember/Match";
 function App() {
   return (
     <BrowserRouter>
@@ -86,44 +92,17 @@ function App() {
           <Route path="/createTournament" element={<TournamentForm />} />
           <Route path="/mytournament" element={<MyTournament />} />
           <Route path="/detailtournament/:tournamentId" element={<DetailTournament />} />
+          <Route path="/detailtournamentjoin/:tournamentId" element={<DetailTournamentJoin />} />
           <Route path="/managementtournament" element={<ManagementTournament />} />
           <Route path="/updateTournament/:tournamentId" element={<UpdateTournament />} />
+          <Route path="/Tournamentall" element={<TournamentOut />} />
+          <Route path="/TournamentBracket/:tournamentId" element={<TournamentBracket />} />
+          <Route path="/ViewTournamentBracket/:tournamentId" element={<ViewTournamentBracket />} />
+          <Route path="/ViewListTeam/:tournamentId" element={<ViewListTeam />} />
+          {/* <Route path="/ViewListMember/:teamId" element={<ViewListMember />} /> */}
           
           <Route element={<ProtectRoutes />}>
             <Route path="user-about" element={<UserAbout />} />
-            
-            {/* <Route
-              path="user-my-calendar"
-              element={(<MyCalendar />)}
-            /> */}
-            {/* <Route
-              path="event-detail"
-              element={(<EventDetail />)}
-            />
-            <Route
-              path="user-my-calendar/new-booking"
-              element={(<NewBooking />)}
-            /> */}
-            {/* <Route path="news/:id" element={(<News />)} /> */}
-            {/* <Route
-              path="user-my-calendar/new-booking/payment/:companyNameForPayment"
-              element={(<Payment />)}
-            /> */}
-            
-            {/* <Route
-              path="change-pass"
-              element={(<ChangePass />)}
-            />
-            <Route
-              path="booking-detail/:bookingName"
-              element={(<BookingDetail />)}
-            />
-            <Route
-              path="customer-unpaid-list"
-              element={(<CustomerUnpaidList />)}
-            />
-            <Route path="admin" element={<Admin />} />
-            <Route path="contract/:bookingName" element={<Contract />} /> */}
           </Route>
         </Routes>
       </AppProvider>

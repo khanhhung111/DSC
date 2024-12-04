@@ -28,6 +28,10 @@ function ClubItem({ tournamentId, name, numberOfTeams, location, startDate, avat
   const handleViewMore = () => {
     navigate(`/updateTournament/${tournamentId}`); // Điều hướng đến /detailClub/clubId
   };
+  const handleViewResult = () => {
+    navigate(`/TournamentBracket/${tournamentId}`); // Điều hướng đến /detailClub/clubId
+  };
+  
 
   // Hàm xử lý xóa giải đấu
   const handleDelete = () => {
@@ -74,11 +78,11 @@ function ClubItem({ tournamentId, name, numberOfTeams, location, startDate, avat
   return (
     <article className={styles.clubItem}>
       {/* Avatar bên trái */}
-      <img src="https://image.bongda24h.vn/medias/640x359twebp/original/2023/09/10/afc_cup_trophy_october_2022-1009225955.jpg" alt={`${name} avatar`} className={styles.clubLogo} />
+      <img src={avatar} alt={`${name} avatar`} className={styles.clubLogo} />
 
       {/* Thông tin giải đấu */}
       <div className={styles.clubInfo}>
-        <h2 className={styles.name} style={{ fontSize: "24px", fontWeight: 500 }}>{name}</h2>
+        <h2 className={styles.name} onClick={handleViewResult} style={{ fontSize: "24px", fontWeight: 500 }}>{name}</h2>
         
         {/* Ngày bắt đầu */}
         <p className={styles.clubDetails}>

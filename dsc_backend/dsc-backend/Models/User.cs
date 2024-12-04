@@ -12,6 +12,7 @@ public partial class User
     public int? UserTeamId { get; set; }
 
     public string? Email { get; set; }
+
     public string? Password { get; set; }
 
     public string? FullName { get; set; }
@@ -45,6 +46,8 @@ public partial class User
     public virtual ICollection<RequestJoinClub> RequestJoinClubs { get; set; } = new List<RequestJoinClub>();
 
     public virtual Role? Role { get; set; }
+
+    public virtual ICollection<Team> Teams { get; set; } = new List<Team>();
 
     public virtual ICollection<Tournament> Tournaments { get; set; } = new List<Tournament>();
 

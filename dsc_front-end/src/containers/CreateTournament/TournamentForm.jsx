@@ -1,17 +1,24 @@
-import React, { useState } from 'react';
+import { useEffect, useState ,useCallback} from "react";
 import Header from '../../components/Header/Hearder';
 import styles from './TournamentForm.module.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation} from 'react-router-dom';
 import axios from 'axios';
 import LocaleProvider from 'antd/es/locale';
 import { toast } from 'react-toastify';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {createTournament} from "../../utils/tournament"
+import { createTournament,createPayment,setPayment,deleteTournament } from "../../utils/tournament"
 const TournamentForm = () => {
+  const location = useLocation();
   const navigate = useNavigate();
   const [selectedSport, setSelectedSport] = useState(null);
   const [selectedLevel, setSelectedLevel] = useState(null);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [previewUrl, setPreviewUrl] = useState(null);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [params, setParams] = useState(new URLSearchParams(location.search));
+  const [hasSetPaymentCalled, setHasSetPaymentCalled] = useState(false);
+  const [toastShown, setToastShown] = useState(false);
   const [formData, setFormData] = useState({
     Name: '',
     startDate: '',
@@ -40,7 +47,7 @@ const TournamentForm = () => {
     { id: 3, name: 'Chuyên nghiệp' },
   ];
 
- const userId = localStorage.getItem('userId'); // Retrieve UserId from localStorage
+  const userId = localStorage.getItem('userId'); // Retrieve UserId from localStorage
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -56,12 +63,29 @@ const TournamentForm = () => {
       });
     }
   };
-
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setSelectedFile(file);
+      setPreviewUrl(URL.createObjectURL(file));
+    }
+  };
+  const handleOpenModal = () => {
+    if (previewUrl) {
+      setIsModalVisible(true);
+    }
+  };
+  const handleCloseModal = () => {
+    setIsModalVisible(false);
+  };
   const validateForm = () => {
     const newErrors = {};
 
     if (!selectedSport) {
       newErrors.sport = 'Vui lòng chọn môn thể thao';
+    }
+    if (!selectedFile && selectedFile !== 0) {
+      newErrors.image = 'Vui lòng chọn ảnh cho giải đấu';
     }
 
     if (!selectedLevel && selectedLevel !== 0) {
@@ -97,9 +121,9 @@ const TournamentForm = () => {
     }
 
     if (!formData.numberOfParticipants) {
-      newErrors.numberOfParticipants = 'Vui lòng nhập số người tham gia';
+      newErrors.numberOfParticipants = 'Vui lòng nhập số đội tham gia';
     } else if (formData.numberOfParticipants < 2) {
-      newErrors.numberOfParticipants = 'Số người tham gia phải ít nhất là 2';
+      newErrors.numberOfParticipants = 'Số đội tham gia phải ít nhất là 2';
     }
 
     if (!formData.teamSize) {
@@ -111,72 +135,114 @@ const TournamentForm = () => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
+  const callNetPayment = useCallback(async () => {
+    try {
+      // Đảm bảo không gọi lại hàm nếu đã xử lý
+      if (!toastShown && params.toString()) {
+        const responsePayment = await setPayment(params);
+        console.log(responsePayment);
+        if (responsePayment.message === "Success" && responsePayment.rspCode) {
+          toast.success("Tạo giải đấu thành công.", {
+            autoClose: 1000,
+          });
+          setToastShown(true); // Đặt trạng thái để không hiển thị lại toast
+          setTimeout(() => navigate('/mytournament'), 1900);
+        } else {
+          // await deleteTournament(responsePayment.tournamentId);
+          toast.error("Bạn không thanh toán nên không thể tạo giải đấu.", {
+            autoClose: 1000,
+          });
+          setTimeout(() => navigate('/createTournament'), 1900);
+        }
+      }
+    } catch (err) {
+      console.error('Error in callNetPayment:', err);
+    }
+  }, [params, toastShown, navigate]);
+  
+  useEffect(() => {
+    if (!toastShown) {
+      callNetPayment();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [params]); // Chỉ phụ thuộc vào params để tránh gọi lại không cần thiết
+  
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!validateForm()) {
-        return;
+      return;
     }
 
     // Format startTime to combine date and time
     const startDateTime = `${formData.startDate}T${formData.startTime}:00`; // Format: "YYYY-MM-DDThh:mm:ss"
 
     const tournamentData = {
-        sportId: selectedSport,
-        LevelId: levels[selectedLevel].id,
-        UserId: userId,
-        Name: formData.Name,
-        note: formData.note,
-        StartDate: formData.startDate,
-        EndDate: formData.endDate,
-        location: formData.location,
-        teamSize: formData.teamSize,
-        startTime: startDateTime, 
-        numberOfParticipants: formData.numberOfParticipants,
-        registrationDeadline: formData.registrationDeadline
-         // Sử dụng định dạng đã format
+      sportId: selectedSport,
+      LevelId: levels[selectedLevel].id,
+      UserId: userId,
+      Name: formData.Name,
+      note: formData.note,
+      StartDate: formData.startDate,
+      EndDate: formData.endDate,
+      location: formData.location,
+      teamSize: formData.teamSize,
+      startTime: startDateTime,
+      numberOfParticipants: formData.numberOfParticipants,
+      registrationDeadline: formData.registrationDeadline,
+      // Sử dụng định dạng đã format
     };
 
-    console.log('TournamentData:', tournamentData);
-
+    console.log('TournamentData:', selectedFile);
     try {
-        const response = await createTournament(tournamentData);
-        console.log(response.data);
-        if (response.data && response.data.success == true) {
-            toast.success(response.data.message);
-            setTimeout(() => {
-                navigate('/mytournament');
-            }, 1200);
-        } else {
-            toast.error(response.data.message || 'Có lỗi xảy ra');
-        }
+      const responseTournament = await createTournament({
+        tournamentData,
+        file: selectedFile
+      });
+        console.log("tournamentId",responseTournament.data.tournamentId)
+        if(responseTournament.data.tournamentId){
+          const TournamentId = responseTournament.data.tournamentId;
+          const Amount = 200000;
+          const response = await createPayment(TournamentId,Amount)
+            if (response.data){
+              window.location.href =response.data;
+            }
+            else {
+              toast.error(response.data.message || 'Có lỗi xảy ra');
+            }
+        }else {
+        toast.error(responseTournament.data.message || 'Có lỗi xảy ra');
+      }
     } catch (error) {
-        console.error('Error creating tournament:', error);
-        toast.error(error.response?.data?.message || 'Không thể tạo giải đấu');
+      console.error('Error creating tournament:', error);
+      toast.error(error.responseTournament?.data?.message || 'Không thể tạo giải đấu');
     }
-};
+  };
 
+  console.log("previewUrl", previewUrl)
   return (
     <div>
       <Header />
-      <div className={styles.tournamentContainer}>
-        <div className={styles.bannerContainer}>
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/73697ede93124dea36ec63cd0d105c568819e769f86fa52d92e3a5690a5d212c?placeholderIfAbsent=true&apiKey=64a11f7ccf9c4f09a01cd9aadc1c5dac"
-            alt=""
-            className={styles.bannerImage}
-          />
-          <div className={styles.bannerContent}>
-            <h2 className={styles.bannerTitle}>Kèo thể thao</h2>
-            <p className={styles.bannerSubtitle}>Subtitle</p>
-            <div className={styles.buttonGroup}>
-              <button className={styles.secondaryButton} onClick={() => navigate('/createTournament')}>Tạo Giải Đấu</button>
-              <button className={styles.primaryButton} onClick={() => navigate('/managementtournament')}>Tham Gia Giải đấu</button>
-              <button className={styles.primaryButton} onClick={() => navigate('/mytournament')}>Quản Lí Giải đấu</button>
-            </div>
+
+      <div className={styles.bannerContainer}>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/73697ede93124dea36ec63cd0d105c568819e769f86fa52d92e3a5690a5d212c?placeholderIfAbsent=true&apiKey=64a11f7ccf9c4f09a01cd9aadc1c5dac"
+          alt=""
+          className={styles.bannerImage}
+        />
+        <div className={styles.bannerContent}>
+          <h2 className={styles.bannerTitle}>Giải Đấu</h2>
+          <p className={styles.bannerSubtitle}>Subtitle</p>
+          <div className={styles.buttonGroup}>
+            <button className={styles.secondaryButton} onClick={() => navigate('/createTournament')}>Tạo Giải Đấu</button>
+            <button className={styles.primaryButton} onClick={() => navigate('/managementtournament')}>Tham Gia Giải đấu</button>
+            <button className={styles.primaryButton} onClick={() => navigate('/mytournament')}>Quản Lí Giải đấu</button>
           </div>
         </div>
+      </div>
+      <div className={styles.tournamentContainer}>
+
 
         <form onSubmit={handleSubmit}>
           <div className={styles.section}>
@@ -224,6 +290,31 @@ const TournamentForm = () => {
               {errors.Name && <span className={styles.error}>{errors.Name}</span>}
             </div>
 
+            <div className={`${styles.formGroup} ${styles.fullWidth}`}>
+              <label>Hình ảnh</label>
+              <input
+                type="file"
+                onChange={handleImageChange}
+                className={styles.imageUploadInput}
+              />
+              {previewUrl && (
+                <button className={styles.openModalButton} onClick={handleOpenModal}>
+                  Xem ảnh
+                </button>
+              )}
+              {errors.image && <span className={styles.error}>{errors.image}</span>}
+            </div>
+
+            {isModalVisible && (
+              <div className={styles.modalOverlay}>
+                <div className={styles.modalContent}>
+                  <img src={previewUrl} alt="Preview" className={styles.modalImage} />
+                  <button className={styles.closeModalButton} onClick={handleCloseModal}>
+                    Đóng
+                  </button>
+                </div>
+              </div>
+            )}
             <div className={styles.formGroup}>
               <label>Ngày diễn ra</label>
               <input
@@ -292,13 +383,23 @@ const TournamentForm = () => {
 
             <div className={styles.formGroup}>
               <label>Số đội tham gia</label>
-              <input
-                type="number"
+              <select
                 name="numberOfParticipants"
                 value={formData.numberOfParticipants}
                 onChange={handleInputChange}
-              />
-              {errors.numberOfParticipants && <span className={styles.error}>{errors.numberOfParticipants}</span>}
+                className={styles.selectInput}
+              >
+                <option value="">Chọn số đội</option>
+                <option value="4">4 đội</option>
+                <option value="8">8 đội</option>
+                <option value="16">16 đội</option>
+                <option value="32">32 đội</option>
+              </select>
+              {errors.numberOfParticipants && (
+                <span className={styles.error}>
+                  {errors.numberOfParticipants}
+                </span>
+              )}
             </div>
 
             <div className={styles.formGroup}>
@@ -319,17 +420,17 @@ const TournamentForm = () => {
           </div>
         </form>
       </div>
-      <ToastContainer 
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-        />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };

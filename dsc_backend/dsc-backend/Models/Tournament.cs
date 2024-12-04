@@ -45,8 +45,6 @@ public partial class Tournament
 
     public virtual ICollection<Round> Rounds { get; set; } = new List<Round>();
 
-    public virtual ICollection<TeamTournament> TeamTournaments { get; set; } = new List<TeamTournament>();
-
     public virtual ICollection<Team> Teams { get; set; } = new List<Team>();
 
     public virtual User? User { get; set; }

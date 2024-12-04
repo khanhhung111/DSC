@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header/Hearder';
 import styles from './TournamentForm.module.css';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -6,12 +6,14 @@ import { toast } from 'react-toastify';
 import { updateTounarment, createTournament, getTournamentDetails } from "../../utils/tournament"; // Import các hàm API
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-import {dateFormatting} from "../../utils/formatHelper"
 const TournamentForm = () => {
   const navigate = useNavigate();
   const { tournamentId } = useParams(); // Lấy tournamentId từ URL nếu có
   const [selectedSport, setSelectedSport] = useState(null);
   const [selectedLevel, setSelectedLevel] = useState(null);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [previewUrl, setPreviewUrl] = useState(null);
+  const [isImageChanged, setIsImageChanged] = useState(false);
   const [formData, setFormData] = useState({
     Name: '',
     startDate: '',
@@ -55,7 +57,7 @@ const TournamentForm = () => {
         const response = await getTournamentDetails(tournamentId);
         if (response.data && response.data.$values && response.data.$values.length > 0) {
           const tournamentData = response.data.$values[0];
-          
+
           // Format dates properly for input fields
           setFormData({
             Name: tournamentData.name || '',
@@ -65,10 +67,11 @@ const TournamentForm = () => {
             location: tournamentData.location || '',
             startTime: tournamentData.createdDate ? tournamentData.createdDate.split('T')[1].substring(0, 5) : '',
             note: tournamentData.description || '',
-            numberOfParticipants: tournamentData.memberOfTeams || '',
-            teamSize: tournamentData.numberOfTeams || '',
+            numberOfParticipants: tournamentData.numberOfTeams || '',
+            teamSize: tournamentData.memberOfTeams || '',
+            avatar: tournamentData.avatar || '',
           });
-          
+
           setSelectedSport(tournamentData.sportId);
           setSelectedLevel(tournamentData.levelId - 1);
         }
@@ -100,14 +103,23 @@ const TournamentForm = () => {
       });
     }
   };
-
+const handleImageChange = (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    setSelectedFile(file);
+    setPreviewUrl(URL.createObjectURL(file));
+    setIsImageChanged(true);
+  }
+};
   const validateForm = () => {
     const newErrors = {};
 
     if (!selectedSport) {
       newErrors.sport = 'Vui lòng chọn môn thể thao';
     }
-
+    if (!selectedFile && !formData.avatar) {
+      newErrors.image = 'Vui lòng chọn ảnh cho giải đấu';
+    }
     if (!selectedLevel && selectedLevel !== 0) {
       newErrors.level = 'Vui lòng chọn trình độ';
     }
@@ -143,7 +155,7 @@ const TournamentForm = () => {
     if (!formData.numberOfParticipants) {
       newErrors.numberOfParticipants = 'Vui lòng nhập số người tham gia';
     } else if (formData.numberOfParticipants < 2) {
-      newErrors.numberOfParticipants = 'Số người tham gia phải ít nhất là 2';
+      newErrors.numberOfParticipants = 'Số đội tham gia phải ít nhất là 2';
     }
 
     if (!formData.teamSize) {
@@ -175,23 +187,27 @@ const TournamentForm = () => {
       endDate: formData.endDate,
       registrationDeadline: formData.registrationDeadline,
       location: formData.location,
-      teamSize:formData.teamSize,
+      teamSize: formData.teamSize,
       startTime: startDateTime,
       numberOfParticipants: formData.numberOfParticipants,
     };
-
+    console.log('TournamentData:', selectedFile);
     try {
       let response;
       if (tournamentId) {
         // Thêm tournamentId vào data khi update
         tournamentData.tournamentId = tournamentId;
-        response = await updateTounarment(tournamentId, tournamentData);
-      } 
+        response = await updateTounarment({
+          tournamentId,
+          tournamentData,
+          file: selectedFile
+        });
+      }
       if (response.data.success === true) {
         toast.success(response.data.message);
-            setTimeout(() => {
-                navigate('/mytournament');
-            }, 1200);
+        setTimeout(() => {
+          navigate('/mytournament');
+        }, 1200);
       } else {
         toast.error(response.message || 'Có lỗi xảy ra');
       }
@@ -251,7 +267,21 @@ const TournamentForm = () => {
               />
               {errors.Name && <span className={styles.error}>{errors.Name}</span>}
             </div>
-
+            <div className={styles.formGrid}>
+              <label>Hình ảnh</label>
+              <input
+                type="file"
+                onChange={handleImageChange}
+              />
+              <div className={styles.imagePreview}>
+                <img
+                  src={previewUrl || formData.avatar} // avatar là URL ảnh từ cloud
+                  alt="Preview"
+                  className={styles.previewImage}
+                />
+              </div>
+            </div>
+            {errors.image && <span className={styles.error}>{errors.image}</span>}
             <div className={styles.formGroup}>
               <label>Ngày diễn ra</label>
               <input
@@ -320,13 +350,23 @@ const TournamentForm = () => {
 
             <div className={styles.formGroup}>
               <label>Số đội tham gia</label>
-              <input
-                type="number"
+              <select
                 name="numberOfParticipants"
                 value={formData.numberOfParticipants}
                 onChange={handleInputChange}
-              />
-              {errors.numberOfParticipants && <span className={styles.error}>{errors.numberOfParticipants}</span>}
+                className={styles.selectInput}
+              >
+                <option value="">Chọn số đội</option>
+                <option value="4">4 đội</option>
+                <option value="8">8 đội</option>
+                <option value="16">16 đội</option>
+                <option value="32">32 đội</option>
+              </select>
+              {errors.numberOfParticipants && (
+                <span className={styles.error}>
+                  {errors.numberOfParticipants}
+                </span>
+              )}
             </div>
 
             <div className={styles.formGroup}>
@@ -347,17 +387,17 @@ const TournamentForm = () => {
           </div>
         </form>
       </div>
-      <ToastContainer 
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-        />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };
