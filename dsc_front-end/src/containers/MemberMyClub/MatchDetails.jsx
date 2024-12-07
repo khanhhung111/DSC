@@ -44,7 +44,7 @@ function MatchDetails({ memberdata }) {
             </span>
           </div>
         <div className={styles.matchActions}>
-          <button className={styles.participantsButton} onClick={() => navigate('#')}>Chỉnh Sửa</button>
+          <button className={styles.participantsButton} onClick={() => navigate(`/updateclub/${data.clubId}`)}>Chỉnh Sửa</button>
           <button className={styles.joinButton} onClick={() => navigate(`/membermyclub/${data.clubId}`)}>Thành Viên</button>
           <button className={styles.participantsButton} onClick={() => navigate(`/approvemember/${data.activity.activityId}`)}>Kèo</button>
           <button

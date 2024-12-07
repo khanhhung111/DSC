@@ -148,7 +148,7 @@ const TournamentForm = () => {
           setToastShown(true); // Đặt trạng thái để không hiển thị lại toast
           setTimeout(() => navigate('/mytournament'), 1900);
         } else {
-          // await deleteTournament(responsePayment.tournamentId);
+          await deleteTournament(responsePayment.tournamentId);
           toast.error("Bạn không thanh toán nên không thể tạo giải đấu.", {
             autoClose: 1000,
           });

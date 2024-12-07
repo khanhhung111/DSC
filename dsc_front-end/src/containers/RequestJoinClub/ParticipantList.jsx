@@ -57,7 +57,7 @@ function ParticipantList({ memberdata }) {
   };
   return (
     <section className={styles.participantSection}>
-      <h2 className={styles.sectionTitle}>Danh sách thành viên</h2>
+      <h2 className={styles.sectionTitle}>Danh sách thành viên chờ duyệt</h2>
       <ul className={styles.participantList}>
         {data.map((participant, index) => (
           <li key={index} className={styles.participantItem}>

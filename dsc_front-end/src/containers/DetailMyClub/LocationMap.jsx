@@ -13,10 +13,11 @@ function LocationMap({ matchData }) {
         {/* Tên và Avatar Quản Trị Viên */}
         <div className={styles.adminContainer}>
           <img
-            src={data.avatar}
+            src={data.avatarLeader ? data.avatarLeader : data.avatar}
             alt="Admin Avatar"
             className={styles.adminAvatar}
           />
+
           <span className={styles.adminName}>{data.leaderFullName}</span>
         </div>
       </div>

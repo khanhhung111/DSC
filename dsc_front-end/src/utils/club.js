@@ -71,29 +71,30 @@ const getrequestJoinClub = (clubId) =>
       .then((result) => result)
       .catch((error) => error);
   };
-  const createActivity = (eventData) => {
-    return axios(
-      configuration({
+  const createClub = async ({ sendformData, file }) => {
+    try {
+      const formData = new FormData();
+  
+      Object.keys(sendformData).forEach((key) => {
+        formData.append(key, sendformData[key]);
+      });
+  
+      if (file) {
+        formData.append("file", file);
+      }
+  
+      const response = await axios(configuration({
         method: "POST",
-        path: "/Activity/createActivity",
-        data:
-          eventData,
-      })
-    )
-      .then((result) => result)
-      .catch((error) => error);
-  };
-  const uppdateActivity = (eventData) => {
-    return axios(
-      configuration({
-        method: "POST",
-        path: "/Activity/uppdateActivity",
-        data:
-          eventData,
-      })
-    )
-      .then((result) => result)
-      .catch((error) => error);
+        path: `/Club/createClub`,
+        data: formData,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }));
+      return response;
+    } catch (error) {
+      throw error;
+    }
   };
   const requestJoinClub = (userId, clubId) => {
     return axios(
@@ -102,6 +103,57 @@ const getrequestJoinClub = (clubId) =>
         path: "/Club/requestJoinClub",
         data: {
           userId, clubId
+        },
+      })
+    )
+      .then((result) => result)
+      .catch((error) => error);
+  };
+  const updateClub = async ({ clubId, clubData, file }) => {
+    try {
+      const formData = new FormData();
+  
+      Object.keys(clubData).forEach((key) => {
+        formData.append(key, clubData[key]);
+      });
+  
+      if (file) {
+        formData.append("file", file);
+      }
+  
+      const response = await axios(configuration({
+        method: "POST",
+        path: `/Club/updateClub/${clubId}`,
+        data: formData,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }));
+      return response;
+    } catch (error) {
+      throw error;
+    }
+  };
+  const stopClub = (clubId) => {
+    return axios(
+      configuration({
+        method: "POST",
+        path: "/Club/stopClub",
+        data: {
+          clubId
+        },
+      })
+    )
+      .then((result) => result)
+      .catch((error) => error);
+  };
+  const activateClub = (clubId) => {
+    return axios(
+      configuration({
+        method: "POST",
+        path: "/Club/activateClub",
+        data: {
+          clubId
         },
       })
     )
@@ -118,7 +170,9 @@ export {
     getrequestJoinClub,
     acceptrequestJoinClub,
     cancelrequestJoinClub,
-    createActivity,
-    uppdateActivity,
-    requestJoinClub
+    createClub,
+    updateClub,
+    requestJoinClub,
+    stopClub,
+    activateClub
   };

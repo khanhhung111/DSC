@@ -34,3 +34,22 @@
   background-color: rgba(255, 0, 0, 0.1); /* Nền khi hover cho nút Dừng Hoạt Động */
   color: red; /* Giữ màu chữ đỏ khi hover */
 }
+/* Cập nhật nút kích hoạt lại */
+.activateButton {
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 100px;
+  background-color: #007bff; /* Màu xanh nước biển */
+  color: white; /* Màu chữ trắng */
+  border-color: #007bff; /* Viền xanh nước biển */
+}
+
+.activateButton:hover {
+  
+  background-color: #007bff(0, 123, 255, 0.1); /* Nền khi hover cho nút Kích Hoạt Lại */
+  color: white; /* Giữ màu chữ trắng khi hover */
+  border-color: #007bff; /* Giữ màu viền khi hover */
+}
