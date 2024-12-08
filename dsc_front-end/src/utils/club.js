@@ -30,7 +30,15 @@ const getMyClub = (userId) =>
       path: `/Club/getMyClub`,
       params: { userId },
     })
-  );      
+  );
+  const getMyClubJoined = (userId) =>
+    axios(
+      configuration({
+        method: "get",
+        path: `/Club/getClubJoined`,
+        params: { userId },
+      })
+    );         
 const getMemberClub = (ClubId) =>
         axios(
           configuration({
@@ -160,6 +168,20 @@ const getrequestJoinClub = (clubId) =>
       .then((result) => result)
       .catch((error) => error);
   };
+  const outClub = (clubId, userId) => {
+    return axios(
+      configuration({
+        method: "POST",
+        path: "/Club/outClub",
+        data: {
+          clubId, userId
+        },
+      })
+    )
+      .then((result) => result)
+      .catch((error) => error);
+  };
+
   
 export {
     getAllClub,
@@ -174,5 +196,7 @@ export {
     updateClub,
     requestJoinClub,
     stopClub,
-    activateClub
+    activateClub,
+    getMyClubJoined,
+    outClub
   };

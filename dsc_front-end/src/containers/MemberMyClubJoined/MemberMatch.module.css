@@ -287,17 +287,3 @@
   .pendingMembersButton:hover {
     background-color: #40a9ff; /* Màu sắc khi hover */
   }
-  .removeButton {
-    background-color: #ff4d4f; /* Màu đỏ */
-    color: #fff; /* Chữ trắng */
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    margin-left: auto; /* Đẩy nút về bên phải */
-  }
-  
-  .removeButton:hover {
-    background-color: #ff7875; /* Màu nhạt hơn khi hover */
-  }
-  

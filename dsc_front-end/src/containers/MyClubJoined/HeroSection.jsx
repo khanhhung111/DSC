@@ -10,7 +10,7 @@ function HeroSection() {
     if (location.pathname === '/club') return 'my';
     if (location.pathname === '/myclub' || location.pathname === '/myclubjoined') return 'myclub';
     
-    return 'all';
+    return 'my';
   };
   const [activeButton, setActiveButton] = useState(getInitialActiveButton());
 
@@ -38,7 +38,7 @@ function HeroSection() {
             Tất cả câu lạc bộ
           </button>
           <button 
-            className={`${styles.navButton} ${activeButton === '' ? styles.active : ''}`} 
+            className={`${styles.navButton} ${activeButton === 'myclub' ? styles.active : ''}`} 
             onClick={() => {
               handleButtonClick('myclub');
               navigate('/myclub'); 

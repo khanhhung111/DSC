@@ -29,11 +29,13 @@ import AddSportAcc from "./containers/AccountPage/AddSportAcc";
 import MemberMatch from "./containers/MemberMatch/MemberMatch";
 import Match from "./containers/DetailMatch/Match";
 import MyClub from "./containers/MyClub/ClubPage";
+import MyClubJoined from "./containers/MyClubJoined/ClubPage";
 import DetailMyClub from "./containers/DetailMyClub/Match";
 import DetailMyBetting from "./containers/DetailMyBetting/Match";
 import DetailJoined from "./containers/DetailJoined/Match"
 import MemberMyMatch from "./containers/MemberMyMatch/MemberMatch";
 import MemberMyClub from "./containers/MemberMyClub/MemberClub";
+import MemberMyClubJoined from "./containers/MemberMyClubJoined/MemberClub"
 import RequestJoinClub from "./containers/RequestJoinClub/MemberClub";
 import JoinActivity from "./containers/JoinActivity/MemberMatch";
 import CreateSportEvent from "./containers/CreateSportEvent/CreateSportEvent";
@@ -50,6 +52,7 @@ import TournamentBracket from "./containers/TournamentBracket/TournamentBracket"
 import ViewTournamentBracket from "./containers/ViewTournamentBracket/TournamentBracket"
 import ViewListTeam from "./containers/ViewListTeam/Match";
 import SportClubUpdate from "./containers/UpdateClub/SportClubUpdate";
+import DetailMyClubJoined from "./containers/DetailMyClubJoined/Match";
 // import ViewListMember from "./containers/ViewListMember/Match";
 function App() {
   return (
@@ -67,13 +70,15 @@ function App() {
           <Route path="/management-betting" element={<ManagementSportsBetting />} />
           <Route path="/mybetting" element={<MyBetting />} />
           <Route path="club" element={<Club />} />
-          
           <Route path="detailclub/:clubId" element={<DetailClub />} />
           <Route path="myclub" element={<MyClub />} />
+          <Route path="myclubjoined" element={<MyClubJoined />} />
           <Route path="myclubdetail/:clubId" element={<DetailMyClub />} />
           <Route path="/membermyclub/:clubId" element={<MemberMyClub />} />
+          <Route path="/membermyclubjoined/:clubId" element={<MemberMyClubJoined />} />
           <Route path="/approveclub/:clubId" element={<RequestJoinClub />} />
           <Route path="/updateclub/:clubId" element={<SportClubUpdate />} />
+          <Route path="/myclubdetailjoined/:clubId" element={<DetailMyClubJoined />} />
           <Route path="/home" element={<HomePageLogin />} />
           <Route path="/createclub" element={<SportClubCreation />} />
           <Route path="/account" element={<AccountPage />} />
