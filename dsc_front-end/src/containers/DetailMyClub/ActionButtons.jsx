@@ -94,7 +94,7 @@ function ActionButtons({ matchData }) {
       </button>
       <button
         className={styles.button}
-        onClick={() => handleButtonClick(`/approvemember/${data?.activityId}`)}
+        onClick={() => handleButtonClick(`/sportbettingclub/${data?.clubId}`)}
       >
         Kèo
       </button>

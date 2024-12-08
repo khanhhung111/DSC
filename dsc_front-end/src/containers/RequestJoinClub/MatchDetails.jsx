@@ -46,7 +46,7 @@ function MatchDetails({ memberclub }) {
         <div className={styles.matchActions}>
           <button className={styles.participantsButton} onClick={() => navigate(`/updateclub/${data.clubId}`)}>Chỉnh Sửa</button>
           <button className={styles.participantsButton} onClick={() => navigate(`/membermyclub/${data.clubId}`)}>Thành Viên</button>
-          <button className={styles.participantsButton} onClick={() => navigate(`/approvemember/${data.activity.activityId}`)}>Kèo</button>
+          <button className={styles.participantsButton} onClick={() => navigate(`/sportbettingclub/${data?.clubId}`)}>Kèo</button>
           <button
         className={styles.stopButton} // class thêm cho nút dừng hoạt động
         onClick={() => navigate('/resultmatch')}

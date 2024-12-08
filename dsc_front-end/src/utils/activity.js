@@ -8,6 +8,22 @@ const getAllActivity = (userId) =>
         params: { userId },
       })
     );
+    const getAllActivityClub = (clubId) =>
+      axios(
+        configuration({
+          method: "get",
+          path: "/Activity/getAllActivityClub",
+          params: { clubId },
+        })
+      );
+      const getDetailActivityClub = (activityclubId) =>
+        axios(
+          configuration({
+            method: "get",
+            path: `/Activity/getActivityDetailsClub/${activityclubId}`,
+          })
+        );
+      
 const getActivityJoined = (userId) =>
       axios(
         configuration({
@@ -38,6 +54,14 @@ const getMemberActivity = (activityId) =>
             path: `/Activity/getMemberActivity/${activityId}`,
           })
         );
+        const getMemberActivityClub = (activityclubId) =>
+          axios(
+            configuration({
+              method: "get",
+              path: `/Activity/getMemberActivityClub/${activityclubId}`,
+            })
+          );
+        
 const getrequestJoinActivity = (activityId) =>
   axios(
     configuration({
@@ -83,11 +107,35 @@ const getrequestJoinActivity = (activityId) =>
       .then((result) => result)
       .catch((error) => error);
   };
+  const createActivityClub = (eventData) => {
+    return axios(
+      configuration({
+        method: "POST",
+        path: "/Activity/createActivityClub",
+        data:
+          eventData,
+      })
+    )
+      .then((result) => result)
+      .catch((error) => error);
+  };
   const uppdateActivity = (eventData) => {
     return axios(
       configuration({
         method: "POST",
         path: "/Activity/uppdateActivity",
+        data:
+          eventData,
+      })
+    )
+      .then((result) => result)
+      .catch((error) => error);
+  };
+  const uppdateActivityClub = (eventData) => {
+    return axios(
+      configuration({
+        method: "POST",
+        path: "/Activity/uppdateActivityClub",
         data:
           eventData,
       })
@@ -108,6 +156,32 @@ const getrequestJoinActivity = (activityId) =>
       .then((result) => result)
       .catch((error) => error);
   };
+  const JoinActivityClub = (userId, clubId, activityclubId) => {
+    return axios(
+      configuration({
+        method: "POST",
+        path: "/Activity/joinActivityClub",
+        data: {
+          userId, clubId, activityclubId
+        },
+      })
+    )
+      .then((result) => result)
+      .catch((error) => error);
+  };
+  const getInforJoinned = (userId, clubId, activityclubId) => {
+    return axios(
+      configuration({
+        method: "POST",
+        path: "/Activity/getInforJoinned",
+        data: {
+          userId, clubId, activityclubId
+        },
+      })
+    )
+      .then((result) => result)
+      .catch((error) => error);
+  };
   
 export {
     getAllActivity,
@@ -120,5 +194,12 @@ export {
     cancelrequestJoinActivity,
     createActivity,
     uppdateActivity,
-    requestJoinActivity
+    requestJoinActivity,
+    getAllActivityClub,
+    getDetailActivityClub,
+    uppdateActivityClub,
+    getMemberActivityClub,
+    createActivityClub,
+    JoinActivityClub,
+    getInforJoinned
   };

@@ -15,6 +15,8 @@ import MyProfile from "./containers/MyProfile/Profile";
 // import Admin from "./containers/Admin";
 import Header from "./components/Header/Hearder";
 import SportsBetting from "./containers/SportsBetting/SportsBetting";
+import SportsBettingClub from "./containers/SportsBettingClub/SportsBetting";
+import SportsBettingMyClub from "./containers/SportsBettingMyClub/SportsBetting";
 import ManagementSportsBetting from "./containers/ManagementSportsBetting/SportsBetting";
 import ManagementTournament from "./containers/ManagementTournament/ClubPage";
 import MyBetting from "./containers/MyBetting/SportsBetting";
@@ -27,7 +29,10 @@ import AccountPage from "./containers/AccountPage/AccountPage";
 import AccountSport from "./containers/AccountPage/AccountSport";
 import AddSportAcc from "./containers/AccountPage/AddSportAcc";
 import MemberMatch from "./containers/MemberMatch/MemberMatch";
+import MemberMatchClub from "./containers/MemberMatchClub/MemberMatch";
 import Match from "./containers/DetailMatch/Match";
+import DetailMatchClub from "./containers/DetailMatchClub/Match";
+
 import MyClub from "./containers/MyClub/ClubPage";
 import MyClubJoined from "./containers/MyClubJoined/ClubPage";
 import DetailMyClub from "./containers/DetailMyClub/Match";
@@ -39,9 +44,11 @@ import MemberMyClubJoined from "./containers/MemberMyClubJoined/MemberClub"
 import RequestJoinClub from "./containers/RequestJoinClub/MemberClub";
 import JoinActivity from "./containers/JoinActivity/MemberMatch";
 import CreateSportEvent from "./containers/CreateSportEvent/CreateSportEvent";
+import CreateSportEventClub from "./containers/CreateSportEventClub/CreateSportEvent";
 import ResultMatch from "./containers/ResultMatch/ResultMatch";
 import Security from "./containers/Security/Security";
 import UpdateSportEvent from "./containers/UpdateSportEvent/UpdateSportEvent";
+import UpdateSportEventClub from "./containers/UpdateSportEventClub/UpdateSportEvent";
 import TournamentForm from "./containers/CreateTournament/TournamentForm";
 import MyTournament from "./containers/MyTournament/ClubPage";
 import UpdateTournament from "./containers/UpdateTournament/TournamentForm";
@@ -53,6 +60,7 @@ import ViewTournamentBracket from "./containers/ViewTournamentBracket/Tournament
 import ViewListTeam from "./containers/ViewListTeam/Match";
 import SportClubUpdate from "./containers/UpdateClub/SportClubUpdate";
 import DetailMyClubJoined from "./containers/DetailMyClubJoined/Match";
+import DetailMatchMyClub from "./containers/DetailMatchMyClub/Match";
 // import ViewListMember from "./containers/ViewListMember/Match";
 function App() {
   return (
@@ -65,6 +73,8 @@ function App() {
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/my-profile" element={<MyProfile />} />
           <Route path="/sportbetting" element={<SportsBetting />} />
+          <Route path="/sportbettingclub/:clubId" element={<SportsBettingClub />} />
+          <Route path="/sportbettingmyclub/:clubId" element={<SportsBettingMyClub />} />
           <Route path="/sportprofile" element={<SportProfile />} />
           <Route path="/add-sport" element={<AddSportProfile />} />
           <Route path="/management-betting" element={<ManagementSportsBetting />} />
@@ -85,14 +95,19 @@ function App() {
           <Route path="/accountsports" element={<AccountSport />} />
           <Route path="/addsportsacc" element={<AddSportAcc />} />
           <Route path="/membermatch/:activityId" element={<MemberMatch />} />
+          <Route path="/membermatchclub/:activityclubId" element={<MemberMatchClub />} />
           <Route path="/membermymatch/:activityId" element={<MemberMyMatch />} />
           <Route path="/approvemember/:activityId" element={<JoinActivity />} />
           <Route path="/detailmatch/:activityId" element={<Match />} />
+          <Route path="/detailmatchclub/:activityclubId" element={<DetailMatchClub />} />
           <Route path="/detailmymatch/:activityId" element={<DetailMyBetting />} />
-
+          <Route path="/detailmatchmyclub/:activityclubId" element={<DetailMatchMyClub />} />
           <Route path="/detailmatchjoined/:activityId" element={<DetailJoined />} />
           <Route path="/createsportevent" element={<CreateSportEvent />} />
+          <Route path="/createsporteventclub/:clubId" element={<CreateSportEventClub />} />
+          
           <Route path="/updatesportevent/:activityId" element={<UpdateSportEvent />} />
+          <Route path="/updatesporteventclub/:activityclubId" element={<UpdateSportEventClub />} />
           <Route path="/resultmatch" element={<ResultMatch />} />
           <Route path="/security" element={<Security />} />
           <Route path="/createTournament" element={<TournamentForm />} />
