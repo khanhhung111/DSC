@@ -137,6 +137,14 @@ const saveTournamentResults = (data1) =>
       data: data1,
     }),
   );
+  const  saveTournamentResultsTemp  = ({tournamentId, matches}) =>
+    axios(
+      configuration({
+        method: "post",
+        path: "/Tournament/saveTournamentResults",
+        data: {tournamentId, matches},
+      }),
+    );
 const getTournamentResults = (tournamentId) =>
   axios(
     configuration({
@@ -215,5 +223,6 @@ export {
   saveTournamentResults,
   updateTounarment,
   createPayment,
-  setPayment
+  setPayment,
+  saveTournamentResultsTemp
 };

@@ -56,7 +56,7 @@ import DetailTournament from "./containers/DetailTournament/Match"
 import TournamentOut from "./containers/TournamentOut/ClubPage";
 import DetailTournamentJoin from "./containers/DetailTournamentJoin/Match";
 import TournamentBracket from "./containers/TournamentBracket/TournamentBracket";
-import ViewTournamentBracket from "./containers/ViewTournamentBracket/TournamentBracket"
+import ViewTournamentBracket from "./containers/ViewTournamentBracket/ViewTournamentBracket"
 import ViewListTeam from "./containers/ViewListTeam/Match";
 import SportClubUpdate from "./containers/UpdateClub/SportClubUpdate";
 import DetailMyClubJoined from "./containers/DetailMyClubJoined/Match";
