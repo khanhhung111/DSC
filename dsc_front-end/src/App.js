@@ -12,7 +12,7 @@ import { ProtectRoutes } from "./hooks/ProtectRoutes";
 import AppProvider from "./hooks";
 // import MyCalendar from "./components/MyCalendar";
 import MyProfile from "./containers/MyProfile/Profile";
-// import Admin from "./containers/Admin";
+import Admin from "./containers/Admin";
 import Header from "./components/Header/Hearder";
 import SportsBetting from "./containers/SportsBetting/SportsBetting";
 import SportsBettingClub from "./containers/SportsBettingClub/SportsBetting";
@@ -121,7 +121,7 @@ function App() {
           <Route path="/ViewTournamentBracket/:tournamentId" element={<ViewTournamentBracket />} />
           <Route path="/ViewListTeam/:tournamentId" element={<ViewListTeam />} />
           
-          {/* <Route path="/ViewListMember/:teamId" element={<ViewListMember />} /> */}
+          <Route path="/admin" element={<Admin />} />
           
           <Route element={<ProtectRoutes />}>
             <Route path="user-about" element={<UserAbout />} />

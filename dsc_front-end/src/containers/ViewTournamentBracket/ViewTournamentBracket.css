@@ -131,6 +131,8 @@
   }
   
   .winner-announcement {
+    width: 500px;
+    height: 250px;
     background: linear-gradient(45deg, #0052b4, #00b4ff);
     padding: 20px;
     border-radius: 10px;
@@ -139,7 +141,7 @@
   }
   
   .winner-name {
-    font-size: 28px;
+    font-size: 48px;
     font-weight: bold;
     margin-top: 10px;
     text-transform: uppercase;

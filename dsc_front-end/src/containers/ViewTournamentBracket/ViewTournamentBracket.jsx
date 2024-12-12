@@ -6,8 +6,10 @@ import Header from "../../components/Header/Hearder";
 import { DatePicker, TimePicker, Modal, Button, Input } from 'antd';
 import Footer from "../../components/Footer/Footer";
 import moment from 'moment';
-
+import Confetti from "react-confetti";
+import { useWindowSize } from "react-use"; // Để tính kích thước màn hình động
 const TournamentBracket = () => {
+  const { width, height } = useWindowSize(); // Kích thước cửa sổ
   const { tournamentId } = useParams();
   const [numberOfTeams, setNumberOfTeams] = useState(8);
   const [teams, setTeams] = useState([]);
@@ -178,13 +180,14 @@ const TournamentBracket = () => {
     });
 
     // Xác định người chiến thắng chung cuộc
-    const finalRound = newMatches.round1?.[0];
-    if (finalRound?.score1 !== '-' && finalRound?.score2 !== '-') {
+    const finalRound = newMatches?.round1?.[0]; // Kiểm tra newMatches và round1 có tồn tại
+    if (finalRound && finalRound.score1 !== '-' && finalRound.score2 !== '-') {
       const tournamentWinner = parseInt(finalRound.score1) > parseInt(finalRound.score2)
         ? finalRound.team1
         : finalRound.team2;
       setWinner(tournamentWinner);
     }
+    
 
     setMatches(newMatches);
   };
@@ -235,86 +238,92 @@ const TournamentBracket = () => {
   return (
     <div>
       <Header/>
-      <div className="tournament-container">
-        <div className="tournament-controls">
-          <h2>Bảng Giải Đấu</h2>
-          {error && <div className="error-message">{error}</div>}
-          {winner && (
-            <div className="winner-announcement">
-              <h3>Tournament Winner</h3>
-              <div className="winner-name">{winner}</div>
-            </div>
-          )}
-        </div>
-  
-        {loading ? (
-          <div className="loading">Loading...</div>
-        ) : error ? (
-          <div className="error-container">
-            <p>{error}</p>
-          </div>
-        ) : (
-          <div className="tournament-bracket">
-            {Object.entries(matches).map(([roundName, roundMatches], roundIndex) => (
-              <div key={roundName} className={`round ${roundName}`}>
-                <h3>Round {Math.log2(numberOfTeams) - roundIndex}</h3>
-                {roundMatches.map((match, matchIndex) => (
-                  <div key={matchIndex} className="match-container234">
-                    {/* Thêm phần hiển thị ngày giờ và địa điểm */}
-                    <div className="match-details">
-                          {/* <p>{match.date} {match.time}</p>
-                          <p>{match.location}</p> */}
-                          <Button
-                            type="primary"
-                            style={{
-                              backgroundColor: '#28a745', // Màu xanh lá cây
-                              borderColor: '#28a745', // Màu viền trùng với màu nền
-                              color: 'white', // Chữ màu trắng
-                              marginBottom: '10px'
-                            }}
-                            onClick={() => {
-                              setSelectedMatch({ round: roundName, index: matchIndex });
-                              setShowModal(true);
-                            }}
-                          >
-                            {'Chi tiết'}
-                          </Button>
-                        </div>
-                    <div className="match">
-                      <div className={`team ${parseInt(match.score1) > parseInt(match.score2) ? 'winner' : ''}`}>
-                        <span>{match.team1}</span>
-                        <span className="score">{match.score1}</span>
-                      </div>
-                      <div className={`team ${parseInt(match.score2) > parseInt(match.score1) ? 'winner' : ''}`}>
-                        <span>{match.team2}</span>
-                        <span className="score">{match.score2}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-                 {showModal && selectedMatch && (
-              <MatchDetailsModal
-                match={selectedMatch ? matches[selectedMatch.round][selectedMatch.index] : {}}
-                open={showModal}
-                onClose={() => setShowModal(false)}
-                onSave={(details) => {
-                  const newMatches = { ...matches };
-                  newMatches[selectedMatch.round][selectedMatch.index] = {
-                    ...newMatches[selectedMatch.round][selectedMatch.index],
-                    ...details
-                  };
-                  setMatches(newMatches);
-                }}
-              />
-            )}
-              </div>
-            ))}
+    <div className="tournament-container">
+      <div className="tournament-controls">
+        <h2>Bảng Giải Đấu</h2>
+        {error && <div className="error-message">{error}</div>}
+        {winner && (
+          <div className="winner-announcement">
+            <h3 style={{fontSize:'30px'}}>Tournament Winner</h3>
+            <div className="winner-name">{winner}</div>
           </div>
         )}
       </div>
-      <Footer />
+
+      {winner && (
+        <Confetti
+          width={width}
+          height={height}
+          numberOfPieces={500} // Số lượng mảnh tung hoa
+          // recycle={false} // Ngừng hiệu ứng sau khi kết thúc
+        />
+      )}
+
+      {loading ? (
+        <div className="loading">Loading...</div>
+      ) : error ? (
+        <div className="error-container">
+          <p>{error}</p>
+        </div>
+      ) : (
+        <div className="tournament-bracket">
+          {Object.entries(matches).map(([roundName, roundMatches], roundIndex) => (
+            <div key={roundName} className={`round ${roundName}`}>
+              <h3>Round {Math.log2(numberOfTeams) - roundIndex}</h3>
+              {roundMatches.map((match, matchIndex) => (
+                <div key={matchIndex} className="match-container234">
+                  <div className="match-details">
+                    <Button
+                      type="primary"
+                      style={{
+                        backgroundColor: '#28a745',
+                        borderColor: '#28a745',
+                        color: 'white',
+                        marginBottom: '10px',
+                      }}
+                      onClick={() => {
+                        setSelectedMatch({ round: roundName, index: matchIndex });
+                        setShowModal(true);
+                      }}
+                    >
+                      {'Chi tiết'}
+                    </Button>
+                  </div>
+                  <div className="match">
+                    <div className={`team ${parseInt(match.score1) > parseInt(match.score2) ? 'winner' : ''}`}>
+                      <span>{match.team1}</span>
+                      <span className="score">{match.score1}</span>
+                    </div>
+                    <div className={`team ${parseInt(match.score2) > parseInt(match.score1) ? 'winner' : ''}`}>
+                      <span>{match.team2}</span>
+                      <span className="score">{match.score2}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              {showModal && selectedMatch && (
+                <MatchDetailsModal
+                  match={selectedMatch ? matches[selectedMatch.round][selectedMatch.index] : {}}
+                  open={showModal}
+                  onClose={() => setShowModal(false)}
+                  onSave={(details) => {
+                    const newMatches = { ...matches };
+                    newMatches[selectedMatch.round][selectedMatch.index] = {
+                      ...newMatches[selectedMatch.round][selectedMatch.index],
+                      ...details,
+                    };
+                    setMatches(newMatches);
+                  }}
+                />
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+    <Footer />
     </div>
   );
-}
+};
 
 export default TournamentBracket;

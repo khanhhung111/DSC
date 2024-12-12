@@ -206,8 +206,8 @@ const TournamentBracket = () => {
           });
 
           matches.push({
-            team1: teamList[team1Index]?.teamName || 'TBD',
-            team2: teamList[team2Index]?.teamName || 'TBD',
+            team1: teamList[team1Index]?.teamName || 'Chưa Có',
+            team2: teamList[team2Index]?.teamName || 'Chưa Có',
             team1Id: teamList[team1Index]?.teamId || null,
             team2Id: teamList[team2Index]?.teamId || null,
             score1: '',
@@ -217,8 +217,8 @@ const TournamentBracket = () => {
           });
         } else {
           matches.push({
-            team1: 'TBD',
-            team2: 'TBD',
+            team1: 'Chưa Có',
+            team2: 'Chưa Có',
             team1Id: null,
             team2Id: null,
             score1: '',
@@ -288,8 +288,8 @@ const TournamentBracket = () => {
             // Đảm bảo trận đấu tiếp theo tồn tại
             if (!newMatches[nextRound][nextMatchIndex]) {
               newMatches[nextRound][nextMatchIndex] = {
-                team1: 'TBD',
-                team2: 'TBD',
+                team1: 'Chưa Có',
+                team2: 'Chưa Có',
                 team1Id: null,
                 team2Id: null,
                 score1: '-',

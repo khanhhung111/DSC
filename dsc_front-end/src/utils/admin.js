@@ -5,177 +5,201 @@ const getCustomerList = () =>
   axios(
     configuration({
       method: "get",
-      path: "/manager/listCustomer",
-    })
+      path: "/admin/listCustomer",
+    }),
   );
-
-const getGuardList = () =>
+const activateClub = (clubId) => {
+  return axios(
+    configuration({
+      method: "POST",
+      path: "/admin/activateClub",
+      data: {
+        clubId,
+      },
+    }),
+  )
+    .then((result) => result)
+    .catch((error) => error);
+};
+const updateInfoCustomer = (
+  updatedDetails,
+) => {
+  return axios(
+    configuration({
+      method: "POST",
+      path: "/Admin/UpdateInforcustomer",
+      data: updatedDetails,
+    }),
+  )
+    .then((result) => result)
+    .catch((error) => error);
+};
+const getClubList = () =>
   axios(
     configuration({
       method: "get",
-      path: "/manager/listGuard",
-    })
+      path: "/admin/getClubList",
+    }),
   );
 
-const getBookingList = (typeBooking) =>
+const getClubById = (clubId) =>
   axios(
     configuration({
       method: "get",
-      path: `/manager/${typeBooking}`,
-    })
+      path: `/admin/getClubById/${clubId}`,
+    }),
   );
-
-const getManagerBookingDetail = ({ bookingName }) =>
+const getClubMembers = (clubId) =>
   axios(
     configuration({
       method: "get",
-      path: `/manager/getDetailBooking/${bookingName}`,
-    })
+      path: `/admin/getMemberClub/${clubId}`,
+    }),
   );
 
-const getListGuardFree = () =>
+const getTournamentList = () =>
   axios(
     configuration({
       method: "get",
-      path: `/manager/listGuardFree`,
-    })
+      path: "/admin/GetAllTournament",
+    }),
   );
 
-const postAllocateGuard = ({ bookingName, data }) =>
-  axios(
-    configuration({
-      method: "post",
-      path: `/manager/PickGuard/${bookingName}`,
-      data,
-    })
-  );
-
-const UpdateAllocateGuard = ({ bookingName, data }) =>
-  axios(
-    configuration({
-      method: "post",
-      path: `/manager/EditGuardBooking/${bookingName}`,
-      data,
-    })
-  );
-
-const getSalaryGuard = ({ guardId }) =>
+const getTournamentById = (clubId) =>
   axios(
     configuration({
       method: "get",
-      path: `/manager/GetSalaryGuard/${guardId}`,
-    })
+      path: `/admin/getClubById/${clubId}`,
+    }),
   );
-
-const getGuardById = ({ guardId }) =>
+const getTournamentMembers = (tournamentId) =>
   axios(
     configuration({
       method: "get",
-      path: `/manager/getGuardById/${guardId}`,
-    })
+      path: `/admin/getListTeam/${tournamentId}`,
+    }),
   );
-
 const getCustomerById = ({ customerId }) =>
   axios(
     configuration({
       method: "get",
-      path: `/manager/getCustomerById/${customerId}`,
-    })
+      path: `/admin/getCustomerById/${customerId}`,
+    }),
   );
-const getAllNews = () =>
-  axios(
-    configuration({
-      method: "get",
-      path: `/manager/getAllNews`,
-    })
-  );
-const postNews = ({ news }) =>
-  axios(
-    configuration({
-      method: "post",
-      path: `/manager/postNews`,
-      data: news,
-    })
-  );
-const editNews = ({ news }) =>
-  axios(
-    configuration({
-      method: "post",
-      path: `/manager/editNews`,
-      data: news,
-    })
-  );
-const deleteNews = ({ id }) =>
-  axios(
-    configuration({
-      method: "post",
-      path: `/manager/deleteNews/${id}`,
-    })
-  );
-const getTop4New = () =>
-  axios(
-    configuration({
-      method: "get",
-      path: `/manager/getTop4News`,
-    })
-  );
-const getPostById = (id) =>
-  axios(
-    configuration({
-      method: "get",
-      path: `/manager/getDetailNews/${id}`,
-    })
-  );
-const searchByName = (name) =>
-  axios(
-    configuration({
-      method: "get",
-      path: `/manager/searchGuard?q=${name}`,
-    })
-  );
+
 const searchByNameUser = (name) =>
   axios(
     configuration({
       method: "get",
-      path: `/manager/searchCustomer?q=${name}`,
-    })
+      path: `/admin/searchCustomer?q=${name}`,
+    }),
   );
-
-const getSummaryAdmin = () =>
+const searchByNameClub = (name) =>
   axios(
     configuration({
       method: "get",
-      path: "/manager/dashboard/summary",
-    })
+      path: `/admin/searchClub?q=${name}`,
+    }),
   );
-
-const getManagerNotificationList = () =>
+const stopClub = (clubId) => {
+  return axios(
+    configuration({
+      method: "POST",
+      path: "/admin/stopClub",
+      data: {
+        clubId,
+      },
+    }),
+  )
+    .then((result) => result)
+    .catch((error) => error);
+};
+const outClub = (clubId, userId) => {
+  return axios(
+    configuration({
+      method: "POST",
+      path: "/admin/outClub",
+      data: {
+        clubId,
+        userId,
+      },
+    }),
+  )
+    .then((result) => result)
+    .catch((error) => error);
+};
+const getListMember = (teamId) =>
+  axios(
+    configuration({
+      method: "post",
+      path: `/admin/getListMember/${teamId}`,
+    }),
+  );
+const deleteTournament = (tournamentId) =>
+  axios(
+    configuration({
+      method: "post",
+      path: `/admin/deleteTournament/${tournamentId}`,
+    }),
+  );
+  const getTournamentbyMonth = (time) => {
+    const path = time ? `/admin/getTournamentbyMonth/${time}` : `/admin/getTournamentbyMonth`; // Nếu time null, không thêm tham số
+    return axios(
+      configuration({
+        method: "get",
+        path,
+      }),
+    );
+  };
+  
+const getTotalTournaments = () =>
   axios(
     configuration({
       method: "get",
-      path: `/manager/getMyNoti`,
-    })
+      path: `/admin/getTotalTournaments`,
+    }),
   );
-
+const getTotalUsers = () =>
+  axios(
+    configuration({
+      method: "get",
+      path: `/admin/getTotalUsers`,
+    }),
+  );
+const getTotalUsersActive = () =>
+    axios(
+      configuration({
+        method: "get",
+        path: `/admin/getTotalUsersActive`,
+      }),
+);
+const getFundAdmin = () =>
+  axios(
+    configuration({
+      method: "get",
+      path: `/admin/getFundAdmin`,
+    }),
+);
 export {
-  getCustomerList,
-  getGuardList,
-  getBookingList,
-  getManagerBookingDetail,
-  getListGuardFree,
-  postAllocateGuard,
-  UpdateAllocateGuard,
-  getSalaryGuard,
-  getGuardById,
+  activateClub,
+  deleteTournament,
+  getClubById,
+  getClubList,
+  getClubMembers,
   getCustomerById,
-  getAllNews,
-  postNews,
-  editNews,
-  deleteNews,
-  getTop4New,
-  getPostById,
-  searchByName,
+  getCustomerList,
+  getListMember,
+  getTotalTournaments,
+  getTotalUsers,
+  getTournamentById,
+  getTournamentbyMonth,
+  getTournamentList,
+  getTournamentMembers,
+  outClub,
+  searchByNameClub,
   searchByNameUser,
-  getSummaryAdmin,
-  getManagerNotificationList,
+  stopClub,
+  updateInfoCustomer,
+  getTotalUsersActive,
+  getFundAdmin
 };

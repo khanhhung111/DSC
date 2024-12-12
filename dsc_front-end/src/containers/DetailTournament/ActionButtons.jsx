@@ -42,7 +42,7 @@ function ActionButtons({ matchData }) {
       setPreviewUrl(URL.createObjectURL(file));
     }
   };
-  
+
   const validatePlayerField = (value, type, index) => {
     if (!value.trim()) {
       return `Vui lòng nhập ${type === 'name' ? 'tên cầu thủ' : 'số áo'}`;
@@ -137,32 +137,41 @@ function ActionButtons({ matchData }) {
       teamName,
       players: players.map(({ name, number }) => ({ name, number })),
     };
-    console.log("abc",teamData);
+    console.log("abc", teamData);
     try {
       const response = await addMemberTeam({
-      teamData,
-      file : teamLogo});
+        teamData,
+        file: teamLogo
+      });
       if (response.data && response.data.success == true) {
-          toast.success(response.data.message);
-          setTimeout(() => {
-              navigate('/managementtournament');
-          }, 1200);
+        toast.success(response.data.message);
+        setTimeout(() => {
+          navigate('/managementtournament');
+        }, 1200);
       } else {
-          toast.error(response.data.message || 'Có lỗi xảy ra');
+        toast.error(response.data.message || 'Có lỗi xảy ra');
       }
-  } catch (error) {
+    } catch (error) {
       console.error('Error creating tournament:', error);
       toast.error(error.response?.data?.message || 'Không thể tạo giải đấu');
-  }
+    }
     // setShowModal(false);
     // navigate(`/updatesportevent/${data?.activityId}`, { state: { teamData } });
   };
-
+// console.log("NumberOfRegisteredTeams",data.numberOfRegisteredTeams)
   return (
     <div className={styles.actionButtons}>
-      <button className={styles.button} onClick={handleButtonClick}>
-        Tạo Đội
-      </button>
+      {data.numberOfRegisteredTeams >= data.numberOfTeams ? (
+  <div className={styles.message}>
+    Giải đấu đã tham gia đủ số lượng đội. Xin cảm ơn!
+  </div>
+) : (
+  <button className={styles.button} onClick={handleButtonClick}>
+    Tạo Đội
+  </button>
+)}
+
+
 
       {showModal && (
         <div className={styles.modal}>
@@ -179,18 +188,18 @@ function ActionButtons({ matchData }) {
               {teamNameError && <span className={styles.errorMessage}>{teamNameError}</span>}
             </div>
             <div className={styles.formGroup}>
-  <label>Logo đội</label>
-  <input
-    type="file"
-    onChange={handleLogoChange}
-    className={styles.input}
-  />
-  {previewUrl && (
-              <div className={styles.imagePreview}>
-                <img src={previewUrl} alt="Preview" className={styles.previewImage} />
-              </div>
-            )}
-</div>
+              <label>Logo đội</label>
+              <input
+                type="file"
+                onChange={handleLogoChange}
+                className={styles.input}
+              />
+              {previewUrl && (
+                <div className={styles.imagePreview}>
+                  <img src={previewUrl} alt="Preview" className={styles.previewImage} />
+                </div>
+              )}
+            </div>
 
             <div className={styles.formGroup}>
               <label>Số thành viên</label>

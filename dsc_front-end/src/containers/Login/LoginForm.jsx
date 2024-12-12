@@ -38,37 +38,48 @@ function LoginForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
-    
+  
     setIsLoading(true);
     try {
       const response = await login(email, password);
       console.log("response", response);
-      
+  
       if (response && response.success) {
-        // Lưu thông tin vào localStorage
-        localStorage.setItem('userEmail', email);
-        localStorage.setItem('userId', response.userId);
-        localStorage.setItem('isLoggedIn', 'true');
-        localStorage.setItem('fullName', response.fullName);
-        localStorage.setItem('avatar', response.avatar);
-        toast.success("Đăng nhập thành công!", {
-          autoClose: 1000
-        });
-        setTimeout(() => {
-          navigate('/'); // Navigate về trang chủ sau khi login
-        }, 1200);
-      } else {
-        throw new Error(response?.message || "Có lỗi xảy ra");
+        // Handle successful login
+        if(response.roleId === "Admin") {
+          localStorage.setItem('userEmail', email);
+          localStorage.setItem('userId', response.userId);
+          localStorage.setItem('isLoggedIn', 'true');
+          localStorage.setItem('Fund', response.Fund);
+          toast.success("Đăng nhập thành công!", { autoClose: 1000 });
+          setTimeout(() => {
+            navigate('/admin'); // Navigate to admin page
+          }, 1200);
+        } else {
+          localStorage.setItem('userEmail', email);
+          localStorage.setItem('userId', response.userId);
+          localStorage.setItem('isLoggedIn', 'true');
+          localStorage.setItem('fullName', response.fullName);
+          localStorage.setItem('avatar', response.avatar);
+          toast.success("Đăng nhập thành công!", { autoClose: 1000 });
+          setTimeout(() => {
+            navigate('/'); // Navigate to user page
+          }, 1200);
+        }
+      } else if (response && response.response.data.success === false){
+        throw new Error(response.response?.data.message || "Có lỗi xảy ra");
       }
     } catch (error) {
       console.error('Error details:', error);
-      const errorMessage = error.response?.message || "Có lỗi xảy ra";
+      const errorMessage = error.response?.data?.message || error.message || "Có lỗi xảy ra";
       setError(errorMessage);
       toast.error(errorMessage);
     } finally {
       setIsLoading(false);
     }
   };
+  
+
   return (
     <section className={styles.LoginSection}>
       <h1 className={styles.title}>Đăng Nhập</h1>

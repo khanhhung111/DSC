@@ -69,6 +69,8 @@ function Header() {
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/2bd87701f8e5de31409290c62870400ced251ecd3f5895c6c336318f1e3231eb?placeholderIfAbsent=true&apiKey=64a11f7ccf9c4f09a01cd9aadc1c5dac" 
           alt="DSC Logo" 
           className={styles.logoImage} 
+          onClick={() => navigate('/')}
+          style={{ cursor: 'pointer' }}
         />
         <span className={styles.logoText}>DSC</span>
       </div>
