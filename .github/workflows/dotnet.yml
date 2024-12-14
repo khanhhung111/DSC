@@ -27,4 +27,4 @@ jobs:
     - name: Publish
       run: dotnet publish ./dsc_backend/dsc-backend.sln --configuration Release --no-build
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test ./dsc_backend/dsc-backend.sln --no-build --verbosity normal
