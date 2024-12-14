@@ -1,0 +1,49 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'dsc_backend/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'dsc_backend/**'
+
+env:
+  DOTNET_ROOT: './publish'
+
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
+        
+    - name: Restore dependencies
+      run: dotnet restore ./dsc_backend/dsc-backend.sln
+      
+    - name: Build
+      run: dotnet build ./dsc_backend/dsc-backend.sln --configuration Release --no-restore
+      
+    - name: Test
+      run: dotnet test ./dsc_backend/dsc-backend.sln --no-build
+      
+    - name: Publish
+      run: dotnet publish ./dsc_backend/dsc-backend.sln -c Release -o ${{env.DOTNET_ROOT}}/myapp
+
+    # Deploy to Azure Web App
+    - name: Deploy to Azure
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'dsc-be'
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        package: ${{env.DOTNET_ROOT}}/myapp
