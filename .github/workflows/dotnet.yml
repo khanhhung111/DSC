@@ -5,21 +5,15 @@ name: .NET
 
 on:
   push:
-    branches: [ main ]
-    paths:
-      - 'dsc_backend/**'
+    branches: [ "main" ]
   pull_request:
-    branches: [ main ]
-    paths:
-      - 'dsc_backend/**'
-
-env:
-  DOTNET_ROOT: './publish'
+    branches: [ "main" ]
 
 jobs:
-  build-and-deploy:
+  build:
+
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
