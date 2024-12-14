@@ -10,7 +10,7 @@ on:
   pull_request:
     branches: [ "main" ]
 env:
-  AZURE_WEBAPP_NAME: dsc-be
+  AZURE_WEBAPP_NAME: dsc-fpt-backend
   AZURE_WEBAPP_PACKAGE_PATH: "./publish"
 
 jobs:
