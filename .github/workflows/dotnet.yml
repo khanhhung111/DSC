@@ -21,10 +21,10 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Restore dependencies
-      run: dotnet restore ./dsc-backend.sln
+      run: dotnet restore ./dsc-backend/dsc-backend.sln
     - name: Build
-      run: dotnet build ./dsc-backend.sln --configuration Release --no-restore
+      run: dotnet build ./dsc-backend/dsc-backend.sln --configuration Release --no-restore
     - name: Publish
-      run: dotnet publish ./dsc-backend.sln --configuration Release --no-build
+      run: dotnet publish ./dsc-backend/dsc-backend.sln --configuration Release --no-build
     - name: Test
       run: dotnet test --no-build --verbosity normal
