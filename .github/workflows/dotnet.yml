@@ -24,14 +24,19 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 7.0.x
+        
     - name: Restore dependencies
       run: dotnet restore ./dsc_backend/dsc-backend.sln
+      
     - name: Build
       run: dotnet build ./dsc_backend/dsc-backend.sln --configuration Release --no-restore
+      
     - name: Publish
-      run: dotnet publish ./dsc_backend/dsc-backend.sln --configuration Release --no-build
+      run: dotnet publish ./dsc_backend/dsc-backend.sln --configuration Release --no-build --output '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'
+      
     - name: Test
       run: dotnet test ./dsc_backend/dsc-backend.sln --no-build --verbosity normal
+      
     - name: Deployment
       uses: azure/webapps-deploy@v2
       with:
