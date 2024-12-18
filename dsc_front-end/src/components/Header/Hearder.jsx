@@ -5,10 +5,10 @@ import Button from '../Button/Button';
 import { useNavigate } from 'react-router-dom';
 
 const navItems = [
-  { text: 'Kèo thể thao', href: '/sportbetting' },
-  { text: 'Giải đấu', href: '/createTournament' },
-  { text: 'Câu lạc bộ', href: '/club' },
-  { text: 'Thông báo', href: '#' },
+  { text: 'Kèo thể thao', path: '/sportbetting' },
+  { text: 'Giải đấu', path: '/createTournament' },
+  { text: 'Câu lạc bộ', path: '/club' },
+  { text: 'Thông báo', path: '#' },
 ];
 
 function Header() {
@@ -23,21 +23,21 @@ function Header() {
       const loginStatus = localStorage.getItem('isLoggedIn') === 'true';
       const fullname = localStorage.getItem('fullName');
       const email = localStorage.getItem('userEmail');
-      const avatars = localStorage.getItem('avatar'); // Get avatar from localStorage
+      const avatars = localStorage.getItem('avatar');
 
       setIsLoggedIn(loginStatus);
       setUserEmail(email || '');
       setUserFullName(fullname || '');
       if (avatars && avatars !== 'null' && avatars !== '') {
-        setAvatar(avatars); // Chỉ set nếu avatar có giá trị hợp lệ
+        setAvatar(avatars);
       } else {
-        setAvatar(null); // Nếu không có ảnh thì để null
+        setAvatar(null);
       }
     };
 
     checkLoginStatus();
 
-    window.addEventListener('storage', checkLoginStatus); // Listen for changes to localStorage
+    window.addEventListener('storage', checkLoginStatus);
 
     return () => {
       window.removeEventListener('storage', checkLoginStatus);
@@ -53,15 +53,27 @@ function Header() {
     setIsLoggedIn(false);
     setUserEmail('');
     setUserFullName('');
-    setAvatar(null); // Reset avatar
+    setAvatar(null);
     navigate('/login');
+  };
+
+  const handleNavigation = (path) => {
+    if (!isLoggedIn) {
+      navigate('/login');
+    } else {
+      navigate(path);
+    }
   };
 
   return (
     <header className={styles.header}>
       <nav className={styles.navigation}>
         {navItems.map((item, index) => (
-          <NavigationPill key={index} text={item.text} href={item.href} />
+          <NavigationPill 
+            key={index} 
+            text={item.text} 
+            onClick={() => handleNavigation(item.path)} 
+          />
         ))}
       </nav>
       <div className={styles.logo}>
@@ -77,17 +89,14 @@ function Header() {
 
       {isLoggedIn ? (
         <div className={styles.userContainer}>
-          {/* Use default avatar if avatar is null */}
           <img
-        src={avatar || "https://cdn.builder.io/api/v1/image/assets/TEMP/6bc8d1ef7ef6beb9a8f62d9a9760725d3ae3ce0003da0601a02b4778efb767c8?placeholderIfAbsent=true&apiKey=64a11f7ccf9c4f09a01cd9aadc1c5dac"} 
-        alt="1Avatar1"
+            src={avatar || "https://cdn.builder.io/api/v1/image/assets/TEMP/6bc8d1ef7ef6beb9a8f62d9a9760725d3ae3ce0003da0601a02b4778efb767c8?placeholderIfAbsent=true&apiKey=64a11f7ccf9c4f09a01cd9aadc1c5dac"} 
+            alt="1Avatar1"
             className={styles.logoIcon}
             onClick={() => navigate('/account')}
             style={{ cursor: 'pointer' }}
           />
           <span className={styles.userName}>{userFullName}</span>
-          {/* Uncomment to add logout button */}
-          {/* <Button onClick={handleLogout} variant="secondary">Đăng xuất</Button> */}
         </div>
       ) : (
         <div className={styles.authButtons}>
