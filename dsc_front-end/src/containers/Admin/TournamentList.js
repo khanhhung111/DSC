@@ -2,13 +2,14 @@ import { useEffect, useState, useCallback } from "react";
 import { Pagination } from "antd";
 import { Modal } from "antd";
 import { EyeOutlined, DeleteOutlined, ArrowLeftOutlined, PauseOutlined, PlayCircleOutlined, CalendarOutlined, TeamOutlined, EnvironmentOutlined, FlagOutlined, UsergroupAddOutlined } from '@ant-design/icons';
-import { getTournamentList, searchByNameClub, outClub, getTournamentMembers, deleteTournament, getListMember } from "../../utils/admin";
+import { getTournamentList, searchByNameTournament, outClub, getTournamentMembers, deleteTournament, getListMember } from "../../utils/admin";
 import { toast } from 'react-toastify';
 import helloAdmin from "../../assets/helloAdmin.png";
 import 'react-toastify/dist/ReactToastify.css';
 import { dateFormatting } from "../../utils/formatHelper";
 import Defaults from "../../assets/teamne.jpg";
 import styles from "./Detail/Tournament.module.css"
+import ViewTournament from "./ViewTournamentBracketAdmin/ViewTournamentBracketAdmin"
 function TournamentList() {
     const [showModal, setShowModal] = useState(false);
     const [selectedTeamPlayers, setSelectedTeamPlayers] = useState([]);
@@ -28,6 +29,13 @@ function TournamentList() {
     const [isDetailView, setIsDetailView] = useState(false); // Trạng thái xem chi tiết
     const [clubToDelete, setClubToDelete] = useState(null);
     const [tournamentId, setTournamentId] = useState(null);
+    const [showViewTournament, setShowViewTournament] = useState(false); // Trạng thái hiển thị ViewTournament
+    const [currentTournamentId, setCurrentTournamentId] = useState(null); // Lưu TournamentID
+
+    const handleViewSchedule = (tournamentId) => {
+        setCurrentTournamentId(tournamentId); // Gán ID giải đấu hiện tại
+        setShowViewTournament(!showViewTournament); // Đổi trạng thái hiển thị
+    };
     useEffect(() => {
         getTournamentList()
             .then((res) => {
@@ -122,7 +130,7 @@ function TournamentList() {
             try {
                 if (searchQuery) {
                     // Case when there's a search query
-                    const response = await searchByNameClub(searchQuery);
+                    const response = await searchByNameTournament(searchQuery);
 
                     if (response.status === 200) {
                         const searchList = response.data?.data.$values || [];
@@ -135,7 +143,7 @@ function TournamentList() {
                     // Case when searchQuery is empty
                     const response = await getTournamentList();
                     if (response.status === 200) {
-                        const clubs = response.data?.listClub.$values || [];
+                        const clubs = response.data?.$values || [];
                         setClubList(clubs);  // Set club list with full list
                         setPaginatedList(clubs.slice(0, itemsPerPage)); // Paginate full list
                     } else {
@@ -279,7 +287,18 @@ function TournamentList() {
                         </div>
                     )}
                 </div>
-            ) : (
+            ) : showViewTournament ? (
+                <div className="space-y-6">
+                    <button
+                        className="text-blue-500 flex items-center space-x-2 py-2 px-4 bg-blue-100 rounded-lg shadow-md hover:bg-blue-200 transition-all"
+                        onClick={() => setShowViewTournament(false)}
+                    >
+                        <ArrowLeftOutlined className="text-xl" />
+                        <span className="text-lg font-semibold">Quay lại</span>
+                    </button>
+                    <ViewTournament tournamentId={currentTournamentId} />
+                </div>
+            ): (
                 <div className="space-y-4">
                     {paginatedList.map((club) => (
                         <div
@@ -345,6 +364,14 @@ function TournamentList() {
                                 <span>Danh Sách Đội</span>
                             </button>
                             <span className="border-l border-gray-300 h-6 mx-4"></span>
+                            <button
+        className="text-green-500 flex items-center space-x-2"
+        onClick={() => handleViewSchedule(club.tournamentId)} // Hàm này xử lý xem lịch thi đấu
+    >
+        <CalendarOutlined />
+        <span>Xem Lịch Thi Đấu</span>
+    </button>
+    <span className="border-l border-gray-300 h-6 mx-4"></span>
                             {/* Dừng hoạt động or Kích hoạt lại button */}
                             <button
                                 className="text-red-500 flex items-center space-x-2"
@@ -355,7 +382,7 @@ function TournamentList() {
                             </button>
                         </div>
                     ))}
-
+                
                     {/* Modal confirm delete */}
                     <Modal
                         title="Xác nhận xóa giải đấu"
