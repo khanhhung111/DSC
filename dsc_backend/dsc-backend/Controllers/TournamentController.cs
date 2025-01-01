@@ -117,7 +117,8 @@ namespace dsc_backend.Controllers
                     a.Location,
                     a.StartDate,
                     a.EndDate,
-                    a.Avatar
+                    a.Avatar,
+                    a.TournamentType
                 })
                 .ToListAsync();
 
@@ -148,7 +149,8 @@ namespace dsc_backend.Controllers
                     a.LevelId,
                     LevelName = a.Level.LevelName,
                     a.Avatar,
-                    NumberOfRegisteredTeams = _db.Teams.Count(t => t.TournamentId == a.TournamentId) // Đếm số team đã tham gia
+                    NumberOfRegisteredTeams = _db.Teams.Count(t => t.TournamentId == a.TournamentId), // Đếm số team đã tham gia
+                    a.TournamentType
                 })
                 .Where(x => x.TournamentId == tournamentId)
                 .ToListAsync();
@@ -249,6 +251,7 @@ namespace dsc_backend.Controllers
                     MemberOfTeams = tournaments.teamSize,
                     LimitRegister = tournaments.RegistrationDeadline,
                     UserId = tournaments.UserId,
+                    TournamentType = tournaments.TournamentType
                 };
 
                 // Xử lý upload ảnh nếu có file

@@ -136,7 +136,7 @@ namespace dsc_backend.Controllers
 
             return Ok(activities);
         }
-
+        
         private async Task<ImageUploadResult> UploadToCloudinary(IFormFile file)
         {
             if (file == null || file.Length == 0)
@@ -1065,3 +1065,5 @@ namespace dsc_backend.Controllers
         }
     }
 }
+
+// alo alo

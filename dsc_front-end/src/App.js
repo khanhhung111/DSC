@@ -62,6 +62,8 @@ import ViewListTeam from "./containers/ViewListTeam/Match";
 import SportClubUpdate from "./containers/UpdateClub/SportClubUpdate";
 import DetailMyClubJoined from "./containers/DetailMyClubJoined/Match";
 import DetailMatchMyClub from "./containers/DetailMatchMyClub/Match";
+import RoundRobinBracket from "./containers/RoundRobin/RoundRobinBracket";
+import RoundRobinBracketJoin from "./containers/RoundRobinJoin/RoundRobinBracket";
 // import ViewListMember from "./containers/ViewListMember/Match";
 function App() {
   return (
@@ -120,6 +122,8 @@ function App() {
           <Route path="/updateTournament/:tournamentId" element={<UpdateTournament />} />
           <Route path="/Tournamentall" element={<TournamentOut />} />
           <Route path="/TournamentBracket/:tournamentId" element={<TournamentBracket />} />
+          <Route path="/RoundRobinBracket/:tournamentId" element={<RoundRobinBracket />} />
+          <Route path="/RoundRobinBracketJoin/:tournamentId" element={<RoundRobinBracketJoin />} />
           <Route path="/ViewTournamentBracket/:tournamentId" element={<ViewTournamentBracket />} />
           <Route path="/ViewListTeam/:tournamentId" element={<ViewListTeam />} />
           
