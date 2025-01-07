@@ -136,7 +136,7 @@ namespace dsc_backend.Controllers
 
             return Ok(activities);
         }
-
+        
         private async Task<ImageUploadResult> UploadToCloudinary(IFormFile file)
         {
             if (file == null || file.Length == 0)
@@ -858,8 +858,7 @@ namespace dsc_backend.Controllers
                 NumberOfTeams = firstActivity.NumberOfTeams,
                 Description = firstActivity.Description,
                 Expense = firstActivity.Expense,
-                LevelName = firstActivity.Level?.LevelName, // Kiểm tra null cho Level
-                Avatar = firstActivity.Avatar
+                LevelName = firstActivity.Level?.LevelName // Kiểm tra null cho Level
             };
 
             // Danh sách UserId từ UserActivityClubs
@@ -1066,3 +1065,5 @@ namespace dsc_backend.Controllers
         }
     }
 }
+
+// alo alo

@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { Pagination } from "antd";
 import { Modal } from "antd";
-import { EyeOutlined, DeleteOutlined,UserOutlined, ArrowLeftOutlined, PauseOutlined, PlayCircleOutlined, CalendarOutlined, TeamOutlined, EnvironmentOutlined, FlagOutlined, UsergroupAddOutlined } from '@ant-design/icons';
+import { EyeOutlined, DeleteOutlined, ArrowLeftOutlined, PauseOutlined, PlayCircleOutlined, CalendarOutlined, TeamOutlined, EnvironmentOutlined, FlagOutlined, UsergroupAddOutlined } from '@ant-design/icons';
 import { getTournamentList, searchByNameTournament, outClub, getTournamentMembers, deleteTournament, getListMember } from "../../utils/admin";
 import { toast } from 'react-toastify';
 import helloAdmin from "../../assets/helloAdmin.png";
@@ -349,10 +349,6 @@ function TournamentList() {
                                         </span>
                                     </span>
                                 </p>
-                                <p className="text-sm mb-2 flex items-center space-x-2">
-    <UserOutlined  className="text-lg text-green-500" />
-    <span>Người tạo: {club.createdBy}</span>
-</p>
                             </div>
 
 

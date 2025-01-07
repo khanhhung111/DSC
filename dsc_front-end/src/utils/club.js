@@ -31,16 +31,6 @@ const getMyClub = (userId) =>
       params: { userId },
     })
   );
-  const updateStatusClub = (clubId) => {
-    return axios(
-      configuration({
-        method: "POST",
-        path: `/Club/updateStatusClub/${clubId}`,
-      })
-    )
-      .then((result) => result)
-      .catch((error) => error);
-  };
   const getMyClubJoined = (userId) =>
     axios(
       configuration({
@@ -178,20 +168,6 @@ const getrequestJoinClub = (clubId) =>
       .then((result) => result)
       .catch((error) => error);
   };
-  const expiredClub = (clubId) => {
-    return axios(
-      configuration({
-        method: "POST",
-        path: "/Club/expiredClub",
-        data: {
-          clubId
-        },
-      })
-    )
-      .then((result) => result)
-      .catch((error) => error);
-  };
-  
   const outClub = (clubId, userId) => {
     return axios(
       configuration({
@@ -215,67 +191,6 @@ const getrequestJoinClub = (clubId) =>
       .then((result) => result)
       .catch((error) => error);
   };
-  const createPayment = async (TournamentId,Amount) =>{
-    try{
-      const formData = new FormData();
-      formData.append('TournamentId', TournamentId);
-      formData.append('Amount', Amount);
-    const response = await axios(configuration({
-      method: "POST",
-      path: `/Vnpay/create_payment_url_clb`,
-      data: formData,
-    }));
-    return response;
-  } catch (error) {
-    throw error;
-  }
-  }
-  const setPayment = async (params) => {
-    try {
-      const response = await axios(
-        configuration({
-          method: "get",
-          path: `/Vnpay/vnpay_ipn_club?${params}`, // Đã bỏ dấu / trước params vì params đã có ? rồi
-        })
-      );
-      return response.data;
-    } catch (error) {
-      console.error("Payment API Error:", error);
-      throw error;
-    }
-  };
-  const createPaymentClub = async (TournamentId,Amount) =>{
-    try{
-      const formData = new FormData();
-      formData.append('TournamentId', TournamentId);
-      formData.append('Amount', Amount);
-    const response = await axios(configuration({
-      method: "POST",
-      path: `/Vnpay/create_payment_clb`,
-      data: formData,
-    }));
-    return response;
-  } catch (error) {
-    throw error;
-  }
-  };
-  const deleteClub = (clubId) =>
-    axios(
-      configuration({
-        method: "post",
-        path: `/Club/deleteClub/${clubId}`,
-      }),
-    );
-    const PaymentforClub = () =>{
-      return axios(
-        configuration({
-          method: "post",
-          path: "/Club/PaymentforClub",
-        })
-      )
-        .then((result) => result)
-        .catch((error) => error);
-    }
 export {
     getAllClub,
     getDetailClub,
@@ -292,12 +207,5 @@ export {
     activateClub,
     getMyClubJoined,
     outClub,
-    getAllClubNames,
-    updateStatusClub,
-    createPayment,
-    setPayment,
-    expiredClub,
-    createPaymentClub,
-    deleteClub,
-    PaymentforClub
+    getAllClubNames
   };

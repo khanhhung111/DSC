@@ -30,7 +30,7 @@ namespace dsc_backend.Controllers
         {
             try
             {
-                // Giả sử bạn đang sử dụng Entity Framework Core và có DbContext tên là `AppDbContext`.
+                // Giả sử bạn đang sử dụng Entity Framework Core và có DbContext tên là `AppDbContext`
                 var users = await _db.Users.ToListAsync(); // Lấy toàn bộ danh sách Users từ bảng User
 
                 // Trả về danh sách dưới dạng JSON
@@ -464,22 +464,21 @@ namespace dsc_backend.Controllers
         [HttpGet("GetAllTournament")]
         public async Task<IActionResult> GetAllTournament()
         {
+
             var tournaments = await _db.Tournaments
-                .Include(t => t.Level)
-                .Include(t => t.User) // Thêm Include cho User
-                .Select(a => new
-                {
-                    a.TournamentId,
-                    a.Name,
-                    a.NumberOfTeams,
-                    a.Location,
-                    a.StartDate,
-                    a.EndDate,
-                    LevelName = a.Level.LevelName,
-                    a.Avatar,
-                    CreatedBy = a.User.FullName // Lấy FullName từ User
-                })
-                .ToListAsync();
+    .Select(a => new
+    {
+        a.TournamentId,
+        a.Name,
+        a.NumberOfTeams,
+        a.Location,
+        a.StartDate,
+        a.EndDate,
+        LevelName = a.Level.LevelName,
+        a.Avatar
+    })
+    .ToListAsync();
+
 
             // Kiểm tra danh sách rỗng
             if (!tournaments.Any())

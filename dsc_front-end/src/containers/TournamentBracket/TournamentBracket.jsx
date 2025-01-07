@@ -12,7 +12,6 @@ import { toast } from 'react-toastify';
 
 const TournamentBracket = () => {
   const { tournamentId } = useParams();
-  const [showPenalty, setShowPenalty] = useState({});
   const [numberOfTeams, setNumberOfTeams] = useState(8);
   const [teams, setTeams] = useState([]);
   const [matches, setMatches] = useState({});
@@ -176,7 +175,7 @@ const TournamentBracket = () => {
           </>
         ) : (
           <div className="match-details-readonly">
-            <p><strong>Thời Gian:</strong> {match.Time ? moment(match.Time).format('HH:mm - DD/MM/YYYY') : 'Chưa Có'}</p>
+            <p><strong>Thời Gian:</strong> {match.Time ? moment(match.Time).format('YYYY-MM-DD HH:mm') : 'Chưa Có'}</p>
             <p><strong>Địa Điểm:</strong> {match.location || 'Chưa Có'}</p>
           </div>
         )}
@@ -236,32 +235,7 @@ const TournamentBracket = () => {
     return matchStructure;
   };
 
-  const validateBeforeSave = () => {
-    let isValid = true;
-    let errorMessage = '';
 
-    // Kiểm tra từng trận đấu
-    Object.entries(matches).forEach(([roundName, roundMatches]) => {
-      roundMatches.forEach((match, index) => {
-        // Chỉ kiểm tra các trận đã có điểm số
-        if (match.score1 !== '' && match.score2 !== '') {
-          // Nếu có tỉ số hòa
-          if (parseInt(match.score1) === parseInt(match.score2)) {
-            // Kiểm tra xem đã có penalty chưa và penalty có hợp lệ không
-            if (!match.penalty1 || !match.penalty2 ||
-              match.penalty1 === '' || match.penalty2 === '' ||
-              parseInt(match.penalty1) === parseInt(match.penalty2)) {
-              isValid = false;
-              errorMessage = `Trận đấu ở vòng ${roundName} số ${index + 1} có tỉ số hòa. Vui lòng nhập tỉ số penalty hợp lệ và khác nhau.`;
-              return;
-            }
-          }
-        }
-      });
-    });
-
-    return { isValid, errorMessage };
-  };
 
 
   const updateMatchesWithResults = (results, currentMatches) => {
@@ -272,7 +246,7 @@ const TournamentBracket = () => {
     const sortedResults = [...results].sort((a, b) => b.roundNumber - a.roundNumber);
 
     sortedResults.forEach(result => {
-      const { roundNumber, matchNumber, team1Id, team2Id, score1, score2, penalty1, penalty2, time, location } = result;
+      const { roundNumber, matchNumber, team1Id, team2Id, score1, score2, time, location } = result;
       const roundKey = `round${roundNumber}`;
 
       if (newMatches[roundKey] && newMatches[roundKey][matchNumber - 1]) {
@@ -284,91 +258,58 @@ const TournamentBracket = () => {
           team2Id,
           score1: score1 !== undefined && score1 !== null ? score1.toString() : '-',
           score2: score2 !== undefined && score2 !== null ? score2.toString() : '-',
-          penalty1: penalty1 !== undefined && penalty1 !== null ? penalty1.toString() : '',
-          penalty2: penalty2 !== undefined && penalty2 !== null ? penalty2.toString() : '',
           Time: time || '',
           location: location || ''
         };
 
         // Xử lý cập nhật vòng tiếp theo nếu có điểm số
         if (score1 !== null && score2 !== null && score1 !== '-' && score2 !== '-') {
-          let winningTeam;
-
-          // Kiểm tra tỉ số hòa và penalty
-          if (parseInt(score1) === parseInt(score2)) {
-            // Nếu có penalty và penalty khác nhau
-            if (penalty1 !== null && penalty2 !== null && parseInt(penalty1) !== parseInt(penalty2)) {
-              winningTeam = parseInt(penalty1) > parseInt(penalty2)
-                ? {
-                  name: match.team1,
-                  id: team1Id
-                }
-                : {
-                  name: match.team2,
-                  id: team2Id
-                };
-
-              // Cập nhật trạng thái hiển thị ô penalty
-              setShowPenalty(prev => ({
-                ...prev,
-                [`${roundKey}-${matchNumber - 1}`]: true
-              }));
+          const winningTeam = parseInt(score1) > parseInt(score2)
+            ? {
+              name: match.team1,
+              id: team1Id
             }
-          } else {
-            // Nếu không hòa, xác định winner dựa trên tỉ số chính
-            winningTeam = parseInt(score1) > parseInt(score2)
-              ? {
-                name: match.team1,
-                id: team1Id
-              }
-              : {
-                name: match.team2,
-                id: team2Id
+            : {
+              name: match.team2,
+              id: team2Id
+            };
+
+          // Cập nhật cho vòng tiếp theo
+          if (roundNumber > 1) {
+            const nextRound = `round${roundNumber - 1}`;
+            const nextMatchIndex = Math.floor((matchNumber - 1) / 2);
+            const isFirstTeam = (matchNumber - 1) % 2 === 0;
+
+            // Đảm bảo vòng tiếp theo tồn tại
+            if (!newMatches[nextRound]) {
+              newMatches[nextRound] = [];
+            }
+
+            // Đảm bảo trận đấu tiếp theo tồn tại
+            if (!newMatches[nextRound][nextMatchIndex]) {
+              newMatches[nextRound][nextMatchIndex] = {
+                team1: 'Chưa Có',
+                team2: 'Chưa Có',
+                team1Id: null,
+                team2Id: null,
+                score1: '-',
+                score2: '-'
               };
-          }
+            }
 
-          // Chỉ cập nhật vòng tiếp theo nếu đã xác định được đội thắng
-          if (winningTeam) {
-            if (roundNumber > 1) {
-              const nextRound = `round${roundNumber - 1}`;
-              const nextMatchIndex = Math.floor((matchNumber - 1) / 2);
-              const isFirstTeam = (matchNumber - 1) % 2 === 0;
-
-              // Đảm bảo vòng tiếp theo tồn tại
-              if (!newMatches[nextRound]) {
-                newMatches[nextRound] = [];
-              }
-
-              // Đảm bảo trận đấu tiếp theo tồn tại
-              if (!newMatches[nextRound][nextMatchIndex]) {
-                newMatches[nextRound][nextMatchIndex] = {
-                  team1: 'Chưa Có',
-                  team2: 'Chưa Có',
-                  team1Id: null,
-                  team2Id: null,
-                  score1: '-',
-                  score2: '-',
-                  time: '',
-                  location: '',
-                  penalty1: '',
-                  penalty2: ''
-                };
-              }
-
-              // Cập nhật đội thắng vào vị trí tương ứng
-              if (isFirstTeam) {
-                newMatches[nextRound][nextMatchIndex] = {
-                  ...newMatches[nextRound][nextMatchIndex],
-                  team1: winningTeam.name,
-                  team1Id: winningTeam.id
-                };
-              } else {
-                newMatches[nextRound][nextMatchIndex] = {
-                  ...newMatches[nextRound][nextMatchIndex],
-                  team2: winningTeam.name,
-                  team2Id: winningTeam.id
-                };
-              }
+            // Cập nhật đội thắng vào vị trí tương ứng
+            if (isFirstTeam) {
+              newMatches[nextRound][nextMatchIndex] = {
+                ...newMatches[nextRound][nextMatchIndex],
+                team1: winningTeam.name,
+                team1Id: winningTeam.id
+              };
+            } else {
+              newMatches[nextRound][nextMatchIndex] = {
+                ...newMatches[nextRound][nextMatchIndex],
+                team2: winningTeam.name,
+                team2Id: winningTeam.id
+              };
             }
           }
         }
@@ -378,6 +319,7 @@ const TournamentBracket = () => {
     console.log("Final updated matches:", newMatches);
     setMatches(newMatches);
   };
+
 
   const fetchTournamentResults = async () => {
     if (hasFetched.current) return;
@@ -422,11 +364,8 @@ const TournamentBracket = () => {
 
       // Kiểm tra xem có phải là tỷ số hòa không
       if (score1 === score2) {
-        setShowPenalty(prev => ({
-          ...prev,
-          [`${round}-${matchIndex}`]: true
-        }));
-        return;
+        toast.error('Tỷ số hòa không được chấp nhận. Vui lòng nhập lại để có đội chiến thắng.');
+        return; // Không cập nhật state nếu là tỷ số hòa
       }
 
       // Xác định đội thắng
@@ -473,12 +412,6 @@ const TournamentBracket = () => {
 
   const saveResults = async () => {
     try {
-      const validation = validateBeforeSave();
-      if (!validation.isValid) {
-        toast.error(validation.errorMessage);
-        return;
-      }
-
       setLoading(true);
 
       const convertedMatches = Object.entries(matches).reduce((acc, [roundKey, roundMatches]) => {
@@ -493,10 +426,8 @@ const TournamentBracket = () => {
                 team2Id: match.team2Id,
                 score1: match.score1 !== "" ? parseInt(match.score1) : null,
                 score2: match.score2 !== "" ? parseInt(match.score2) : null,
-                penalty1: match.penalty1 !== "" ? parseInt(match.penalty1) : null,
-                penalty2: match.penalty2 !== "" ? parseInt(match.penalty2) : null,
-                Time: match.Time || match.time || null,
-                Location: match.Location || match.location || null,
+                Time: match.Time || match.time || null,  // Xử lý cả 2 trường hợp
+                Location: match.Location || match.location || null,  // Đảm bảo viết hoa đúng với API
               };
             }
             return null;
@@ -529,11 +460,12 @@ const TournamentBracket = () => {
       }
 
     } catch (err) {
-      toast.error('Lỗi cập nhật thông tin trận đấu: ' + err.message);
+      toast.error('Lỗi cập nhật thông tin trận đấu'+ err.message);
     } finally {
       setLoading(false);
     }
-  }
+  };
+
 
 
   return (
@@ -570,42 +502,23 @@ const TournamentBracket = () => {
               </button>
             )}
             {editMode && (
-              <>
-                <button
-                  onClick={() => window.location.reload()}
-                  disabled={loading}
-                  style={{
-                    backgroundColor: '#f5f5f5',
-                    color: '#333',
-                    padding: '12px 24px',
-                    fontSize: '16px',
-                    border: '1px solid #d9d9d9',
-                    borderRadius: '5px',
-                    cursor: 'pointer',
-                    margin: '0 10px',
-                    transition: 'all 0.3s ease',
-                  }}
-                >
-                  Hủy
-                </button>
-                <button
-                  onClick={saveResults}
-                  disabled={loading}
-                  style={{
-                    backgroundColor: '#4CAF50',
-                    color: 'white',
-                    padding: '12px 24px',
-                    fontSize: '16px',
-                    border: 'none',
-                    borderRadius: '5px',
-                    cursor: 'pointer',
-                    margin: '0 10px',
-                    transition: 'background-color 0.3s ease',
-                  }}
-                >
-                  Lưu
-                </button>
-              </>
+              <button
+                onClick={saveResults}
+                disabled={loading}
+                style={{
+                  backgroundColor: '#4CAF50',
+                  color: 'white',
+                  padding: '12px 24px',
+                  fontSize: '16px',
+                  border: 'none',
+                  borderRadius: '5px',
+                  cursor: 'pointer',
+                  margin: '0 10px',
+                  transition: 'background-color 0.3s ease',
+                }}
+              >
+                Lưu
+              </button>
             )}
           </div>
         </div>
@@ -618,6 +531,7 @@ const TournamentBracket = () => {
           </div>
         ) : (
           <>
+            {console.log("Matches State Before Render:", matches)} {/* DEBUG */}
             <div className="tournament-bracket">
               {Object.entries(matches).map(([roundName, roundMatches], roundIndex) => (
                 <div key={roundName} className={`round ${roundName}`}>
@@ -626,12 +540,14 @@ const TournamentBracket = () => {
                     {roundMatches.map((match, matchIndex) => (
                       <div key={matchIndex} className="match">
                         <div className="match-details">
+                          {/* <p>{match.date} {match.time}</p>
+                          <p>{match.location}</p> */}
                           <Button
                             type="primary"
                             style={{
-                              backgroundColor: '#28a745',
-                              borderColor: '#28a745',
-                              color: 'white',
+                              backgroundColor: '#28a745', // Màu xanh lá cây
+                              borderColor: '#28a745', // Màu viền trùng với màu nền
+                              color: 'white', // Chữ màu trắng
                               marginBottom: '10px'
                             }}
                             onClick={() => {
@@ -642,113 +558,38 @@ const TournamentBracket = () => {
                             {editMode ? 'Chỉnh Sửa' : 'Chi tiết'}
                           </Button>
                         </div>
-
-                        {/* Team 1 */}
-                        <div className={`team ${match.score1 !== '' && match.score2 !== '' &&
-                          ((parseInt(match.score1) > parseInt(match.score2)) ||
-                            (parseInt(match.score1) === parseInt(match.score2) &&
-                              parseInt(match.penalty1) > parseInt(match.penalty2)))
-                          ? 'winner' : ''}`}>
+                        <div className={`team ${parseInt(match.score1) > parseInt(match.score2) ? 'winner' : ''}`}>
                           <span>{match.team1}</span>
-                          <div className="score-container">
-                            {editMode ? (
-                              <div className="input-group">
-                                <input
-                                  type="number"
-                                  value={match.score1}
-                                  onChange={(e) => {
-                                    const newMatches = { ...matches };
-                                    newMatches[roundName][matchIndex].score1 = e.target.value;
-                                    if (e.target.value === match.score2 && e.target.value !== '') {
-                                      setShowPenalty(prev => ({
-                                        ...prev,
-                                        [`${roundName}-${matchIndex}`]: true
-                                      }));
-                                    }
-                                    setMatches(newMatches);
-                                  }}
-                                  min="0"
-                                  className="score-input"
-                                />
-                                {parseInt(match.score1) === parseInt(match.score2) &&
-                                  match.score1 !== '' && match.score2 !== '' && (
-                                    <input
-                                      type="number"
-                                      value={match.penalty1 || ''}
-                                      onChange={(e) => {
-                                        const newMatches = { ...matches };
-                                        newMatches[roundName][matchIndex].penalty1 = e.target.value;
-                                        setMatches(newMatches);
-                                      }}
-                                      min="0"
-                                      className="penalty-input"
-                                      placeholder="Pen"
-                                    />
-                                  )}
-                              </div>
-                            ) : (
-                              <span className="score">
-                                {match.score1 !== undefined && match.score1 !== null ? match.score1 : '-'}
-                                {match.penalty1 && match.score1 === match.score2 ? ` (${match.penalty1})` : ''}
-                              </span>
-                            )}
-                          </div>
+                          {editMode ? (
+                            <input
+                              type="number"
+                              value={match.score1}
+                              onChange={(e) => handleScoreChange(roundName, matchIndex, 1, e.target.value)}
+                              min="0"
+                              className="score-input"
+                            />
+                          ) : (
+                            <span className="score">{match.score1 !== undefined && match.score1 !== null ? match.score1 : '-'}</span>
+                          )}
                         </div>
-
-                        {/* Team 2 */}
-                        <div className={`team ${match.score1 !== '' && match.score2 !== '' &&
-                          ((parseInt(match.score2) > parseInt(match.score1)) ||
-                            (parseInt(match.score1) === parseInt(match.score2) &&
-                              parseInt(match.penalty2) > parseInt(match.penalty1)))
-                          ? 'winner' : ''}`}>
+                        <div className={`team ${parseInt(match.score2) > parseInt(match.score1) ? 'winner' : ''}`}>
                           <span>{match.team2}</span>
-                          <div className="score-container">
-                            {editMode ? (
-                              <div className="input-group">
-                                <input
-                                  type="number"
-                                  value={match.score2}
-                                  onChange={(e) => {
-                                    const newMatches = { ...matches };
-                                    newMatches[roundName][matchIndex].score2 = e.target.value;
-                                    if (e.target.value === match.score1 && e.target.value !== '') {
-                                      setShowPenalty(prev => ({
-                                        ...prev,
-                                        [`${roundName}-${matchIndex}`]: true
-                                      }));
-                                    }
-                                    setMatches(newMatches);
-                                  }}
-                                  min="0"
-                                  className="score-input"
-                                />
-                                {parseInt(match.score1) === parseInt(match.score2) &&
-                                  match.score1 !== '' && match.score2 !== '' && (
-                                    <input
-                                      type="number"
-                                      value={match.penalty2 || ''}
-                                      onChange={(e) => {
-                                        const newMatches = { ...matches };
-                                        newMatches[roundName][matchIndex].penalty2 = e.target.value;
-                                        setMatches(newMatches);
-                                      }}
-                                      min="0"
-                                      className="penalty-input"
-                                      placeholder="Pen"
-                                    />
-                                  )}
-                              </div>
-                            ) : (
-                              <span className="score">
-                                {match.score2 !== undefined && match.score2 !== null ? match.score2 : '-'}
-                                {match.penalty2 && match.score1 === match.score2 ? ` (${match.penalty2})` : ''}
-                              </span>
-                            )}
-                          </div>
+                          {editMode ? (
+                            <input
+                              type="number"
+                              value={match.score2}
+                              onChange={(e) => handleScoreChange(roundName, matchIndex, 2, e.target.value)}
+                              min="0"
+                              className="score-input"
+                            />
+                          ) : (
+                            <span className="score">{match.score2 !== undefined && match.score2 !== null ? match.score2 : '-'}</span>
+                          )}
                         </div>
                       </div>
                     ))}
                   </div>
+
                 </div>
               ))}
             </div>
@@ -771,17 +612,17 @@ const TournamentBracket = () => {
           </>
         )}
       </div>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
+      <ToastContainer 
+     position="top-right"
+     autoClose={5000}
+     hideProgressBar={false}
+     newestOnTop={false}
+     closeOnClick
+     rtl={false}
+     pauseOnFocusLoss
+     draggable
+     pauseOnHover
+   />
       <Footer />
     </div>
   );

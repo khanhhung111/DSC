@@ -13,9 +13,5 @@ public partial class Result
 
     public int? ScoreTeam2 { get; set; }
 
-    public int? PenaltyTeam1 { get; set; }
-
-    public int? PenaltyTeam2 { get; set; }
-
     public virtual Match? Match { get; set; }
 }
