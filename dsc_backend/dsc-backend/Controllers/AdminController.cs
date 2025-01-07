@@ -30,7 +30,7 @@ namespace dsc_backend.Controllers
         {
             try
             {
-                // Giả sử bạn đang sử dụng Entity Framework Core và có DbContext tên là `AppDbContext`
+                // Giả sử bạn đang sử dụng Entity Framework Core và có DbContext tên là `AppDbContext`.
                 var users = await _db.Users.ToListAsync(); // Lấy toàn bộ danh sách Users từ bảng User
 
                 // Trả về danh sách dưới dạng JSON

@@ -1,29 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\test\\dsc_backend\\",
+  "WorkspaceRootPath": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\SE17\\DSC\\dsc_backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E986E7B6-C182-440A-8951-FEC9AD4B1446}|dsc-backend\\dsc-backend.csproj|d:\\documents\\\u0111\u1ED3 \u00E1n\\test\\dsc_backend\\dsc-backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{E986E7B6-C182-440A-8951-FEC9AD4B1446}|dsc-backend\\dsc-backend.csproj|d:\\documents\\\u0111\u1ED3 \u00E1n\\se17\\dsc\\dsc_backend\\dsc-backend\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E986E7B6-C182-440A-8951-FEC9AD4B1446}|dsc-backend\\dsc-backend.csproj|solutionrelative:dsc-backend\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E986E7B6-C182-440A-8951-FEC9AD4B1446}|dsc-backend\\dsc-backend.csproj|d:\\documents\\\u0111\u1ED3 \u00E1n\\se17\\dsc\\dsc_backend\\dsc-backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{E986E7B6-C182-440A-8951-FEC9AD4B1446}|dsc-backend\\dsc-backend.csproj|solutionrelative:dsc-backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E986E7B6-C182-440A-8951-FEC9AD4B1446}|dsc-backend\\dsc-backend.csproj|d:\\documents\\\u0111\u1ED3 \u00E1n\\test\\dsc_backend\\dsc-backend\\controllers\\activitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E986E7B6-C182-440A-8951-FEC9AD4B1446}|dsc-backend\\dsc-backend.csproj|D:\\Documents\\\u0110\u1ED3 \u00E1n\\SE17\\DSC\\dsc_backend\\dsc-backend\\controllers\\activitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E986E7B6-C182-440A-8951-FEC9AD4B1446}|dsc-backend\\dsc-backend.csproj|solutionrelative:dsc-backend\\controllers\\activitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E986E7B6-C182-440A-8951-FEC9AD4B1446}|dsc-backend\\dsc-backend.csproj|d:\\documents\\\u0111\u1ED3 \u00E1n\\test\\dsc_backend\\dsc-backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E986E7B6-C182-440A-8951-FEC9AD4B1446}|dsc-backend\\dsc-backend.csproj|D:\\Documents\\\u0110\u1ED3 \u00E1n\\SE17\\DSC\\dsc_backend\\dsc-backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E986E7B6-C182-440A-8951-FEC9AD4B1446}|dsc-backend\\dsc-backend.csproj|solutionrelative:dsc-backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E986E7B6-C182-440A-8951-FEC9AD4B1446}|dsc-backend\\dsc-backend.csproj|D:\\Documents\\\u0110\u1ED3 \u00E1n\\test\\dsc_backend\\dsc-backend\\controllers\\authencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E986E7B6-C182-440A-8951-FEC9AD4B1446}|dsc-backend\\dsc-backend.csproj|D:\\Documents\\\u0110\u1ED3 \u00E1n\\SE17\\DSC\\dsc_backend\\dsc-backend\\controllers\\authencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E986E7B6-C182-440A-8951-FEC9AD4B1446}|dsc-backend\\dsc-backend.csproj|solutionrelative:dsc-backend\\controllers\\authencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E986E7B6-C182-440A-8951-FEC9AD4B1446}|dsc-backend\\dsc-backend.csproj|D:\\Documents\\\u0110\u1ED3 \u00E1n\\test\\dsc_backend\\dsc-backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E986E7B6-C182-440A-8951-FEC9AD4B1446}|dsc-backend\\dsc-backend.csproj|D:\\Documents\\\u0110\u1ED3 \u00E1n\\SE17\\DSC\\dsc_backend\\dsc-backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E986E7B6-C182-440A-8951-FEC9AD4B1446}|dsc-backend\\dsc-backend.csproj|solutionrelative:dsc-backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E986E7B6-C182-440A-8951-FEC9AD4B1446}|dsc-backend\\dsc-backend.csproj|D:\\Documents\\\u0110\u1ED3 \u00E1n\\test\\dsc_backend\\dsc-backend\\models\\teamtournament.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E986E7B6-C182-440A-8951-FEC9AD4B1446}|dsc-backend\\dsc-backend.csproj|D:\\Documents\\\u0110\u1ED3 \u00E1n\\SE17\\DSC\\dsc_backend\\dsc-backend\\models\\teamtournament.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E986E7B6-C182-440A-8951-FEC9AD4B1446}|dsc-backend\\dsc-backend.csproj|solutionrelative:dsc-backend\\models\\teamtournament.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -47,10 +51,23 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\SE17\\DSC\\dsc_backend\\dsc-backend\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "dsc-backend\\Controllers\\AdminController.cs",
+              "ToolTip": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\SE17\\DSC\\dsc_backend\\dsc-backend\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "dsc-backend\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABwAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T09:39:02.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\test\\dsc_backend\\dsc-backend\\appsettings.json",
+              "DocumentMoniker": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\SE17\\DSC\\dsc_backend\\dsc-backend\\appsettings.json",
               "RelativeDocumentMoniker": "dsc-backend\\appsettings.json",
-              "ToolTip": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\test\\dsc_backend\\dsc-backend\\appsettings.json",
+              "ToolTip": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\SE17\\DSC\\dsc_backend\\dsc-backend\\appsettings.json",
               "RelativeToolTip": "dsc-backend\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -59,37 +76,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ActivityController.cs",
-              "DocumentMoniker": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\test\\dsc_backend\\dsc-backend\\Controllers\\ActivityController.cs",
+              "DocumentMoniker": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\SE17\\DSC\\dsc_backend\\dsc-backend\\Controllers\\ActivityController.cs",
               "RelativeDocumentMoniker": "dsc-backend\\Controllers\\ActivityController.cs",
-              "ToolTip": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\test\\dsc_backend\\dsc-backend\\Controllers\\ActivityController.cs",
+              "ToolTip": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\SE17\\DSC\\dsc_backend\\dsc-backend\\Controllers\\ActivityController.cs",
               "RelativeToolTip": "dsc-backend\\Controllers\\ActivityController.cs",
               "ViewState": "AQIAAF8AAAAAAAAAAAAAADEAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T02:04:10.355Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\test\\dsc_backend\\dsc-backend\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "dsc-backend\\Controllers\\UserController.cs",
-              "ToolTip": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\test\\dsc_backend\\dsc-backend\\Controllers\\UserController.cs",
-              "RelativeToolTip": "dsc-backend\\Controllers\\UserController.cs",
-              "ViewState": "AQIAABAAAAAAaGZmZmYCwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T02:03:57.233Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-05T02:04:10.355Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\SE17\\DSC\\dsc_backend\\dsc-backend\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "dsc-backend\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\SE17\\DSC\\dsc_backend\\dsc-backend\\Controllers\\UserController.cs",
+              "RelativeToolTip": "dsc-backend\\Controllers\\UserController.cs",
+              "ViewState": "AQIAABAAAAAAaGZmZmYCwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T02:03:57.233Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "AuthenController.cs",
-              "DocumentMoniker": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\test\\dsc_backend\\dsc-backend\\Controllers\\AuthenController.cs",
+              "DocumentMoniker": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\SE17\\DSC\\dsc_backend\\dsc-backend\\Controllers\\AuthenController.cs",
               "RelativeDocumentMoniker": "dsc-backend\\Controllers\\AuthenController.cs",
-              "ToolTip": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\test\\dsc_backend\\dsc-backend\\Controllers\\AuthenController.cs",
+              "ToolTip": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\SE17\\DSC\\dsc_backend\\dsc-backend\\Controllers\\AuthenController.cs",
               "RelativeToolTip": "dsc-backend\\Controllers\\AuthenController.cs",
               "ViewState": "AQIAAG4AAACAMjMzM/MswCcAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -97,11 +112,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "User.cs",
-              "DocumentMoniker": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\test\\dsc_backend\\dsc-backend\\Models\\User.cs",
+              "DocumentMoniker": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\SE17\\DSC\\dsc_backend\\dsc-backend\\Models\\User.cs",
               "RelativeDocumentMoniker": "dsc-backend\\Models\\User.cs",
-              "ToolTip": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\test\\dsc_backend\\dsc-backend\\Models\\User.cs",
+              "ToolTip": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\SE17\\DSC\\dsc_backend\\dsc-backend\\Models\\User.cs",
               "RelativeToolTip": "dsc-backend\\Models\\User.cs",
               "ViewState": "AQIAAAYAAAAoAAAAAMAkwA8AAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -109,11 +124,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "TeamTournament.cs",
-              "DocumentMoniker": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\test\\dsc_backend\\dsc-backend\\Models\\TeamTournament.cs",
+              "DocumentMoniker": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\SE17\\DSC\\dsc_backend\\dsc-backend\\Models\\TeamTournament.cs",
               "RelativeDocumentMoniker": "dsc-backend\\Models\\TeamTournament.cs",
-              "ToolTip": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\test\\dsc_backend\\dsc-backend\\Models\\TeamTournament.cs",
+              "ToolTip": "D:\\Documents\\\u0110\u1ED3 \u00E1n\\SE17\\DSC\\dsc_backend\\dsc-backend\\Models\\TeamTournament.cs",
               "RelativeToolTip": "dsc-backend\\Models\\TeamTournament.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -127,7 +142,7 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:8:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+              "Name": "ST:9:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             }
           ]
         },
@@ -137,12 +152,22 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "Name": "ST:8:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             }
           ]
         },
         {
           "DockedWidth": 1186,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
           "SelectedChildIndex": -1,
           "Children": [
             {
@@ -175,10 +200,6 @@
           "DockedWidth": 200,
           "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:9:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:11:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
