@@ -6,18 +6,27 @@ import { getTeamTournament, saveTournamentResults, getTournamentResults, saveTou
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
+import Confetti from "react-confetti";
+import moment from 'moment';
 import Hearder from "../../components/Header/Hearder";
 import Footer from "../../components/Footer/Footer";
+import { useWindowSize } from "react-use"; // Để tính kích thước màn hình động
 const RoundRobinTournament = () => {
   const { tournamentId } = useParams();
+  const { width, height } = useWindowSize(); // Kích thước cửa sổ
   const [teams, setTeams] = useState([]);
+  const [winner, setWinner] = useState('');
   const [matches, setMatches] = useState([]);
   const [standings, setStandings] = useState([]);
   const [currentRound, setCurrentRound] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [editMode, setEditMode] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const [selectedMatch, setSelectedMatch] = useState(null);
   const hasFetched = useRef(false);
+    const [showConfetti, setShowConfetti] = useState(false);
+    const [toastShown, setToastShown] = useState(false); // Trạng thái để kiểm soát toast
 
   useEffect(() => {
     if (!hasFetched.current) {
@@ -77,6 +86,17 @@ const RoundRobinTournament = () => {
         hasFetched.current = true;
     }
 };
+    useEffect(() => {
+    if (
+      standings.length > 0 &&
+      matches.every(match => match.homeScore !== null && match.awayScore !== null)
+    ) {
+      const champion = standings[0]; // Đội đứng đầu bảng
+      if (champion) {
+        setWinner(champion.name);
+      }
+    }
+  }, [standings, matches]);
 useEffect(() => {
   console.log("Matches changed:", matches);
   if (matches.length > 0) {
@@ -84,6 +104,96 @@ useEffect(() => {
       updateStandings(matches);
   }
 }, [matches]);
+const MatchDetailsModal = ({ match, open, onClose, onSave, editMode }) => {
+    const [date, setDate] = useState(
+      match?.Time
+        ? moment(match?.Time)
+        : null
+    );
+
+    const [time, setTime] = useState(
+      match?.Time
+        ? moment(match?.Time).format('HH:mm')
+        : null
+    );
+
+    const [location, setLocation] = useState(match?.location || '');
+
+    const handleSave = () => {
+      const combinedDateTime = date
+        ? moment(date.format('YYYY-MM-DD') + ' ' + time, 'YYYY-MM-DD HH:mm')
+        : null;
+    
+      onSave({
+        Time: combinedDateTime ? combinedDateTime.format('YYYY-MM-DDTHH:mm:ss') : null,
+        location: location
+      });
+      onClose();
+    };
+
+    return (
+      <Modal
+        title="Thời gian và địa điểm thi đấu"
+        open={open}
+        onCancel={onClose}
+        footer={[
+          <Button key="close" onClick={onClose}>
+            Hủy
+          </Button>,
+          editMode && (
+            <Button key="save" type="primary" onClick={handleSave}>
+              Lưu
+            </Button>
+          ),
+        ]}
+        className="match-details-modal"
+      >
+        {editMode ? (
+          <>
+            <div className="match-details-field">
+              <label>Ngày</label>
+              <DatePicker
+                value={date}
+                onChange={(value) => {
+                  console.log('Chọn Ngày:', value);
+                  setDate(value);
+                }}
+                format="YYYY-MM-DD"
+                style={{ width: '100%' }}
+                placeholder="Chọn Ngày"
+              />
+            </div>
+            <div className="match-details-field">
+              <label>Giờ</label>
+              <TimePicker
+                value={time ? moment(time, 'HH:mm') : null}
+                onChange={(value) => {
+                  console.log('Chọn Giờ:', value);
+                  setTime(value ? value.format('HH:mm') : null);
+                }}
+                format="HH:mm"
+                style={{ width: '100%' }}
+                placeholder="Chọn Giờ"
+              />
+            </div>
+            <div className="match-details-field">
+              <label>Địa Điểm</label>
+              <Input
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                placeholder="Địa Điểm"
+              />
+            </div>
+          </>
+        ) : (
+          <div className="match-details-readonly">
+            <p><strong>Thời Gian:</strong> {match?.Time ? moment(match.Time).format('HH:mm - DD/MM/YYYY') : 'Chưa Có'}</p>
+            <p><strong>Địa Điểm:</strong> {match?.location || 'Chưa Có'}</p>
+          </div>
+        )}
+      </Modal>
+    );
+  };
   const generateInitialMatches = (teamsList) => {
     if (!Array.isArray(teamsList) || teamsList.length === 0) {
       console.error("Invalid teams list:", teamsList);
@@ -149,7 +259,9 @@ useEffect(() => {
           updatedMatches[index] = {
             ...match,
             homeScore: result.score1,
-            awayScore: result.score2
+            awayScore: result.score2,
+            Time: result.time,         // Thêm Time từ API
+            location: result.location  // Thêm location từ API
           };
         }
       });
@@ -313,7 +425,21 @@ const saveResults = async () => {
       
       <h1 className={styles.title}>Giải Đấu Vòng Tròn</h1>
 
-      <div className={styles.controls}>
+      {winner && (
+          <div className="winner-announcement">
+            <h3 style={{fontSize:'30px'}}>Tournament Winner</h3>
+            <div className="winner-name">{winner}</div>
+          </div>
+        )}
+        <div className={styles.controls}>
+        {winner && (
+                <Confetti
+                  width={width}
+                  height={height}
+                  numberOfPieces={500} // Số lượng mảnh tung hoa
+                  // recycle={false} // Ngừng hiệu ứng sau khi kết thúc
+                />
+              )}
   
 </div>
 
@@ -426,8 +552,48 @@ const saveResults = async () => {
                 <div className={styles.teamBlock}>
                   <span className={styles.teamName}>{match.awayTeam.name}</span>
                 </div>
+                <Button
+                                    type="primary"
+                                    style={{
+                                      backgroundColor: '#28a745',
+                                      borderColor: '#28a745',
+                                      color: 'white',
+                                      marginLeft: '10px'
+                                    }}
+                                    onClick={() => {
+                                      setSelectedMatch({
+                                        match: match,
+                                        index: matches.findIndex(m =>
+                                          m.round === match.round &&
+                                          m.homeTeam.id === match.homeTeam.id &&
+                                          m.awayTeam.id === match.awayTeam.id
+                                        )
+                                      });
+                                      setShowModal(true);
+                                    }}
+                                  >
+                                    {'Chi tiết'}
+                                  </Button>
               </div>
             ))}
+            {showModal && selectedMatch && (
+              <MatchDetailsModal
+                match={selectedMatch.match}
+                open={showModal}
+                onClose={() => setShowModal(false)}
+                onSave={(details) => {
+                  const newMatches = [...matches];
+                  newMatches[selectedMatch.index] = {
+                    ...newMatches[selectedMatch.index],
+                    Time: details.Time,      // Đảm bảo tên trường khớp
+                    location: details.location  // Đảm bảo tên trường khớp
+                  };
+                  setMatches(newMatches);
+                  toast.success('Cập nhật thông tin trận đấu thành công!');
+                }}
+                editMode={editMode}
+              />
+            )}
         </div>
       </div>
 
