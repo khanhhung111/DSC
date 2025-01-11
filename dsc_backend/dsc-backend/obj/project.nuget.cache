@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "//Hug6fTkpE=",
+  "dgSpecHash": "b0p/61haxdbq/c7Oz141EBLUFu5z1qjQWg53KUWozOSNUt1B8g3dDoXcq7W6/k73PYlFlR+QGO8kW4FOQZ4EDQ==",
   "success": true,
-  "projectFilePath": "D:\\DSC-DOAN\\DSC\\dsc_backend\\dsc-backend\\dsc-backend.csproj",
+  "projectFilePath": "D:\\dsc_backend\\dsc-backend\\dsc-backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

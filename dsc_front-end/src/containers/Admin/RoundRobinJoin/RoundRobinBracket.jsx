@@ -2,17 +2,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import styles from './RoundRobinBracket.module.css';
 import { useParams } from 'react-router-dom';
 import { DatePicker, TimePicker, Modal, Button, Input } from 'antd';
-import { getTeamTournament, saveTournamentResults, getTournamentResults, saveTournamentResultsTemp } from '../../utils/tournament';
+import { getTeamTournament, saveTournamentResults, getTournamentResults, saveTournamentResultsTemp } from '../../../utils/tournament';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 import Confetti from "react-confetti";
 import moment from 'moment';
-import Hearder from "../../components/Header/Hearder";
-import Footer from "../../components/Footer/Footer";
 import { useWindowSize } from "react-use"; // Để tính kích thước màn hình động
-const RoundRobinTournament = () => {
-  const { tournamentId } = useParams();
+const RoundRobinTournament = ({ tournamentId, onClose }) => {
+  // const { tournamentId } = useParams();
   const { width, height } = useWindowSize(); // Kích thước cửa sổ
   const [teams, setTeams] = useState([]);
   const [winner, setWinner] = useState('');
@@ -420,7 +418,6 @@ const saveResults = async () => {
 
   return (
     <div>
-      <Hearder />
     <div className={styles.container}>
       
       <h1 className={styles.title}>Giải Đấu Vòng Tròn</h1>
@@ -610,7 +607,6 @@ const saveResults = async () => {
     draggable
     pauseOnHover
   />
-     <Footer />
     </div>
   );
 };

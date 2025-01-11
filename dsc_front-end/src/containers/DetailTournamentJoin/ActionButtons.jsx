@@ -21,9 +21,9 @@ function ActionButtons({ matchData }) {
 
   return (
     <div className={styles.actionButtons}>
-      <button className={styles.button}>
+      {/* <button className={styles.button}>
         Tham Gia
-      </button>
+      </button> */}
       <button 
         className={styles.buttonresult} 
         onClick={() => navigate(`/ViewListTeam/${data.tournamentId}`)}

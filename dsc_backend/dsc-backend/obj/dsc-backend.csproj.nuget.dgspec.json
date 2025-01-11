@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DSC-DOAN\\DSC\\dsc_backend\\dsc-backend\\dsc-backend.csproj": {}
+    "D:\\dsc_backend\\dsc-backend\\dsc-backend.csproj": {}
   },
   "projects": {
-    "D:\\DSC-DOAN\\DSC\\dsc_backend\\dsc-backend\\dsc-backend.csproj": {
+    "D:\\dsc_backend\\dsc-backend\\dsc-backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DSC-DOAN\\DSC\\dsc_backend\\dsc-backend\\dsc-backend.csproj",
+        "projectUniqueName": "D:\\dsc_backend\\dsc-backend\\dsc-backend.csproj",
         "projectName": "dsc-backend",
-        "projectPath": "D:\\DSC-DOAN\\DSC\\dsc_backend\\dsc-backend\\dsc-backend.csproj",
+        "projectPath": "D:\\dsc_backend\\dsc-backend\\dsc-backend.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\DSC-DOAN\\DSC\\dsc_backend\\dsc-backend\\obj\\",
+        "outputPath": "D:\\dsc_backend\\dsc-backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -35,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -92,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
