@@ -526,3 +526,10 @@
   min-width: 30px;
   text-align: center;
 }
+.penalty-sup {
+  font-size: 0.8em;
+  vertical-align: super;
+  margin-left: -10px;
+  color: #f39c12;
+}
+
