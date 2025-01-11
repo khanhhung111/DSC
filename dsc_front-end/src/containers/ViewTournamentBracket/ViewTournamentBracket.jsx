@@ -188,7 +188,7 @@ const TournamentBracket = () => {
 
         if (score1 !== null && score2 !== null) {
           let winningTeam;
-
+          
           if (parseInt(score1) === parseInt(score2)) {
             // Nếu có penalty và penalty khác nhau
             if (penalty1 !== null && penalty2 !== null) {
@@ -253,7 +253,7 @@ const TournamentBracket = () => {
     }
 
     setMatches(newMatches);
-  };
+};
 
   useEffect(() => {
     const fetchData = async () => {
@@ -314,13 +314,13 @@ const TournamentBracket = () => {
         </div>
 
         {winner && (
-          <Confetti
-            width={pageSize.width}
-            height={pageSize.height}
-            numberOfPieces={1000}
-            style={{ position: 'fixed', top: 0, left: 0, zIndex: 1000 }}
-          />
-        )}
+        <Confetti
+          width={pageSize.width}
+          height={pageSize.height}
+          numberOfPieces={1000}
+          style={{ position: 'fixed', top: 0, left: 0, zIndex: 1000 }}
+        />
+      )}
 
         {loading ? (
           <div className="loading">Loading...</div>
@@ -354,37 +354,26 @@ const TournamentBracket = () => {
                     </div>
                     <div className="match">
                       <div className={`team ${parseInt(match.score1) > parseInt(match.score2) ||
-                        (parseInt(match.score1) === parseInt(match.score2) &&
-                          parseInt(match.penalty1) > parseInt(match.penalty2))
-                        ? 'winner' : ''}`}>
+                          (parseInt(match.score1) === parseInt(match.score2) &&
+                            parseInt(match.penalty1) > parseInt(match.penalty2))
+                          ? 'winner' : ''}`}>
                         <span>{match.team1}</span>
                         <span className="score">
                           {match.score1}
-                          {match.penalty1 && match.score1 === match.score2 ? (
-                            <>
-                              <span> ({match.penalty1})</span>
-                              <sup className="penalty-sup">P</sup>
-                            </>
-                          ) : ''}
+                          {match.penalty1 && match.score1 === match.score2 ? ` (${match.penalty1})` : ''}
                         </span>
                       </div>
                       <div className={`team ${parseInt(match.score2) > parseInt(match.score1) ||
-                        (parseInt(match.score1) === parseInt(match.score2) &&
-                          parseInt(match.penalty2) > parseInt(match.penalty1))
-                        ? 'winner' : ''}`}>
+                          (parseInt(match.score1) === parseInt(match.score2) &&
+                            parseInt(match.penalty2) > parseInt(match.penalty1))
+                          ? 'winner' : ''}`}>
                         <span>{match.team2}</span>
                         <span className="score">
                           {match.score2}
-                          {match.penalty2 && match.score1 === match.score2 ? (
-                            <>
-                              <span> ({match.penalty2})</span>
-                              <sup className="penalty-sup">P</sup>
-                            </>
-                          ) : ''}
+                          {match.penalty2 && match.score1 === match.score2 ? ` (${match.penalty2})` : ''}
                         </span>
                       </div>
                     </div>
-
                   </div>
                 ))}
                 {showModal && selectedMatch && (

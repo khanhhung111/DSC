@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { GoogleOAuthProvider } from '@react-oauth/google';
+
 // import  from "./components/Layout";
 import Home from "./containers/Home/Homepage";
 import HomePageLogin from "./containers/Home/HomepageLogin";
@@ -64,13 +64,9 @@ import DetailMyClubJoined from "./containers/DetailMyClubJoined/Match";
 import DetailMatchMyClub from "./containers/DetailMatchMyClub/Match";
 import RoundRobinBracket from "./containers/RoundRobin/RoundRobinBracket";
 import RoundRobinBracketJoin from "./containers/RoundRobinJoin/RoundRobinBracket";
-import GoogleCallback from './components/GoogleCallback';
 // import ViewListMember from "./containers/ViewListMember/Match";
-console.log("Google Client ID:", process.env.REACT_APP_GOOGLE_CLIENT_ID);
 function App() {
   return (
-    
-    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
     <BrowserRouter>
       <AppProvider>
         <Routes>
@@ -112,7 +108,7 @@ function App() {
           <Route path="/detailmatchjoined/:activityId" element={<DetailJoined />} />
           <Route path="/createsportevent" element={<CreateSportEvent />} />
           <Route path="/createsporteventclub/:clubId" element={<CreateSportEventClub />} />
-          <Route path="/auth/google-callback" element={<GoogleCallback />} />
+          
           <Route path="/updatesportevent/:activityId" element={<UpdateSportEvent />} />
           <Route path="/updatesporteventclub/:activityclubId" element={<UpdateSportEventClub />} />
           <Route path="/resultmatch/:activityId" element={<ResultMatch />} />
@@ -139,7 +135,6 @@ function App() {
         </Routes>
       </AppProvider>
     </BrowserRouter>
-    </GoogleOAuthProvider>
   );
 }
 

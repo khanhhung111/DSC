@@ -477,8 +477,7 @@ namespace dsc_backend.Controllers
                     a.EndDate,
                     LevelName = a.Level.LevelName,
                     a.Avatar,
-                    CreatedBy = a.User.FullName, // Lấy FullName từ User
-                    a.TournamentType
+                    CreatedBy = a.User.FullName // Lấy FullName từ User
                 })
                 .ToListAsync();
 
